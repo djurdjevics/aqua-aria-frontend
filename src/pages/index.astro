@@ -1,10 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { Logo } from '../components/Logo';
+import RootLayout from '../layouts/RootLayout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	This is a Aqua aria website
-</Layout>
+<RootLayout title='AquaAria | Početna'>
+	<div class="flex flex-col items-center justify-center w-full gap-y-10 text-center h-screen">
+		<h1 class="font-display text-5xl md:text-7xl text-secondary">Coming soon. <span class="text-primary block">		
+			Stay tuned!
+		</span>
+	</h1>
+	<Logo />
+	</div>
+</RootLayout>

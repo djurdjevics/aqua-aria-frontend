@@ -1,0 +1,12 @@
+a svg path {
+  fill: transparent;
+  stroke-width: 10px;
+  stroke: currentColor;
+  stroke-dasharray: 547.4111328125;
+  stroke-dashoffset: 547.4111328125;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.29, 0.68, 0.74, 1.02);
+}
+
+a:hover svg path {
+  stroke-dashoffset: 0;
+}
