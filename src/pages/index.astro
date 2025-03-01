@@ -1,17 +1,26 @@
 ---
-import { Logo } from '../components/Logo';
-import RootLayout from '../layouts/RootLayout.astro';
+import RootLayout from "../layouts/RootLayout.astro";
+import { HeroSection } from "../components/pages/root/hero/HeroSection";
+import { DispenserSection } from "../components/pages/root/dispenser/DispenserSection";
+import { OurMissionSection } from "../components/pages/root/our-mission/OurMissionSection";
+import { ServicesSection } from "../components/pages/root/services/ServicesSection";
+import { WatersSection } from "../components/pages/root/waters/WatersSection";
+import { AnanasSection } from "../components/pages/root/ananas/AnanasSection";
+import { TestimonialsSection } from "../components/pages/root/testimonials/TestimonialsSection";
+import { CallToAction } from "../components/CallToAction";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<RootLayout title='AquaAria | Početna'>
-	<div class="flex flex-col items-center justify-center w-full gap-y-10 text-center h-screen">
-		<h1 class="font-display text-5xl md:text-7xl text-secondary">Coming soon. <span class="text-primary block">		
-			Stay tuned!
-		</span>
-	</h1>
-	<Logo />
-	</div>
+<RootLayout title="AquaAria | Početna">
+  <HeroSection />
+  <img src="/under-hero-wave.svg" class="w-full" />
+  <DispenserSection />
+  <OurMissionSection />
+  <ServicesSection client:load />
+  <WatersSection client:load />
+  <AnanasSection />
+  <TestimonialsSection client:only="react" />
+  <CallToAction />
 </RootLayout>
