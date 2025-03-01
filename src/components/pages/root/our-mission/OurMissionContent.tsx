@@ -1,5 +1,5 @@
-import { cn } from "../../utils/cn";
-import { buttonVariants } from "../Button";
+import { cn } from "../../../../utils/cn";
+import { buttonVariants } from "../../../Button";
 
 export function OurMissionContent() {
   return (

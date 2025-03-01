@@ -1,81 +1,26 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
-import { HeroContent } from "../components/hero/HeroContent";
-import { HeroImage } from "../components/hero/HeroImage";
-import { DispenserInfo } from "../components/dispenser/DispenserInfo";
-import { DispenserImage } from "../components/dispenser/DispenserImage";
-import { DispenserPerk } from "../components/dispenser/DispenserPerk";
-import { buttonVariants } from "../components/Button";
-import { OurMissionContent } from "../components/our-mission/OurMissionContent";
-import { OurMissionImage } from "../components/our-mission/OurMissionImage";
+import { HeroSection } from "../components/pages/root/hero/HeroSection";
+import { DispenserSection } from "../components/pages/root/dispenser/DispenserSection";
+import { OurMissionSection } from "../components/pages/root/our-mission/OurMissionSection";
+import { ServicesSection } from "../components/pages/root/services/ServicesSection";
+import { WatersSection } from "../components/pages/root/waters/WatersSection";
+import { AnanasSection } from "../components/pages/root/ananas/AnanasSection";
+import { TestimonialsSection } from "../components/pages/root/testimonials/TestimonialsSection";
+import { CallToAction } from "../components/CallToAction";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <RootLayout title="AquaAria | Početna">
-  <section class="grid grid-cols-2 gap-x-3 items-end max-w-7xl mx-auto px-4 py-7">
-    <HeroContent />
-    <HeroImage />
-  </section>
+  <HeroSection />
   <img src="/under-hero-wave.svg" class="w-full" />
-  <section class="bg-secondary pb-[120px]">
-    <div class="grid grid-cols-2 pt-48 pb-28 max-w-7xl mx-auto px-4">
-      <DispenserInfo
-        side="left"
-        eyebrowText="Kompresorski aparat"
-        title="Glacier White"
-        description="Generalni opis proizvoda. Tekst u kome se tgovori o tome gde i kako je ovaj proizvod najbolje upotrebiti. Ubaciti se u ulogu klijenta i shvatiti za koje potrebe je njima potreban bas ovaj aparat"
-      >
-        <div class="flex flex-col gap-y-[52px] mt-[70px]">
-          <DispenserPerk
-            title="Hlađenje"
-            body="Aparat koristi napredni kompresorski sistem koji omogućava brzo i pouzdano hlađenje vode, čak i u toplim uslovima."
-            icon="/snow.svg"
-          />
-          <DispenserPerk
-            title="Kapacitet"
-            body="Dizajniran za dugotrajnu upotrebu i veći protok vode, idealan za kancelarije i komercijalne prostore."
-            icon="/droplet.svg"
-          />
-          <DispenserPerk
-            title="Efikasnost"
-            body="Aparat koristi energetski efikasan kompresorski sistem koji štedi struju i smanjuje troškove."
-            icon="/lightbulb.svg"
-          />
-        </div>
-      </DispenserInfo>
-      <DispenserImage side="right" imageSrc="/glacier-white.jpg" badgeSrc="/new-badge.svg" />
-    </div>
-    <div class="grid grid-cols-2 pb-28 max-w-7xl mx-auto px-4">
-      <DispenserImage side="left" imageSrc="/harmony-white.png" badgeSrc="/popular-badge.svg" />
-      <DispenserInfo
-        side="right"
-        eyebrowText="Termoelektrični aparat"
-        title="Harmony White"
-        description="Generalni opis proizvoda. Tekst u kome se tgovori o tome gde i kako je ovaj proizvod najbolje upotrebiti. Ubaciti se u ulogu klijenta i shvatiti za koje potrebe je njima potreban bas ovaj aparat"
-      >
-        <div class="flex flex-col gap-y-[52px] mt-[70px]">
-          <DispenserPerk title="Dizajn" body="Termoelektrični aparati su manjih dimenzija, idealni za manje prostore i lako prenosivi." icon="/box.svg" />
-          <DispenserPerk
-            title="Tihi rad"
-            body="Ovi aparati rade gotovo nečujno, što ih čini savršenim za kancelarije, spavaće sobe i kuhinje."
-            icon="/audio.svg"
-          />
-          <DispenserPerk
-            title="Pristupačna cena i održavanje"
-            body="Termoelektrični aparati su ekonomična opcija sa niskim troškovima održavanja."
-            icon="/box.svg"
-          />
-        </div>
-      </DispenserInfo>
-    </div>
-    <div class="flex w-full items-center justify-center">
-      <a href="/katalog" class={buttonVariants({ variant: "default", size: "default" })}>Vidi sve proizvode</a>
-    </div>
-  </section>
-  <section class="py-[120px] grid grid-cols-2 items-center max-w-7xl mx-auto px-4">
-    <OurMissionContent />
-    <OurMissionImage />
-  </section>
+  <DispenserSection />
+  <OurMissionSection />
+  <ServicesSection client:load />
+  <WatersSection client:load />
+  <AnanasSection />
+  <TestimonialsSection client:only="react" />
+  <CallToAction />
 </RootLayout>

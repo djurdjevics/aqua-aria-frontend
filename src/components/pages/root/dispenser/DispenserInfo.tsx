@@ -1,5 +1,5 @@
-import { cn } from "../../utils/cn";
-import { Eyebrow } from "../Eyebrow";
+import { cn } from "../../../../utils/cn";
+import { Eyebrow } from "../../../Eyebrow";
 
 interface DispenserInfoProps {
   eyebrowText: string;

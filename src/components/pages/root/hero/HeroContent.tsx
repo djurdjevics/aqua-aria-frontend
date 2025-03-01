@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from "../Button";
+import { Button, buttonVariants } from "../../../Button";
 
 export function HeroContent() {
   return (
