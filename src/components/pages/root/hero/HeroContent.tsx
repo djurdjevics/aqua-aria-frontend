@@ -3,7 +3,7 @@ import { Button, buttonVariants } from "../../../Button";
 export function HeroContent() {
   return (
     <div className="relative z-30 md:overflow-visible">
-      <h1 className="font-display text-secondary text-left text-[3rem] leading-[98%] uppercase md:text-[9rem]">
+      <h1 className="font-display text-secondary text-left text-[3.5rem] leading-[98%] uppercase md:text-[9rem]">
         <span className="text-secondary md:text-nowrap">Kvalitetna voda.</span>{" "}
         Jednostavno <span className="text-primary">dostupna.</span>
       </h1>
