@@ -59,7 +59,7 @@ export function HeroImage() {
       <div className="relative w-[600px] overflow-hidden rounded-2xl">
         <img src={activeImage.url} className="object-cover" />
         <div className="absolute inset-0 z-10 bg-white/10" />
-        <Progress value={progress} className="absolute bottom-0" />
+        {/* <Progress value={progress} className="absolute bottom-0" /> */}
       </div>
     </div>
   );
