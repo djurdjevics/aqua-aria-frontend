@@ -38,7 +38,9 @@ export function HeroImage() {
           });
 
           clearInterval(timer);
-          setProgress(0);
+
+          setTimeout(() => setProgress(0), 500);
+
           return 100;
         }
         return prev + stepIncrement;
