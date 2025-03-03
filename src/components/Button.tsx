@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "../utils/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center cursor-pointer justify-center gap-2 whitespace-nowrap rounded-full text-base font-semibold uppercase transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center cursor-pointer justify-center gap-2 whitespace-nowrap rounded-full text-sm md:text-base font-semibold uppercase transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -12,7 +12,7 @@ const buttonVariants = cva(
         outline: "bg-transparent border border-primary text-primary hover:bg-primary hover:text-bg",
       },
       size: {
-        default: "px-16 py-4",
+        default: "px-[2.125rem] py-3 md:px-16 md:py-4",
       },
     },
     defaultVariants: {

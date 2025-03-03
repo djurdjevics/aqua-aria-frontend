@@ -5,18 +5,29 @@ import { SectionContainer } from "../../../SectionContainer";
 
 export function AnanasSection() {
   return (
-    <div className="bg-secondary py-[92px] my-[154px]">
-      <SectionContainer className="flex items-end justify-between">
-        <div className="-mt-[328px] w-[18.75rem] ml-20">
-          <img src="ananas.png" className="w-full" width={300} height={680} alt="Ananas fruit" />
+    <div className="bg-secondary py-14 md:my-[154px] md:py-[92px]">
+      <SectionContainer className="items-end justify-between md:flex">
+        <div className="-mt-[328px] ml-20 hidden w-[18.75rem] md:block">
+          <img
+            src="ananas.png"
+            className="hidden w-full md:block"
+            width={300}
+            height={680}
+            alt="Ananas fruit"
+          />
         </div>
-        <div>
-          <AnanasLogo />
-          <h3 className="font-display text-bg text-7xl uppercase mt-3 leading-[100%] max-w-2xl">Poruči naše proizvode putem ananas platforme</h3>
-          <p className="text-white/80 mt-3 max-w-[480px]">
-            U saradnji sa ananas platformom za online kupovinu, sada naše proizvode možete poručiti i putem njihove veb prodavnice.
+        <div className="flex flex-col items-center">
+          <AnanasLogo className="h-7 w-[74px]" />
+          <h3 className="font-display text-bg mt-[14px] max-w-[15ch] text-center text-[40px] leading-[100%] uppercase md:mt-3 md:max-w-2xl md:text-7xl">
+            Poruči naše proizvode putem ananas platforme
+          </h3>
+          <p className="mt-3 max-w-[280px] text-center text-sm text-white/80 md:max-w-[480px] md:text-base">
+            U saradnji sa ananas platformom za online kupovinu, sada naše
+            proizvode možete poručiti i putem njihove veb prodavnice.
           </p>
-          <a className={cn(buttonVariants({ variant: "default" }), "mt-6")}>Poruči</a>
+          <a className={cn(buttonVariants({ variant: "default" }), "mt-6")}>
+            Poruči
+          </a>
         </div>
       </SectionContainer>
     </div>

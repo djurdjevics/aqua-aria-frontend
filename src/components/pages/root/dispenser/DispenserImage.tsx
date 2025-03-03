@@ -6,13 +6,30 @@ interface DispenserImageProps {
   side: "left" | "right";
 }
 
-export function DispenserImage({ imageSrc, badgeSrc, side }: DispenserImageProps) {
+export function DispenserImage({
+  imageSrc,
+  badgeSrc,
+  side,
+}: DispenserImageProps) {
   return (
-    <div className={cn("relative flex", side === "right" ? "justify-end" : "justify-start")}>
-      <div className="rounded-2xl overflow-hidden w-[500px]">
+    <div
+      className={cn(
+        "relative hidden md:flex",
+        side === "right" ? "justify-end" : "justify-start",
+      )}
+    >
+      <div className="w-[500px] overflow-hidden rounded-2xl">
         <img src={imageSrc} width={500} />
       </div>
-      <img src={badgeSrc} width={200} className={cn("absolute", side === "right" ? "-right-20 -top-20" : "right-10 -top-20")} height={200} />
+      <img
+        src={badgeSrc}
+        width={200}
+        className={cn(
+          "absolute hidden md:block",
+          side === "right" ? "-top-20 md:-right-20" : "-top-20 right-10",
+        )}
+        height={200}
+      />
     </div>
   );
 }

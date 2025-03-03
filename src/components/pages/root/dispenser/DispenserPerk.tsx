@@ -1,14 +1,21 @@
+import type { Icon } from "../../../../types/Icon";
+
 interface DispenserPerkProps {
-  title: string;
-  body: string;
-  icon: string;
+  perk: {
+    id: number;
+    body: string;
+    title: string;
+    Icon: Icon;
+  };
 }
 
-export function DispenserPerk({ title, body, icon }: DispenserPerkProps) {
+export function DispenserPerk({ perk }: DispenserPerkProps) {
+  const { id, body, title, Icon } = perk;
+
   return (
-    <div className="flex items-center gap-x-6">
-      <div className="rounded-full shrink-0 p-4 w-14 h-14 bg-primary flex items-center justify-center">
-        <img src={icon} alt={title} width={20} height={20} className="" />
+    <div className="hidden md:flex md:items-center md:gap-x-6">
+      <div className="bg-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-full p-4">
+        <Icon className="h-5 w-5" />
       </div>
       <p className="text-bg">
         <span className="font-semibold">{title} - </span>
