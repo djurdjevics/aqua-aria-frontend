@@ -1,3 +1,7 @@
 export function Eyebrow({ text }: { text: string }) {
-  return <div className="px-7 py-2.5 inline-block border-primary border text-primary rounded-full font-semibold text-sm">{text}</div>;
+  return (
+    <div className="border-primary text-primary inline-block rounded-full border px-[10px] py-[6px] text-[9px] font-semibold md:px-7 md:py-2.5 md:text-sm">
+      {text}
+    </div>
+  );
 }

@@ -4,7 +4,7 @@ import { OurMissionImage } from "./OurMissionImage";
 
 export function OurMissionSection() {
   return (
-    <SectionContainer className="py-[120px] grid grid-cols-2 items-center">
+    <SectionContainer className="grid grid-cols-1 items-center py-14 md:grid-cols-2 md:py-[120px]">
       <OurMissionContent />
       <OurMissionImage />
     </SectionContainer>

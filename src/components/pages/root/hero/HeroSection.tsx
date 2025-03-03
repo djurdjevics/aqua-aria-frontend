@@ -3,7 +3,7 @@ import { HeroImage } from "./HeroImage";
 
 export function HeroSection() {
   return (
-    <section className="grid grid-cols-2 gap-x-3 items-end max-w-7xl mx-auto px-4 py-7">
+    <section className="mx-auto grid max-w-7xl grid-cols-1 items-end gap-x-3 px-4 pt-4 pb-10 md:grid-cols-2 md:py-7">
       <HeroContent />
       <HeroImage />
     </section>
