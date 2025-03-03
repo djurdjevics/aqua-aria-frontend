@@ -17,3 +17,22 @@ export function WaveSecondary({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function WaveSecondaryMobile() {
+  return (
+    <svg
+      className="absolute inset-x-0 bottom-0 w-full"
+      width="375"
+      height="39"
+      viewBox="0 0 375 39"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M-14 21.0002C-14 21.0002 41.3668 38.7463 83.707 38.9973C127.46 39.2566 141.657 21.0624 185.416 21.0002C229.529 20.9374 244.011 39.0495 288.125 38.9973C331.942 38.9454 390 21.0002 390 21.0002"
+        stroke="#1A262F"
+        stroke-width="41.5105"
+      />
+    </svg>
+  );
+}

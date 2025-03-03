@@ -1,7 +1,10 @@
 import Marquee from "react-fast-marquee";
 import { GoogleReviews } from "./GoogleReviews";
 import { TestimonialCard } from "./TestimonialCard";
-import { WaveSecondary } from "../../../../assets/waves/WaveSecondary";
+import {
+  WaveSecondary,
+  WaveSecondaryMobile,
+} from "../../../../assets/waves/WaveSecondary";
 
 export function TestimonialsSection() {
   return (
@@ -62,7 +65,7 @@ export function TestimonialsSection() {
             kvalitetnije hidriraju svoje telo.
           </p>
         </div>
-        <WaveSecondary className="absolute inset-x-0 bottom-0 w-full" />
+        <WaveSecondaryMobile />
       </section>
     </>
   );
