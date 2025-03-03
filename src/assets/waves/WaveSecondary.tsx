@@ -5,8 +5,8 @@ export function WaveSecondary({ className }: { className?: string }) {
     <svg
       className={cn(className)}
       width="1440"
-      height="37.92"
-      viewBox="0 0 1440 37.92"
+      height="38"
+      viewBox="0 0 1440 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
