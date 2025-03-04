@@ -1,65 +1,59 @@
 import { useEffect, useMemo, useState } from "react";
 import { Progress } from "../../../Progress";
 
-const images = [
-  {
-    idx: 1,
-    url: "/hero-image-1.jpg",
-  },
-  {
-    idx: 2,
-    url: "/hero-image-2.jpg",
-  },
-  {
-    idx: 3,
-    url: "/hero-image-3.jpg",
-  },
-];
+const images = ["/hero-image-1.jpg", "/hero-image-2.jpg", "/hero-image-3.jpg"];
 
 export function HeroImage() {
+  const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [activeImageIndex, setActiveImageIndex] = useState<1 | 2 | 3>(1);
-  const duration = 10000;
-  const interval = 40;
+
+  const duration = 8000; // 5 seconds per image
+  const interval = 50; // Progress updates every 50ms
+  const stepIncrement = 100 / (duration / interval); // How much to increment per step
 
   useEffect(() => {
-    const steps = duration / interval;
-    const stepIncrement = 100 / steps;
+    let progressTimer: any;
 
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setActiveImageIndex((prev) => {
-            if (prev >= 3) {
-              return 1;
-            }
+    const startProgress = () => {
+      progressTimer = setInterval(() => {
+        setProgress((prev) => {
+          if (prev + stepIncrement >= 100) {
+            clearInterval(progressTimer);
+            setTimeout(() => {
+              setActiveIndex((prev) => (prev + 1) % images.length);
+              setProgress(0); // Reset progress
+            }, 300); // Small delay for smooth transition
+            return 100;
+          }
+          return prev + stepIncrement;
+        });
+      }, interval);
+    };
 
-            return (prev + 1) as 1 | 2 | 3;
-          });
-
-          clearInterval(timer);
-
-          setTimeout(() => setProgress(0), 500);
-
-          return 100;
-        }
-        return prev + stepIncrement;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [progress === 0]);
-
-  const activeImage = useMemo(() => {
-    return images.find((img) => img.idx === activeImageIndex)!;
-  }, [activeImageIndex]);
+    startProgress();
+    return () => clearInterval(progressTimer);
+  }, [activeIndex]);
 
   return (
     <div className="mt-6 flex w-full justify-end md:my-0">
-      <div className="relative w-[600px] overflow-hidden rounded-2xl">
-        <img src={activeImage.url} className="object-cover" />
-        <div className="absolute inset-0 z-10 bg-white/10" />
-        {/* <Progress value={progress} className="absolute bottom-0" /> */}
+      <div className="relative aspect-square h-full w-full overflow-hidden rounded-2xl">
+        {images.map((src, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 h-full w-full transition-opacity duration-700 ${
+              index === activeIndex ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img src={src} alt="Slide" className="object-cover" />
+          </div>
+        ))}
+
+        <div className="bg-primary/20 absolute bottom-0 left-0 h-1 w-full">
+          <div
+            className="bg-secondary h-full transition-all duration-50"
+            style={{ width: `${progress}%` }}
+          ></div>
+        </div>
       </div>
     </div>
   );
