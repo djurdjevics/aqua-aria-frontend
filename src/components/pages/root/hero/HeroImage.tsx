@@ -35,22 +35,27 @@ export function HeroImage() {
   }, [activeIndex]);
 
   return (
-    <div className="mt-6 flex w-full justify-end md:my-0">
+    <div className="mt-6 flex h-full w-full max-w-[600px] justify-end md:my-0 md:max-w-[1200px] lg:h-full lg:w-full">
       <div className="relative aspect-square h-full w-full overflow-hidden rounded-2xl">
         {images.map((src, index) => (
           <div
             key={index}
-            className={`absolute inset-0 h-full w-full transition-opacity duration-700 ${
+            className={`absolute inset-0 h-full w-full transition-opacity duration-700 lg:w-full ${
               index === activeIndex ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img src={src} alt="Slide" className="object-cover" />
+            <div className="absolute inset-0 h-full w-full bg-linear-to-br from-white/70 to-transparent"></div>
+            <img
+              src={src}
+              alt="Slide"
+              className="object-cover lg:h-full lg:w-full"
+            />
           </div>
         ))}
 
-        <div className="bg-primary/20 absolute bottom-0 left-0 h-1 w-full">
+        <div className="bg-primary/20 absolute bottom-0 left-0 h-2 w-full">
           <div
-            className="bg-secondary h-full transition-all duration-50"
+            className="bg-primary h-full transition-all duration-50"
             style={{ width: `${progress}%` }}
           ></div>
         </div>

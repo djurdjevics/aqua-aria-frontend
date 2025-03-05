@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { NavItem } from "./NavItem";
 import { cn } from "../utils/cn";
+import { Logo } from "./Logo";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="block md:hidden">
+    <div className="block lg:hidden">
       <button onClick={() => setIsOpen(true)} className="cursor-pointer">
         <img src="/menu.svg" width={20} height={16} />
       </button>
@@ -18,8 +19,9 @@ export function MobileNavigation() {
         )}
       >
         <div className="flex items-center justify-between">
+          <Logo />
           <button className="cursor-pointer" onClick={() => setIsOpen(false)}>
-            Close
+            <img src="/close.svg" width={20} height={16} />
           </button>
         </div>
         <ul className="flex h-full flex-col items-center justify-center gap-x-10 gap-y-6">

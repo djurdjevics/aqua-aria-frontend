@@ -196,7 +196,7 @@ const CarouselPrevious = React.forwardRef<
       <button
         ref={ref}
         className={cn(
-          "group h-10 w-10 cursor-pointer rounded-full transition-all duration-200 disabled:opacity-40",
+          "group h-10 w-10 cursor-pointer rounded-full transition-all duration-200 disabled:opacity-40 lg:h-16 lg:w-16",
           className,
         )}
         disabled={!canScrollPrev}
@@ -214,7 +214,7 @@ const CarouselPrevious = React.forwardRef<
           }
         }}
       >
-        <LeftArrow className="h-10 w-10 group-hover:opacity-80" />
+        <LeftArrow className="h-10 w-10 group-hover:opacity-80 md:h-12 md:w-12 lg:h-16 lg:w-16" />
         <span className="sr-only">Previous slide</span>
       </button>
     );
@@ -236,7 +236,7 @@ const CarouselNext = React.forwardRef<
       <button
         ref={ref}
         className={cn(
-          "group h-10 w-10 cursor-pointer transition-all duration-200 disabled:opacity-40",
+          "group h-10 w-10 cursor-pointer transition-all duration-200 disabled:opacity-40 lg:h-16 lg:w-16",
           className,
         )}
         disabled={!canScrollNext}
@@ -252,7 +252,7 @@ const CarouselNext = React.forwardRef<
           }
         }}
       >
-        <RightArrow className="h-10 w-10 group-hover:opacity-80" />
+        <RightArrow className="h-10 w-10 group-hover:opacity-80 md:h-12 md:w-12 lg:h-16 lg:w-16" />
         <span className="sr-only">Next slide</span>
       </button>
     );

@@ -9,8 +9,9 @@ import { DispenserMobile } from "./DispenserMobile";
 import { BoxIcon } from "../../../../assets/icons/BoxIcon";
 import { AudioIcon } from "../../../../assets/icons/AudioIcon";
 import { DollarIcon } from "../../../../assets/icons/DollarIcon";
+import type { Dispenser } from "../../../../types/Dispenser";
 
-const dispensers = [
+const dispensers: Dispenser[] = [
   {
     id: 0,
     title: "Glacier white",
@@ -37,6 +38,8 @@ const dispensers = [
         Icon: LightBulbIcon,
       },
     ],
+    imageSide: "right",
+    badge: "new",
   },
   {
     id: 1,
@@ -64,20 +67,29 @@ const dispensers = [
         Icon: DollarIcon,
       },
     ],
+    imageSide: "left",
+    badge: "popular",
   },
 ];
 
 export function DispenserSection() {
   return (
-    <section className="bg-secondary pb-14 md:pb-[120px]">
+    <section className="bg-secondary pb-14 md:pt-[120px] md:pb-[4.5rem] lg:pb-[120px]">
       {dispensers.map((dispenser) => (
         <DispenserMobile key={dispenser.id} dispenser={dispenser} />
       ))}
       {dispensers.map((dispenser) => (
         <div
           key={dispenser.id}
-          className="mx-auto hidden max-w-7xl grid-cols-1 px-4 pt-14 pb-[88px] md:grid md:grid-cols-2 md:pt-48 md:pb-28"
+          className="mx-auto hidden max-w-7xl grid-cols-1 px-4 pt-14 pb-[88px] lg:grid lg:grid-cols-2 lg:gap-x-4 lg:pt-24 lg:pb-28"
         >
+          {dispenser.imageSide === "left" && (
+            <DispenserImage
+              side={dispenser.imageSide}
+              imageSrc={dispenser.image}
+              badge={dispenser.badge}
+            />
+          )}
           <DispenserInfo
             imgOnMobile={dispenser.image}
             side="left"
@@ -85,17 +97,19 @@ export function DispenserSection() {
             title={dispenser.title}
             description={dispenser.body}
           >
-            <div className="mt-4 flex gap-x-4 gap-y-[52px] md:mt-[70px]">
+            <div className="mt-4 flex gap-x-4 gap-y-[52px] md:mt-[70px] lg:flex-col">
               {dispenser.perks.map((perk) => (
                 <DispenserPerk key={perk.id} perk={perk} />
               ))}
             </div>
           </DispenserInfo>
-          <DispenserImage
-            side="right"
-            imageSrc="/glacier-white.jpg"
-            badgeSrc="/new-badge.svg"
-          />
+          {dispenser.imageSide === "right" && (
+            <DispenserImage
+              side={dispenser.imageSide}
+              imageSrc={dispenser.image}
+              badge={dispenser.badge}
+            />
+          )}
         </div>
       ))}
       <div className="flex w-full items-center justify-center">

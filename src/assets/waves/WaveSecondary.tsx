@@ -21,7 +21,7 @@ export function WaveSecondary({ className }: { className?: string }) {
 export function WaveSecondaryMobile() {
   return (
     <svg
-      className="absolute inset-x-0 bottom-0 w-full scale-125"
+      className="absolute inset-x-0 bottom-0 w-full scale-200 md:scale-[3] lg:scale-[4]"
       width="375"
       height="39"
       viewBox="0 0 375 39"

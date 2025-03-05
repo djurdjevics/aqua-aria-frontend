@@ -50,12 +50,12 @@ export const services = [
 
 export function ServicesSection() {
   return (
-    <div className="bg-secondary py-14 md:py-[120px]">
-      <SectionContainer className="hidden md:block">
+    <div className="bg-secondary py-14 md:py-[4.5rem] lg:py-[120px]">
+      <SectionContainer className="hidden lg:block">
         <ServicesHeader />
         <ServicesContent />
       </SectionContainer>
-      <section className="px-4">
+      <section className="px-4 lg:hidden">
         <ServicesHeader />
         <ServicesContentMobile />
       </section>

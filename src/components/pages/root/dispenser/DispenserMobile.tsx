@@ -48,37 +48,74 @@ export function DispenserMobile({ dispenser }: DispenserMobileProps) {
   return (
     <div
       className={cn(
-        dispenser.id === 1 ? "pb-[46px]" : "pt-14 pb-[88px]",
-        "mx-auto grid max-w-7xl grid-cols-1 px-4 md:hidden",
+        dispenser.id === 1 ? "pt-[88px] pb-[46px]" : "pt-14",
+        "mx-auto grid max-w-7xl grid-cols-1 overflow-hidden px-4 md:grid-cols-2 lg:hidden",
       )}
     >
-      <DispenserInfo
-        imgOnMobile={dispenser.image}
-        side="left"
-        eyebrowText={dispenser.eyebrow}
-        title={dispenser.title}
-        description={dispenser.body}
-      >
-        <div className="mt-4 flex gap-x-4 gap-y-[52px] md:mt-[70px] md:flex-col">
-          {dispenser.perks.map((perk) => (
-            <DispenserPerkMobile
-              key={perk.id}
-              perk={perk}
-              progress={progress}
-              isActive={activePerkIndex === perk.id}
-            />
-          ))}
-        </div>
-      </DispenserInfo>
-      <p className="text-bg/80 mt-3 text-sm md:hidden">
-        <b className="text-bg">{activePerk?.title} - </b>
-        {activePerk?.body}
-      </p>
-      <DispenserImage
-        side="right"
-        imageSrc={dispenser.image}
-        badgeSrc="/new-badge.svg"
-      />
+      {dispenser.imageSide === "left" && (
+        <DispenserImage
+          side={dispenser.imageSide}
+          imageSrc={dispenser.image}
+          badge={dispenser.badge}
+        />
+      )}
+      <div className="flex flex-col justify-between md:hidden">
+        <DispenserInfo
+          imgOnMobile={dispenser.image}
+          side="left"
+          eyebrowText={dispenser.eyebrow}
+          title={dispenser.title}
+          description={dispenser.body}
+        >
+          <div className="mt-4 flex gap-x-4 gap-y-[52px] md:hidden">
+            {dispenser.perks.map((perk) => (
+              <DispenserPerkMobile
+                isTablet={false}
+                key={perk.id}
+                perk={perk}
+                progress={progress}
+                isActive={activePerkIndex === perk.id}
+              />
+            ))}
+          </div>
+        </DispenserInfo>
+        <p className="text-bg/80 mt-3 text-sm lg:hidden">
+          <b className="text-bg">{activePerk?.title} - </b>
+          {activePerk?.body}
+        </p>
+      </div>
+      <div className="hidden flex-col justify-between md:flex lg:hidden">
+        <DispenserInfo
+          imgOnMobile={dispenser.image}
+          side="left"
+          eyebrowText={dispenser.eyebrow}
+          title={dispenser.title}
+          description={dispenser.body}
+        >
+          <div className="mt-4 flex gap-x-4 gap-y-[52px] lg:hidden">
+            {dispenser.perks.map((perk) => (
+              <DispenserPerkMobile
+                isTablet={true}
+                key={perk.id}
+                perk={perk}
+                progress={progress}
+                isActive={activePerkIndex === perk.id}
+              />
+            ))}
+          </div>
+        </DispenserInfo>
+        <p className="text-bg/80 mt-3 text-sm lg:hidden">
+          <b className="text-bg">{activePerk?.title} - </b>
+          {activePerk?.body}
+        </p>
+      </div>
+      {dispenser.imageSide === "right" && (
+        <DispenserImage
+          side={dispenser.imageSide}
+          imageSrc={dispenser.image}
+          badge={dispenser.badge}
+        />
+      )}
     </div>
   );
 }

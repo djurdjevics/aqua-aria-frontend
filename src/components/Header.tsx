@@ -5,7 +5,7 @@ import { NavItem } from "./NavItem";
 
 export function Header() {
   return (
-    <header className="max-w-7xl mx-auto py-5 md:py-7 px-4 flex items-center justify-between">
+    <header className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 md:py-[30px]">
       <Logo />
       <Navigation />
       <MobileNavigation />

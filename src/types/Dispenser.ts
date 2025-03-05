@@ -12,4 +12,6 @@ export type Dispenser = {
     title: string;
     Icon: Icon;
   }[];
+  imageSide: "left" | "right";
+  badge: "new" | "popular";
 };

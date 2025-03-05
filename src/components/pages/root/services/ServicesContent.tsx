@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { ServicesCard } from "./ServicesCard";
 import { services } from "./ServicesSection";
 
 export function ServicesContent() {
+  const [activeServiceIndex, setActiveServiceIndex] = useState<string>("01");
+
   return (
-    <div className="mt-12 hidden flex-col gap-x-4 md:flex">
+    <div className="mt-12 hidden gap-x-4 md:flex">
       {services.map((service) => (
-        <ServicesCard key={service.id} service={service} />
+        <ServicesCard
+          activeServiceIndex={activeServiceIndex}
+          setActiveServiceIndex={setActiveServiceIndex}
+          key={service.id}
+          service={service}
+        />
       ))}
     </div>
   );

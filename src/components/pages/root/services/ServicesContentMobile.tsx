@@ -13,10 +13,10 @@ import { buttonVariants } from "../../../Button";
 
 export function ServicesContentMobile() {
   return (
-    <Carousel className="mt-9 w-full">
+    <Carousel className="mt-9 w-full lg:hidden">
       <CarouselContent className="gap-x-4 pr-24">
         {services.map((service) => (
-          <CarouselItem key={service.id}>
+          <CarouselItem key={service.id} className="md:basis-1/2">
             <ServicesCard service={service} />
           </CarouselItem>
         ))}
@@ -32,8 +32,8 @@ export function ServicesContentMobile() {
           Kontakt
         </a>
         <div className="flex h-full w-full items-center justify-end gap-x-3">
-          <CarouselPrevious className="h-10 w-10" />
-          <CarouselNext className="h-10 w-10" />
+          <CarouselPrevious className="h-10 w-10 md:h-12 md:w-12" />
+          <CarouselNext className="h-10 w-10 md:h-12 md:w-12" />
         </div>
       </div>
     </Carousel>
