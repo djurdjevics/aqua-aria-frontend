@@ -11,13 +11,13 @@ import {
 import { SectionContainer } from "../../../SectionContainer";
 
 const availableWaterTypes = [
-  {
-    index: 0,
-    title: "Aquanika",
-    description:
-      "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje. Ova voda je idealna svakodnevnu upotrebu, bilo da je koristite za piće, kuvanje, ili rad u kancelariji. Kristalno čista i bogata mineralima, CrystalPure je pravi izbor za zdrav život.",
-    img: "/slide-1-img.png",
-  },
+  // {
+  //   index: 0,
+  //   title: "Aquanika",
+  //   description:
+  //     "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje. Ova voda je idealna svakodnevnu upotrebu, bilo da je koristite za piće, kuvanje, ili rad u kancelariji. Kristalno čista i bogata mineralima, CrystalPure je pravi izbor za zdrav život.",
+  //   img: "/slide-1-img.png",
+  // },
   {
     index: 1,
     title: "Ledena",
@@ -25,13 +25,13 @@ const availableWaterTypes = [
     description:
       "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje. Ova voda je idealna svakodnevnu upotrebu, bilo da je koristite za piće, kuvanje, ili rad u kancelariji. Kristalno čista i bogata mineralima, CrystalPure je pravi izbor za zdrav život.",
   },
-  {
-    index: 2,
-    title: "Kremanska",
-    img: "/slide-1-img.png",
-    description:
-      "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje. Ova voda je idealna svakodnevnu upotrebu, bilo da je koristite za piće, kuvanje, ili rad u kancelariji. Kristalno čista i bogata mineralima, CrystalPure je pravi izbor za zdrav život.",
-  },
+  // {
+  //   index: 2,
+  //   title: "Kremanska",
+  //   img: "/slide-1-img.png",
+  //   description:
+  //     "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje. Ova voda je idealna svakodnevnu upotrebu, bilo da je koristite za piće, kuvanje, ili rad u kancelariji. Kristalno čista i bogata mineralima, CrystalPure je pravi izbor za zdrav život.",
+  // },
 ];
 
 export function WatersSection() {
