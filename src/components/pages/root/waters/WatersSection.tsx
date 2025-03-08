@@ -23,7 +23,7 @@ const availableWaterTypes = [
     title: "Ledena",
     img: "/slide-1-img.png",
     description:
-      "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje. Ova voda je idealna svakodnevnu upotrebu, bilo da je koristite za piće, kuvanje, ili rad u kancelariji. Kristalno čista i bogata mineralima, CrystalPure je pravi izbor za zdrav život.",
+      "Golijska Ledena je laka, meka osvežavajuća voda potpuno izbalansiranog hemijskog sastava. Dobro uravnotežen mineralni sastav i izuzetno nizak sadržaj natrijuma čine je pogodnom za svakodnevnu upotrebu.",
   },
   // {
   //   index: 2,
