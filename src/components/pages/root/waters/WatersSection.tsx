@@ -21,7 +21,7 @@ const availableWaterTypes = [
   {
     index: 1,
     title: "Ledena",
-    img: "/slide-1-img.png",
+    img: "/golijska-ledena.webp",
     description:
       "Golijska Ledena je laka, meka osvežavajuća voda potpuno izbalansiranog hemijskog sastava. Dobro uravnotežen mineralni sastav i izuzetno nizak sadržaj natrijuma čine je pogodnom za svakodnevnu upotrebu.",
   },
