@@ -9,42 +9,42 @@ export const services = [
     title: "Servis aparata",
     href: "/usluge#servis-aparata",
     description:
-      "Naša firma pruža usluge servisa aparata za vodu direktno na vašoj adresi, osiguravajući brz i efikasan popravak kako biste nesmetano uživali u čistoj vodi.",
+      "Naš tim pruža usluge popravke aparata, osiguravajući da vaša voda ostane higijenski ispravna i sveža.",
   },
   {
     id: "02",
-    title: "Servis aparata",
-    href: "/usluge#servis-aparata",
+    title: "Sanitacija aparata",
+    href: "/usluge#sanitacija-aparata",
     description:
-      "Naša firma pruža usluge servisa aparata za vodu direktno na vašoj adresi, osiguravajući brz i efikasan popravak kako biste nesmetano uživali u čistoj vodi.",
+      "Sanitacija aparata podrazumeva detaljno čišćenje, dezinfekciju i obnovu kako bi uređaj ponovo bio potpuno funkcionalan i siguran za upotrebu.",
   },
   {
     id: "03",
-    title: "Servis aparata",
-    href: "/usluge#servis-aparata",
+    title: "Otkup aparata",
+    href: "/usluge#otkup-aparata",
     description:
-      "Naša firma pruža usluge servisa aparata za vodu direktno na vašoj adresi, osiguravajući brz i efikasan popravak kako biste nesmetano uživali u čistoj vodi.",
+      "Ukoliko posedujete aparat za vodu koji vam više nije potreban, nudimo mogućnost otkupa po fer i konkurentnim uslovima.",
   },
   {
     id: "04",
-    title: "Servis aparata",
-    href: "/usluge#servis-aparata",
+    title: "Prodaja aparata",
+    href: "/usluge#prodaja-aparata",
     description:
-      "Naša firma pruža usluge servisa aparata za vodu direktno na vašoj adresi, osiguravajući brz i efikasan popravak kako biste nesmetano uživali u čistoj vodi.",
+      "Nudimo širok izbor aparata za vodu koji odgovaraju različitim potrebama – bilo da vam je potreban uređaj za kancelariju, ugostiteljski objekat ili vaš dom.",
   },
   {
     id: "05",
-    title: "Servis aparata",
-    href: "/usluge#servis-aparata",
+    title: "Distribucija vode",
+    href: "/usluge#distribucija-vode",
     description:
-      "Naša firma pruža usluge servisa aparata za vodu direktno na vašoj adresi, osiguravajući brz i efikasan popravak kako biste nesmetano uživali u čistoj vodi.",
+      "Naša usluga distribucije vode omogućava vam jednostavan i pouzdan način da obezbedite kvalitetnu vodu za vaš dom ili poslovni prostor.",
   },
   {
     id: "06",
-    title: "Servis aparata",
-    href: "/usluge#servis-aparata",
+    title: "Dostava vode",
+    href: "/usluge#dostava-vode",
     description:
-      "Naša firma pruža usluge servisa aparata za vodu direktno na vašoj adresi, osiguravajući brz i efikasan popravak kako biste nesmetano uživali u čistoj vodi.",
+      "Naša firma uz prodaju nudi usluge isporuke vode direktno na vašu adresu brzo i fleksibilno.",
   },
 ];
 

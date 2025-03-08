@@ -15,10 +15,10 @@ export function Footer() {
             Telefon
           </p>
           <a className="text-bg/80 mt-3 text-sm lg:text-base" href="">
-            +381 11 234 999
+            +381 60 55 10 377
           </a>
           <a className="text-bg/80 mt-2 block" href="">
-            +381 11 333 876
+            +381 61 30 14 647
           </a>
         </div>
         <div className="mt-6 space-y-1 text-center md:mt-0 md:text-left">
