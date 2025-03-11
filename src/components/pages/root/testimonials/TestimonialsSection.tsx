@@ -25,36 +25,32 @@ export function TestimonialsSection() {
         <div className="md:col-span-2 md:col-start-3">
           <Marquee loop={0} speed={50}>
             <TestimonialCard
-              quote={
-                "Aparat je servisiran perfektno, u dogovorenom roku. Sve pohvale za momke!"
-              }
-              img="avatar-1.jpg"
-              fullName="Mika Mikic"
-              location="Zrenjanin, Serbia"
+              quote={"Vrhunski kvalitet usluge, svaka preporuka!"}
+              img="avatar.svg"
+              fullName="Antonije Erdeljan"
+              location="Novi Sad, Srbija"
             />
             <TestimonialCard
               quote={
-                "Aparat je servisiran perfektno, u dogovorenom roku. Sve pohvale za momke!"
+                "Odlicna usluga, prilikom porucivanja voda stize u istom danu"
               }
-              img="img-1.jpg"
-              fullName="Mika Mikic"
-              location="Zrenjanin, Serbia"
+              img="avatar.svg"
+              fullName="Ognjen Radivojević"
+              location="Zrenjanin, Srbija"
+            />
+            <TestimonialCard
+              quote={"Aparat servisiran u dogovorenom roku. Svaka preporuka!"}
+              img="avatar.svg"
+              fullName="Jovan Cvetkov"
+              location="Beograd, Srbija"
             />
             <TestimonialCard
               quote={
-                "Aparat je servisiran perfektno, u dogovorenom roku. Sve pohvale za momke!"
+                "Svaka čast za kompaniju, efikasna i profesionalna pre svega. Voda odlična."
               }
-              img="img-1.jpg"
-              fullName="Mika Mikic"
-              location="Zrenjanin, Serbia"
-            />
-            <TestimonialCard
-              quote={
-                "Aparat je servisiran perfektno, u dogovorenom roku. Sve pohvale za momke!"
-              }
-              img="img-1.jpg"
-              fullName="Mika Mikic"
-              location="Zrenjanin, Serbia"
+              img="avatar.svg"
+              fullName="Dušan Runjevac"
+              location="Zrenjanin, Srbija"
             />
           </Marquee>
         </div>
