@@ -1,0 +1,28 @@
+<div id="dispensers">Aparati</div>
+<div id="waters">Vode</div>
+
+<script>
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+
+  const dispensersContainer = document.getElementById("dispensers")!;
+  const watersContainer = document.getElementById("waters")!;
+
+  if (params.q === "aparati") {
+    watersContainer.classList.add("hidden");
+    watersContainer.classList.remove("block");
+    dispensersContainer.classList.add("block");
+    dispensersContainer.classList.remove("hidden");
+  } else if (params.q === "vode") {
+    watersContainer.classList.add("block");
+    watersContainer.classList.remove("hidden");
+    dispensersContainer.classList.add("hidden");
+    dispensersContainer.classList.remove("block");
+  } else {
+    watersContainer.classList.add("block");
+    dispensersContainer.classList.add("block");
+
+    watersContainer.classList.remove("hidden");
+    dispensersContainer.classList.remove("hidden");
+  }
+</script>

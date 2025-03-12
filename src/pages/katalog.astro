@@ -1,13 +1,17 @@
 ---
+import Container from "@components/Container.astro";
 import { CallToAction } from "../components/CallToAction";
 import { Logo } from "../components/Logo";
 import RootLayout from "../layouts/RootLayout.astro";
+import CatalogHeader from "@components/pages/catalog/CatalogHeader.astro";
+import CatalogContent from "@components/pages/catalog/CatalogContent.astro";
 ---
 
 <RootLayout title="Aqua Aria | Katalog">
-  <div class="flex flex-col items-center justify-center w-full gap-y-10 text-center h-screen">
-    <h1 class="font-display text-5xl md:text-7xl text-secondary">Coming soon. <span class="text-primary block"> Stay tuned! </span></h1>
-    <Logo />
-  </div>
-  <CallToAction />
+  <Container className="py-14">
+    <Fragment>
+      <CatalogHeader />
+      <CatalogContent />
+    </Fragment>
+  </Container>
 </RootLayout>
