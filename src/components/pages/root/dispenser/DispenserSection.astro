@@ -11,6 +11,7 @@ import { BoxIcon } from "../../../../assets/icons/BoxIcon";
 import { AudioIcon } from "../../../../assets/icons/AudioIcon";
 import { DollarIcon } from "../../../../assets/icons/DollarIcon";
 import type { Dispenser } from "../../../../types/Dispenser";
+import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
 
 const dispensers: Dispenser[] = [
   {
@@ -92,6 +93,6 @@ const dispensers: Dispenser[] = [
     ))
   }
   <div class="flex w-full items-center justify-center">
-    <a href="/katalog" class={buttonVariants({ variant: "default", size: "default" })}> Vidi sve proizvode </a>
+    <ButtonLinkPrimary href="/katalog" label="Vidi sve proizvode" />
   </div>
 </section>
