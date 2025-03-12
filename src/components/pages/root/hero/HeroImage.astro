@@ -1,0 +1,66 @@
+---
+import slideImage1 from "@assets/images/hero-image-1.jpg";
+import slideImage2 from "@assets/images/hero-image-2.jpg";
+import slideImage3 from "@assets/images/hero-image-3.jpg";
+import { Image } from "astro:assets";
+---
+
+<div class="mt-6 flex h-full w-full max-w-[600px] justify-end md:my-0 md:max-w-[1200px] lg:h-full lg:w-full">
+  <div class="relative aspect-square h-full w-full overflow-hidden rounded-2xl">
+    <div id="slide-image-1" class={`absolute inset-0 h-full w-full transition-opacity duration-700 lg:w-full opacity-100`}>
+      <div class="absolute inset-0 h-full w-full bg-linear-to-br from-white/70 to-transparent"></div>
+      <Image src={slideImage1} width={600} height={600} alt="Glass of water next to laptop" class="object-cover lg:h-full lg:w-full" />
+    </div>
+    <div id="slide-image-2" class={`absolute inset-0 h-full w-full transition-opacity duration-700 lg:w-full opacity-0`}>
+      <div class="absolute inset-0 h-full w-full bg-linear-to-br from-white/70 to-transparent"></div>
+      <Image src={slideImage2} width={600} height={600} alt="Pouring water from a bottle into a glass" class="object-cover lg:h-full lg:w-full" />
+    </div>
+    <div id="slide-image-3" class={`absolute inset-0 h-full w-full transition-opacity duration-700 lg:w-full opacity-0`}>
+      <div class="absolute inset-0 h-full w-full bg-linear-to-br from-white/70 to-transparent"></div>
+      <Image src={slideImage3} alt="Glass of water with lemon" class="object-cover lg:h-full lg:w-full" />
+    </div>
+
+    <div class="bg-primary/20 absolute bottom-0 left-0 h-2 w-full">
+      <div id="progress" class="bg-primary h-full transition-all duration-50"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let intervalTimer;
+  let interval = 50;
+  let duration = 8000;
+  let stepIncrement = 100 / (duration / interval);
+  let progress = 0;
+  let activeIndex = 0;
+
+  const progressBar = document.getElementById("progress")!;
+
+  const slideImage1 = document.getElementById("slide-image-1")!;
+  const slideImage2 = document.getElementById("slide-image-2")!;
+  const slideImage3 = document.getElementById("slide-image-3")!;
+
+  intervalTimer = setInterval(() => {
+    progress = progress + stepIncrement;
+    progressBar.style.width = `${progress}%`;
+
+    if (progress >= 100) {
+      setTimeout(() => {
+        activeIndex = activeIndex < 2 ? activeIndex + 1 : 0;
+        progress = 0; // Reset the progress
+        if (activeIndex === 0) {
+          slideImage1.classList.add("opacity-100");
+          slideImage3.classList.remove("opacity-100");
+        } else if (activeIndex === 1) {
+          slideImage1.classList.remove("opacity-100");
+          slideImage2.classList.add("opacity-100");
+        } else {
+          slideImage2.classList.remove("opacity-100");
+          slideImage3.classList.add("opacity-100");
+        }
+      }, 300);
+    }
+  }, interval);
+
+  window.addEventListener("beforeunload", () => clearInterval(intervalTimer));
+</script>
