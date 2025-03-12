@@ -1,6 +1,6 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
-import { HeroSection } from "../components/pages/root/hero/HeroSection";
+import HeroSection from "@components/pages/root/hero/HeroSection.astro";
 import { DispenserSection } from "../components/pages/root/dispenser/DispenserSection";
 import { OurMissionSection } from "../components/pages/root/our-mission/OurMissionSection";
 import { ServicesSection } from "../components/pages/root/services/ServicesSection";
@@ -15,7 +15,7 @@ import { WaveSecondaryMobile } from "../assets/waves/WaveSecondary";
 ---
 
 <RootLayout title="Aqua Aria | Početna">
-  <HeroSection client:load />
+  <HeroSection />
   <DispenserSection client:load />
   <OurMissionSection />
   <ServicesSection client:load />
