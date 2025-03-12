@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "../../../Carousel";
 import { ServicesCard } from "./ServicesCard";
-import { services } from "./ServicesSection";
+import { services } from "./ServicesSection.astro";
 import { cn } from "../../../../utils/cn";
 import { buttonVariants } from "../../../Button";
 

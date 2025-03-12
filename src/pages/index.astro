@@ -3,22 +3,18 @@ import RootLayout from "../layouts/RootLayout.astro";
 import HeroSection from "@components/pages/root/hero/HeroSection.astro";
 import DispenserSection from "@components/pages/root/dispenser/DispenserSection.astro";
 import OurMissionSection from "@components/pages/root/our-mission/OurMissionSection.astro";
-import { ServicesSection } from "../components/pages/root/services/ServicesSection";
-import { WatersSection } from "../components/pages/root/waters/WatersSection";
+import ServicesSection from "@components/pages/root/services/ServicesSection.astro";
+import { WatersSection } from "@components/pages/root/waters/WatersSection";
 import { AnanasSection } from "../components/pages/root/ananas/AnanasSection";
 import { TestimonialsSection } from "../components/pages/root/testimonials/TestimonialsSection";
 import { CallToAction } from "../components/CallToAction";
-import { WaveSecondaryMobile } from "../assets/waves/WaveSecondary";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <RootLayout title="Aqua Aria | Početna">
   <HeroSection />
   <DispenserSection />
   <OurMissionSection />
-  <ServicesSection client:load />
+  <ServicesSection />
   <WatersSection client:load />
   <AnanasSection />
   <TestimonialsSection client:only="react" />

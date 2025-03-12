@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ServicesCard } from "./ServicesCard";
-import { services } from "./ServicesSection";
+import { services } from "./ServicesSection.astro";
 
 export function ServicesContent() {
   const [activeServiceIndex, setActiveServiceIndex] = useState<string>("01");
