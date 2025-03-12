@@ -9,7 +9,7 @@ import {
 export function TestimonialsSection() {
   return (
     <>
-      <section className="relative grid w-full grid-cols-1 gap-x-5 overflow-hidden py-14 md:grid-cols-[1fr_390px_890px_1fr] md:pt-[120px] md:pb-[240px]">
+      <section className="relative grid w-full grid-cols-1 gap-x-5 overflow-hidden py-14 md:grid-cols-[1fr_390px_890px_1fr] md:pt-[120px] md:pb-[240px] lg:pb-[320px]">
         <div className="flex flex-col justify-between px-4 md:col-start-2 md:col-end-3">
           <div>
             <h3 className="font-display text-secondary mx-auto max-w-[10ch] text-center text-[40px] leading-none uppercase md:mx-0 md:text-left md:text-7xl">
