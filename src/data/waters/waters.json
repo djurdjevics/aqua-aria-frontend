@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Ledena voda",
+    "image": "./ledena-image.png",
+    "volume": "11L",
+    "pricePerBalloon": 300,
+    "description": "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje",
+    "composition": [
+      {
+        "substance": "Bikarbonat",
+        "amount": "xx.qq"
+      },
+      {
+        "substance": "Natrijum",
+        "amount": "xx.qq"
+      },
+      {
+        "substance": "Kalijum",
+        "amount": "xx.qq"
+      }
+    ]
+  }
+]

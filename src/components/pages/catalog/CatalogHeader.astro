@@ -3,8 +3,8 @@ import { cn } from "../../../utils/cn";
 const filter = Astro.url.searchParams.get("q");
 ---
 
-<header class="flex flex-col justify-center items-center gap-y-14">
-  <h1 class="font-display text-[56px] leading-none text-center text-secondary">Katalog proizvoda</h1>
+<header class="flex flex-col justify-center items-center gap-y-14 md:gap-y-16">
+  <h1 class="font-display text-[56px] md:text-[68px] lg:text-[112px] leading-none text-center text-secondary">Katalog proizvoda</h1>
   <ul class="flex justify-between max-w-[300px] w-full pb-12">
     <li class="relative flex flex-col items-center">
       <a href="/katalog" class={cn("font-display text-[2rem]", filter === null ? "text-secondary" : "text-secondary/50")}>Sve</a>

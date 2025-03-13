@@ -23,4 +23,20 @@ const dispensers = defineCollection({
   })
 });
 
-export const collections = {dispensers};
+const waters = defineCollection({
+  loader: file("src/data/waters/waters.json"),
+  schema: ({ image }) => z.object({
+    id:z.number(),
+    name: z.string(),
+    image: image(),
+    volume: z.string(),
+    pricePerBalloon: z.number(),
+    description: z.string(),
+    composition: z.array(z.object({
+      substance: z.string(),
+      amount: z.string()
+    }))
+  })
+})
+
+export const collections = {dispensers, waters};

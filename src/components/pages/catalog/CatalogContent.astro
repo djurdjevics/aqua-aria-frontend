@@ -1,17 +1,23 @@
 ---
 import {getCollection} from 'astro:content';
 import Dispensers from "@components/pages/catalog/Dispensers.astro";
+import Waters from "@components/pages/catalog/Waters.astro";
+import { WaveSecondary } from '@assets/waves/WaveSecondary';
 
 const searchParams = Astro.url.searchParams;
 const filter = searchParams.get("q");
 
 const dispensersCollection = await getCollection("dispensers");
+const watersCollection = await getCollection("waters");
 
 
 ---
-{filter === 'aparati' ? <div>
+{filter === 'aparati' ?
   <Dispensers dispensers={dispensersCollection} />
-</div> : filter === "vode" ? <div>Vode</div> : <Fragment>
-  <div id="dispensers">Aparati</div>
-  <div id="waters">Vode</div>
+ : filter === "vode" ?
+  <Waters waters={watersCollection} />
+ : <Fragment>
+  <Dispensers dispensers={dispensersCollection} />
+  <Waters waters={watersCollection} />
 </Fragment>}
+

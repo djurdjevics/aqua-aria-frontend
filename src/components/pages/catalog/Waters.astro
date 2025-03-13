@@ -1,0 +1,14 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import WaterCard from "./WaterCard.astro";
+
+interface Props {
+  waters: CollectionEntry<"waters">[];
+}
+
+const { waters } = Astro.props
+---
+
+<div class="mt-4">
+  {waters.map(water => <WaterCard water={water} />)}
+</div>
