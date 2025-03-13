@@ -1,28 +1,17 @@
-<div id="dispensers">Aparati</div>
-<div id="waters">Vode</div>
+---
+import {getCollection} from 'astro:content';
+import Dispensers from "@components/pages/catalog/Dispensers.astro";
 
-<script>
-  const urlSearchParams = new URLSearchParams(window.location.search);
-  const params = Object.fromEntries(urlSearchParams.entries());
+const searchParams = Astro.url.searchParams;
+const filter = searchParams.get("q");
 
-  const dispensersContainer = document.getElementById("dispensers")!;
-  const watersContainer = document.getElementById("waters")!;
+const dispensersCollection = await getCollection("dispensers");
 
-  if (params.q === "aparati") {
-    watersContainer.classList.add("hidden");
-    watersContainer.classList.remove("block");
-    dispensersContainer.classList.add("block");
-    dispensersContainer.classList.remove("hidden");
-  } else if (params.q === "vode") {
-    watersContainer.classList.add("block");
-    watersContainer.classList.remove("hidden");
-    dispensersContainer.classList.add("hidden");
-    dispensersContainer.classList.remove("block");
-  } else {
-    watersContainer.classList.add("block");
-    dispensersContainer.classList.add("block");
 
-    watersContainer.classList.remove("hidden");
-    dispensersContainer.classList.remove("hidden");
-  }
-</script>
+---
+{filter === 'aparati' ? <div>
+  <Dispensers dispensers={dispensersCollection} />
+</div> : filter === "vode" ? <div>Vode</div> : <Fragment>
+  <div id="dispensers">Aparati</div>
+  <div id="waters">Vode</div>
+</Fragment>}
