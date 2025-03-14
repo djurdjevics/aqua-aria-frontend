@@ -1,13 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import {  Image } from "astro:assets"
 import ColorIndicator from "./ColorIndicator.astro";
+import { Image } from "astro:assets";
 
 interface Props {
   dispenser: CollectionEntry<"dispensers">;
 }
 
-const {dispenser} = Astro.props;
+const { dispenser } = Astro.props;
 ---
 
 <a class="block bg-secondary rounded-2xl" href={dispenser.data.slug}>

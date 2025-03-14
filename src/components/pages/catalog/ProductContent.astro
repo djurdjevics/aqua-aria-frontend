@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import ProductEyebrow from "@components/pages/catalog/ProductEyebrow.astro";
+import MainProductSpec from "@components/pages/catalog/MainProductSpec.astro";
+import { cn } from "../../../utils/cn";
+
+interface Props {
+  data: CollectionEntry<"dispensers">;
+}
+
+const { data } = Astro.props;
+---
+
+<div>
+  <ProductEyebrow type={data.data.type} />
+  <h1 class="font-display leading-[120%] text-secondary text-5xl mt-2">{data.data.name}</h1>
+  <span class="text-secondary text-xl">{data.data.price.toLocaleString("de-DE")} rsd.</span>
+  <!--<div class="mt-2 flex items-center gap-x-2">-->
+  <!--  <span class="text-base">Boja: </span>-->
+  <!--  {data.data.availableColors.map((color, index) => (<div class={cn("w-4 h-4 rounded-full", color === "grey" ? "bg-[#979797]" : "bg-white border border-secondary")} />))}-->
+
+  <!--</div>-->
+  <div class="flex items-center gap-x-1 pt-3">
+    {data.data.mainSpecs.map((spec) => (
+      <MainProductSpec spec={spec} />
+    ))}
+    <div class="flex flex-col items-center justify-center border border-secondary rounded-2xl flex-1 h-16">
+      <span class="text-2xl">12</span>
+      <span class="text-xs text-secondary/80 text-center">Meseci <br/> Garancije</span>
+    </div>
+  </div>
+  <div class="mt-4">
+    <p class="text-lg leading-[120%] mb-1">Ostale specifikacije: </p>
+    {data.data.otherSpecs.map((spec) => (<Fragment>
+      <div class="w-full flex text-sm text-secondary/80 justify-between mt-3">
+        <span>{spec.category}</span>
+        <span>{spec.value}</span>
+      </div>
+      <hr class="text-secondary/80" />
+    </Fragment>))}
+  </div>
+  <div class="w-full flex justify-end mt-4">
+    <button id="view-more-btn" class="underline underline-offset-4">Vidi više</button>
+  </div>
+  <p id="description-text" class="hidden text-secondary/80 mt-2">
+    {data.data.description}
+  </p>
+</div>
+
+<script>
+  const viewMoreBtn = document.getElementById("view-more-btn")!;
+
+  const descriptionText = document.getElementById("description-text")!;
+
+  viewMoreBtn.addEventListener("click", (e) => {
+    descriptionText.classList.toggle("hidden");
+
+    if(descriptionText.classList.contains("hidden")){
+      viewMoreBtn.innerText = "Vidi više";
+    } else {
+      viewMoreBtn.innerText = "Vidi manje";
+    }
+
+  })
+
+</script>

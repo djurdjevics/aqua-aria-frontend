@@ -5,7 +5,7 @@ import {glob, file} from "astro/loaders";
 const dispensers = defineCollection({
   loader: file("src/data/dispensers/dispensers.json"),
   schema: ({ image }) => z.object({
-    id: z.number(),
+    slug: z.string(),
     name: z.string(),
     description: z.string(),
     price: z.number().gt(0),

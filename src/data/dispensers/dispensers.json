@@ -1,8 +1,8 @@
  [{
-    "id": 1,
+    "slug": "/katalog/aparati/harmony",
     "name": "Aparat Harmony",
     "price": 12000.00,
-    "images": ["./glacier-white-1.jpg"],
+    "images": ["./glacier-white-1.jpg", "./glacier-white-1.png", "./harmony-white.png"],
     "availableColors": ["grey", "white"],
     "type": "Termoelektrični",
     "mainSpecs": [
@@ -36,7 +36,7 @@
     "description": "Ovo su neke dodatne informacije o samom aparatu i ne znam koje to treba da budu ali treba da se doda ili da se promeni model."
   },
    {
-     "id": 2,
+     "slug": "/katalog/aparati/glacier",
      "name": "Aparat Harmony",
      "price": 12000.00,
      "images": ["./glacier-white-1.png"],

@@ -1,0 +1,59 @@
+---
+import { getEntry } from "astro:content";
+import Container from "@components/Container.astro"
+import RootLayout from "../../layouts/RootLayout.astro";
+import ProductImages from "@components/pages/catalog/ProductImages.astro";
+import ProductContent from "@components/pages/catalog/ProductContent.astro";
+import ButtonLinkPrimary from "../../components/ButtonLinkPrimary.astro";
+import MoreDispensers from "@components/pages/catalog/MoreDispensers.astro"
+import ProductImagesDesktop from "@components/pages/catalog/ProductImagesDesktop.astro"
+import { WaveSecondaryMobile } from "../../assets/waves/WaveSecondary";
+export const prerender = false;
+
+const params = Astro.params;
+
+if(params.slug === undefined) {
+  return Astro.redirect("/404");
+}
+
+const dispenser = await getEntry("dispensers", `/katalog/${params.slug}`);
+
+if(!dispenser) {
+  return Astro.redirect("/404");
+}
+
+---
+
+<RootLayout title={`Aqua Aria | ${dispenser?.data?.name}`}>
+  <div class="relative pb-14">
+  <Container className="py-14">
+    <header class="flex items-center gap-x-4 text-xs flex-wrap">
+      <a class="uppercase" href="/">Početna</a>
+      <span>/</span>
+      <a class="uppercase" href="/katalog">Katalog</a>
+      <span>/</span>
+      <a class="uppercase" href={`/katalog?q=${params.slug?.split("/")[0]}`}>{params.slug?.split("/")[0]}</a>
+      <span>/</span>
+      <span class="uppercase font-bold">{params.slug?.split("/")[1]}</span>
+    </header>
+  </Container>
+    <div class="md:grid md:grid-cols-2 md:relative md:h-full md:max-w-7xl mx-auto">
+      <ProductImages images={dispenser?.data.images} />
+      <ProductImagesDesktop images={dispenser?.data.images} />
+      <div class="md:sticky md:top-4 md:h-max md:overflow-hidden">
+        <Container className="pt-13 pb-9 md:pt-0 md:h-full">
+          <ProductContent data={dispenser} />
+        </Container>
+        <div class="inline-flex justify-center w-full pb-14 md:justify-start md:pl-4">
+          <ButtonLinkPrimary href="/kontakt" label="Kontakt" />
+        </div>
+
+      </div>
+    </div>
+    <Container className="py-14">
+      <h2 class="text-5xl text-secondary font-display">Pogledajte i ostale modele</h2>
+      <MoreDispensers />
+    </Container>
+  <WaveSecondaryMobile />
+  </div>
+</RootLayout>
