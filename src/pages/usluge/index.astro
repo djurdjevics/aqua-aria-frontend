@@ -1,0 +1,24 @@
+---
+import { CallToAction } from "../../components/CallToAction";
+import RootLayout from "@layouts/RootLayout.astro";
+import Container from "@components/Container.astro";
+import ServiceCard from "@components/pages/services/ServiceCard.astro";
+import { services } from "@components/pages/root/services/ServicesSection.astro";
+import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
+---
+
+<RootLayout title="Aqua Aria | Usluge">
+  <div class="relative">
+  <Container className="py-14 md:pb-54">
+    <h1 class="text-4xl font-display text-secondary sm:text-6xl">Nudimo...</h1>
+    <div class="grid grid-cols-1 gap-6 mt-4 md:mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {services.map((service) => (
+        <ServiceCard service={service} />
+      ))}
+    </div>
+  </Container>
+  <WaveSecondaryMobile />
+  </div>
+  <CallToAction />
+
+</RootLayout>

@@ -1,0 +1,29 @@
+---
+
+import RootLayout from "../../layouts/RootLayout.astro";
+import Container from "../../components/Container.astro";
+import {Image} from "astro:assets";
+
+import dispensersServiceImage from "src/assets/images/servis-aparata.png"
+import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
+import { CallToAction } from "@components/CallToAction";
+
+---
+
+<RootLayout title="Aqua Aria | Usluge - Servis aparata">
+  <div class="relative">
+  <Container className="py-14 md:grid md:grid-cols-2 md:grid-rows-1 md:items-center md:gap-x-4 md:pb-32 lg:pb-[200px]">
+    <div>
+    <h1 class="text-5xl font-display md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2 lg:text-7xl">Servis aparata</h1>
+    <p class="mt-3 text-secondary/80 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-2">
+      Redovno održavanje i servis aparata za vodu ključni su za njihovu dugotrajnost i ispravan rad. Naš tim pruža usluge popravke aparata, osiguravajući da vaša voda ostane higijenski ispravna i sveža. Bilo da je reč o zameni delova, otklanjanju kvarova ili preventivnom održavanju, stojimo vam na raspolaganju za brzu i pouzdanu uslugu.
+    </p>
+    </div>
+    <div class="relative w-full h-[300px] md:h-full mt-7 md:mt-0 rounded-2xl overflow-hidden">
+      <Image class={"w-full h-full object-cover"} src={dispensersServiceImage} alt="Servis aparata" width={300} height={300} />
+    </div>
+  </Container>
+    <WaveSecondaryMobile />
+  </div>
+  <CallToAction />
+</RootLayout>
