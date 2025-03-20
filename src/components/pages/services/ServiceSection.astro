@@ -1,0 +1,39 @@
+---
+import Container from "../../Container.astro";
+interface Props {
+  title: string;
+  layout: "imageFirst" | "paragraphFirst";
+  id: string;
+}
+
+const { title, layout, id } = Astro.props;
+---
+
+{layout === "imageFirst" ? <Fragment>
+  <section id={id} class="pb-9 hidden sm:block md:pb-14">
+  <Container className="sm:grid sm:grid-cols-2 sm:gap-x-4 sm:items-center md:gap-x-12">
+  <slot name="image" />
+  <div class="space-y-3 lg:space-y-5">
+    <h2 class="font-display text-5xl text-secondary md:text-6xl lg:text-7xl">{title}</h2>
+    <slot name="description" />
+  </div>
+  </Container>
+</section>
+  <section id={id} class="pb-9 block sm:hidden md:pb-14">
+    <Container className=" sm:grid sm:grid-cols-2 sm:gap-x-4">
+      <div class="space-y-3">
+        <h2 class="font-display text-5xl text-secondary">{title}</h2>
+        <slot name="description" />
+      </div>
+      <slot name="image" />
+    </Container>
+  </section>
+</Fragment> : <section id={id} class="pb-9 md:pb-14">
+  <Container className="sm:grid sm:grid-cols-2 sm:gap-x-4 sm:items-center md:gap-x-12">
+  <div class="space-y-3 lg:space-y-5">
+    <h2 class="font-display text-5xl text-secondary md:text-6xl lg:text-7xl">{title}</h2>
+    <slot name="description" />
+  </div>
+  <slot name="image" />
+  </Container>
+</section>}

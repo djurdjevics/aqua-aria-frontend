@@ -1,0 +1,87 @@
+---
+
+import RootLayout from "../../layouts/RootLayout.astro";
+import Container from "../../components/Container.astro";
+
+import TestimonialCard from "@components/pages/about/TestimonialCard.astro";
+
+import {Image} from "astro:assets"
+
+import aboutImage1 from "@assets/images/o-nama-img-1.png";
+import aboutImage2 from "@assets/images/our-mission-img.jpg"
+import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
+import {CallToAction} from "@components/CallToAction";
+---
+
+<RootLayout title="Aqua Aria | O nama">
+  <div class="relative">
+  <Container className="pt-9">
+    <h1 class="text-4xl font-display space-y-2">
+      Naša misija je da vam obezbedimo pristup vrhunskoj <span class="text-primary">hidrataciji</span>
+    </h1>
+    <p class="text-sm text-secondary/80">Pristup kvalitetnoj vodi za piće potrebno je da ima svaki dom i poslovni prostor. Na nama je da to i obezbedimo svojim klijentima.</p>
+    <Image src={aboutImage1} alt="Landscape of a mountain river" width={400} height={400} class="rounded-2xl mt-5 w-full" />
+    <div class="grid grid-cols-2 mt-5 gap-y-5 pb-14">
+      <div class="flex flex-col items-center">
+        <span class="text-5xl font-display">50+</span>
+        <p class="text-sm font-medium text-center">Prodatih aparata</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <span class="text-5xl font-display">30+</span>
+        <p class="text-sm font-medium text-center">Uspešnih servisa</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <span class="text-5xl font-display">4</span>
+        <p class="text-sm font-medium text-center">Godine poslovanja</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <span class="text-5xl font-display">75+</span>
+        <p class="text-sm font-medium text-center">Zadovoljnih klijenata</p>
+      </div>
+    </div>
+  </Container>
+  <section class="bg-secondary py-14">
+    <Container className="space-y-2">
+      <h2 class="font-display text-bg text-4xl">Ko smo mi?</h2>
+      <p class="text-bg/80 text-sm">
+        Aqua Aria je specijalizovani servis za kompresorske i termoelektrične aparate za vodu iz Zrenjanina, sa dugogodišnjim iskustvom u održavanju i popravci. Pored profesionalnog servisiranja, nudimo i prodaju novih i polovnih aparata, kao i savetovanje pri odabiru idealnog rešenja za vaše potrebe.
+      </p>
+      <Image src={aboutImage2} class="w-full rounded-2xl mt-5" alt="Hands holding glass of water" width={500} height={500} />
+    </Container>
+  </section>
+  <section class="py-17">
+    <Container>
+      <h3 class="font-display text-4xl text-center">“Verujemo da kvalitetna voda nije samo osnovna potreba, već i ključni deo zdravog i produktivnog života.”</h3>
+      <p class="text-sm text-secondary/80 mt-17">Šta o nama kažu naši klijenti:</p>
+      <div class="space-y-4 mt-2">
+        <TestimonialCard
+          quote={"Vrhunski kvalitet usluge, svaka preporuka!"}
+          fullName="Antonije Erdeljan"
+          location="Novi Sad, Srbija"
+        />
+        <TestimonialCard
+          quote={
+            "Odlicna usluga, prilikom porucivanja voda stize u istom danu"
+          }
+          fullName="Ognjen Radivojević"
+          location="Zrenjanin, Srbija"
+        />
+        <TestimonialCard
+          quote={"Aparat servisiran u dogovorenom roku. Svaka preporuka!"}
+          fullName="Jovan Cvetkov"
+          location="Beograd, Srbija"
+        />
+        <TestimonialCard
+          quote={
+            "Svaka čast za kompaniju, efikasna i profesionalna pre svega. Voda odlična."
+          }
+          fullName="Dušan Runjevac"
+          location="Zrenjanin, Srbija"
+        />
+      </div>
+    </Container>
+  </section>
+    <WaveSecondaryMobile />
+  </div>
+  <CallToAction />
+</RootLayout>
