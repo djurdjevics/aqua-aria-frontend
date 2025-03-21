@@ -14,46 +14,50 @@ import {CallToAction} from "@components/CallToAction";
 ---
 
 <RootLayout title="Aqua Aria | O nama">
-  <div class="relative">
+  <div class="relative md:pb-24">
   <Container className="pt-9">
-    <h1 class="text-4xl font-display space-y-2">
+    <h1 class="text-4xl font-display space-y-2 sm:text-5xl md:text-6xl lg:text-7xl">
       Naša misija je da vam obezbedimo pristup vrhunskoj <span class="text-primary">hidrataciji</span>
     </h1>
-    <p class="text-sm text-secondary/80">Pristup kvalitetnoj vodi za piće potrebno je da ima svaki dom i poslovni prostor. Na nama je da to i obezbedimo svojim klijentima.</p>
-    <Image src={aboutImage1} alt="Landscape of a mountain river" width={400} height={400} class="rounded-2xl mt-5 w-full" />
-    <div class="grid grid-cols-2 mt-5 gap-y-5 pb-14">
-      <div class="flex flex-col items-center">
-        <span class="text-5xl font-display">50+</span>
-        <p class="text-sm font-medium text-center">Prodatih aparata</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <span class="text-5xl font-display">30+</span>
-        <p class="text-sm font-medium text-center">Uspešnih servisa</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <span class="text-5xl font-display">4</span>
-        <p class="text-sm font-medium text-center">Godine poslovanja</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <span class="text-5xl font-display">75+</span>
-        <p class="text-sm font-medium text-center">Zadovoljnih klijenata</p>
+    <p class="text-sm text-secondary/80 lg:text-base lg:max-w-[500px] lg:mt-3 lg:mb-5">Pristup kvalitetnoj vodi za piće potrebno je da ima svaki dom i poslovni prostor. Na nama je da to i obezbedimo svojim klijentima.</p>
+    <div class="w-full relative pb-14 h-full">
+      <Image src={aboutImage1} alt="Landscape of a mountain river" width={400} height={400} class="rounded-2xl mt-5 w-full" />
+      <div class="grid grid-cols-2 mt-5 gap-y-5 pb-14 md:absolute md:grid-cols-1 md:bg-white md:w-[180px] md:top-0 md:inset-y-0 md:h-full md:pb-0 md:mt-0 md:right-[20%] md:gap-y-0 lg:w-[270px]">
+        <div class="flex flex-col items-center md:self-start">
+          <span class="text-5xl font-display lg:text-7xl">50+</span>
+          <p class="text-sm font-medium text-center lg:text-2xl">Prodatih aparata</p>
+        </div>
+        <div class="flex flex-col items-center md:self-start">
+          <span class="text-5xl font-display lg:text-7xl">30+</span>
+          <p class="text-sm font-medium text-center lg:text-2xl">Uspešnih servisa</p>
+        </div>
+        <div class="flex flex-col items-center md:self-start">
+          <span class="text-5xl font-display lg:text-7xl">4</span>
+          <p class="text-sm font-medium text-center lg:text-2xl">Godine poslovanja</p>
+        </div>
+        <div class="flex flex-col items-center md:self-start">
+          <span class="text-5xl font-display lg:text-7xl">75+</span>
+          <p class="text-sm font-medium text-center lg:text-2xl">Zadovoljnih klijenata</p>
+        </div>
       </div>
     </div>
   </Container>
   <section class="bg-secondary py-14">
-    <Container className="space-y-2">
-      <h2 class="font-display text-bg text-4xl">Ko smo mi?</h2>
-      <p class="text-bg/80 text-sm">
-        Aqua Aria je specijalizovani servis za kompresorske i termoelektrične aparate za vodu iz Zrenjanina, sa dugogodišnjim iskustvom u održavanju i popravci. Pored profesionalnog servisiranja, nudimo i prodaju novih i polovnih aparata, kao i savetovanje pri odabiru idealnog rešenja za vaše potrebe.
-      </p>
+    <Container className="space-y-2 md:grid md:grid-cols-2 md:items-center md:gap-x-4">
+      <div class="space-y-2">
+      <h2 class="font-display text-bg text-4xl md:text-5xl lg:text-7xl">Ko smo mi?</h2>
+        <p class="text-bg/80 text-sm lg:text-base lg:mt-3 lg:max-w-[500px]">
+          Aqua Aria je specijalizovani servis za kompresorske i termoelektrične aparate za vodu iz Zrenjanina, sa dugogodišnjim iskustvom u održavanju i popravci. Pored profesionalnog servisiranja, nudimo i prodaju novih i polovnih aparata, kao i savetovanje pri odabiru idealnog rešenja za vaše potrebe.
+        </p>
+      </div>
       <Image src={aboutImage2} class="w-full rounded-2xl mt-5" alt="Hands holding glass of water" width={500} height={500} />
     </Container>
   </section>
-  <section class="py-17">
+  <section class="py-17 lg:pt-[180px]">
     <Container>
-      <h3 class="font-display text-4xl text-center">“Verujemo da kvalitetna voda nije samo osnovna potreba, već i ključni deo zdravog i produktivnog života.”</h3>
-      <p class="text-sm text-secondary/80 mt-17">Šta o nama kažu naši klijenti:</p>
-      <div class="space-y-4 mt-2">
+      <h3 class="font-display text-4xl text-center md:text-5xl lg:text-7xl lg:pb-[180px]">“Verujemo da kvalitetna voda nije samo osnovna potreba, već i ključni deo zdravog i produktivnog života.”</h3>
+      <p class="text-sm text-secondary/80 mt-17 lg:text-base">Šta o nama kažu naši klijenti:</p>
+      <div class="space-y-4 mt-2 md:grid md:grid-cols-2 md:gap-x-4">
         <TestimonialCard
           quote={"Vrhunski kvalitet usluge, svaka preporuka!"}
           fullName="Antonije Erdeljan"
