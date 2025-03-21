@@ -2,12 +2,37 @@
 import { CallToAction } from "../components/CallToAction";
 import { Logo } from "../components/Logo";
 import RootLayout from "../layouts/RootLayout.astro";
+import Container from "../components/Container.astro";
+import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
+import ButtonLinkPrimary from "../components/ButtonLinkPrimary.astro";
 ---
 
 <RootLayout title="Aqua Aria | Kontakt">
-  <div class="flex flex-col items-center justify-center w-full gap-y-10 text-center h-screen">
-    <h1 class="font-display text-5xl md:text-7xl text-secondary">Coming soon. <span class="text-primary block"> Stay tuned! </span></h1>
-    <Logo />
+  <div class="bg-secondary text-center py-14 relative">
+    <Container>
+      <h1 class="text-6xl font-display text-bg">Kontaktirajte nas</h1>
+    </Container>
   </div>
-  <CallToAction />
+  <Container className="py-14">
+    <form>
+      <label class="sr-only" for="firstName">Ime</label>
+      <input id="firstName" placeholder="Ime*" required type="text" class="border-b border-secondary/70 w-full focus:border-primary focus:outline-none" />
+      <label class="sr-only" for="lastName">Prezime</label>
+      <input id="lastName" placeholder="Prezime*" required type="text" class="border-b border-secondary/70 mt-9 w-full focus:border-primary focus:outline-none" />
+      <label class="sr-only" for="email">Email</label>
+      <input id="email" placeholder="Email*" required type="email" class="border-b border-secondary/70 mt-9 w-full focus:border-primary focus:outline-none" />
+      <label class="sr-only" for="phone">Broj telefona</label>
+      <input id="phone" placeholder="Broj telefona*" required type="number" class="border-b border-secondary/70 mt-9 w-full focus:border-primary focus:outline-none" />
+      <label for="serviceType" class="sr-only">Tip usluge</label>
+      <select id="serviceType" class="w-full outline-none border-b border-secondary/70 text-secondary/70 pl-0 pb-1 mt-9">
+        <option value="0" class="text-secondary/30">Tip usluge</option>
+        <option value="servis-aparata">Servis aparata</option>
+        <option value="reparacija-aparata">Reparacija aparata</option>
+        <option value="prodaja-vode">Prodaja vode</option>
+      </select>
+      <label for="message" class="sr-only">Napiši poruku</label>
+      <textarea id="message" placeholder="Napiši poruku..." rows="7" class="rounded-2xl mt-9 p-4 w-full border border-secondary/70" />
+      <ButtonLinkPrimary label="Pošalji poruku" href="/kontakt" />
+    </form>
+  </Container>
 </RootLayout>

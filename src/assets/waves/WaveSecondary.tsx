@@ -18,10 +18,10 @@ export function WaveSecondary({ className }: { className?: string }) {
   );
 }
 
-export function WaveSecondaryMobile() {
+export function WaveSecondaryMobile({ className }: { className?: string }) {
   return (
     <svg
-      className="absolute inset-x-0 -bottom-[20px] w-full"
+      className={cn("absolute inset-x-0 -bottom-[20px] w-full", className)}
       // width="375"
       // height="39"
       viewBox="0 0 375 39"
