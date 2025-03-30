@@ -23,9 +23,6 @@ const { dispenser } = Astro.props;
         <br />
         {dispenser.data.name}
       </p>
-      <div class="flex gap-x-[6px]">
-        {dispenser.data.availableColors.map((color) => <ColorIndicator color={color} />)}
-      </div>
     </div>
     <p class="text-bg font-semibold group-hover:text-secondary transition duration-500 lg:text-[28px]">{dispenser.data.price.toLocaleString("de-DE")}rsd</p>
   </div>
