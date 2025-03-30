@@ -10,12 +10,12 @@ interface Props {
 const { dispenser } = Astro.props;
 ---
 
-<a class="block relative rounded-2xl border group border-slate-200 overflow-hidden max-h-[700px]" href={dispenser.data.slug}>
-  <div class="overflow-hidden relative w-full max-h-[700px]">
-    <Image quality={100} class="w-full object-bottom" src={dispenser.data.images[0]} alt={`${dispenser.data.name}`} width={800} height={1200} />
+<a class="block relative rounded-2xl border group border-slate-200 overflow-hidden h-full" href={dispenser.data.slug}>
+  <div class="relative w-full h-[600px]">
+    <Image quality={100} class="w-full h-full object-contain" src={dispenser.data.images[0]} alt={`${dispenser.data.name}`} width={800} height={1200} />
   </div>
   <div
-    class="flex absolute group-hover:bg-stone-300/10 backdrop-blur-sm transition duration-500 bottom-0 inset-x-0 bg-secondary justify-between items-center px-4 py-[10px] md:p-4 lg:p-7"
+    class="flex group-hover:bg-stone-300/10 backdrop-blur-sm transition duration-500 bottom-0 inset-x-0 bg-secondary justify-between items-center px-4 py-[10px] md:p-4 lg:p-7"
   >
     <div class="space-y-1">
       <p class="font-display group-hover:text-secondary transition duration-150 leading-[120%] text-bg text-lg lg:text-[2rem]">
@@ -24,6 +24,6 @@ const { dispenser } = Astro.props;
         {dispenser.data.name}
       </p>
     </div>
-    <p class="text-bg font-semibold group-hover:text-secondary transition duration-500 lg:text-[28px]">{dispenser.data.price.toLocaleString("de-DE")}rsd</p>
+    <p class="text-bg font-semibold group-hover:text-secondary transition duration-500 lg:text-[28px]">{dispenser.data.price.toLocaleString("de-DE")} rsd</p>
   </div>
 </a>

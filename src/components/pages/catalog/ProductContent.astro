@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from "astro:content";
 import ProductEyebrow from "@components/pages/catalog/ProductEyebrow.astro";
 import MainProductSpec from "@components/pages/catalog/MainProductSpec.astro";
 import { cn } from "../../../utils/cn";
@@ -21,23 +21,25 @@ const { data } = Astro.props;
 
   <!--</div>-->
   <div class="flex items-center gap-x-1 pt-3">
-    {data.data.mainSpecs.map((spec) => (
-      <MainProductSpec spec={spec} />
-    ))}
+    {data.data.mainSpecs.map((spec) => <MainProductSpec spec={spec} />)}
     <div class="flex flex-col items-center justify-center border border-secondary rounded-2xl flex-1 h-16 lg:h-19">
-      <span class="text-2xl lg:text-4xl">12</span>
-      <span class="text-xs text-secondary/80 text-center">Meseci <br class="md:hidden"/> Garancije</span>
+      <span class="text-2xl lg:text-4xl">24</span>
+      <span class="text-xs text-secondary/80 text-center">Meseci <br class="md:hidden" /> Garancije</span>
     </div>
   </div>
   <div class="mt-4">
-    <p class="text-lg leading-[120%] mb-1 lg:text-xl">Ostale specifikacije: </p>
-    {data.data.otherSpecs.map((spec) => (<Fragment>
-      <div class="w-full flex text-sm text-secondary/80 justify-between mt-3">
-        <span>{spec.category}</span>
-        <span>{spec.value}</span>
-      </div>
-      <hr class="text-secondary/80" />
-    </Fragment>))}
+    <p class="text-lg leading-[120%] mb-1 lg:text-xl">Ostale specifikacije:</p>
+    {
+      data.data.otherSpecs.map((spec) => (
+        <Fragment>
+          <div class="w-full flex text-sm text-secondary/80 justify-between mt-3">
+            <span>{spec.category}</span>
+            <span>{spec.value}</span>
+          </div>
+          <hr class="text-secondary/80" />
+        </Fragment>
+      ))
+    }
   </div>
   <div class="w-full flex justify-end mt-4">
     <button id="view-more-btn" class="underline underline-offset-4">Vidi više</button>
@@ -55,12 +57,10 @@ const { data } = Astro.props;
   viewMoreBtn.addEventListener("click", (e) => {
     descriptionText.classList.toggle("hidden");
 
-    if(descriptionText.classList.contains("hidden")){
+    if (descriptionText.classList.contains("hidden")) {
       viewMoreBtn.innerText = "Vidi više";
     } else {
       viewMoreBtn.innerText = "Vidi manje";
     }
-
-  })
-
+  });
 </script>
