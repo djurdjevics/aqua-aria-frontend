@@ -1,12 +1,34 @@
-import { Carousel, CarouselContent, CarouselItem } from "@components/Carousel.tsx";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@components/Carousel.tsx";
 
-
-export default function ImagesCarousel({ images }: {images: ImageMetadata[]}) {
-  return <Carousel>
-    <CarouselContent className="gap-x-2 h-full">
-      {images.map(image => (<CarouselItem className={"basis-4/5 rounded-2xl overflow-hidden relative h-[26rem]"} key={image.src}>
-        <img src={image.src} width={image.width} height={image.height} className={"w-full h-full object-cover"} alt={"Slide image"} />
-      </CarouselItem>))}
-    </CarouselContent>
-  </Carousel>;
+export default function ImagesCarousel({
+  images,
+}: {
+  images: ImageMetadata[];
+}) {
+  return (
+    <Carousel>
+      <CarouselContent className="h-full gap-x-2">
+        {images.map((image) => (
+          <CarouselItem
+            className={
+              "relative h-[26rem] basis-4/5 overflow-hidden rounded-2xl"
+            }
+            key={image.src}
+          >
+            <img
+              src={image.src}
+              width={image.width}
+              height={image.height}
+              className={"h-full w-full object-cover"}
+              alt={"Slide image"}
+            />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+  );
 }

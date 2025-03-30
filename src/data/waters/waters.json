@@ -2,9 +2,9 @@
   {
     "id": 1,
     "name": "Ledena voda",
-    "image": "./golijska-ledena.webp",
+    "image": "./golijska-ledena.jpg",
     "volume": "18.9L",
-    "pricePerBalloon": 450.00,
+    "pricePerBalloon": 450.0,
     "description": "Golijska Ledena sa izvora Vučje, kristalno čista, izvire sa dubine od 130 metara, na nadmorskoj visini od 1080 metara, ispod vrha Bozac, okruženog netaknutom prirodom planine Golija.",
     "composition": [
       {
