@@ -15,9 +15,9 @@ const dispensers: Dispenser[] = [
   {
     id: 0,
     title: "Glacier white",
-    body: "Generalni opis proizvoda. Tekst u kome se tgovori o tome gde i kako je ovaj proizvod najbolje upotrebiti. Ubaciti se u ulogu klijenta i shvatiti za koje potrebe je njima potreban bas ovaj aparat",
+    body: "Glacier White je kompresorski aparat koji omogućava brzo hlađenje vode na nižim temperaturama i veći kapacitet hladne vode, što ga čini savršenim za veće potrebe i pruža dugoročnu pouzdanost.",
     eyebrow: "Kompresorski aparat",
-    image: "/glacier-white.jpg",
+    image: "/glacier_white_side_open_shadow.jpg",
     perks: [
       {
         id: 0,
@@ -44,9 +44,9 @@ const dispensers: Dispenser[] = [
   {
     id: 1,
     title: "Harmony white",
-    body: "Generalni opis proizvoda. Tekst u kome se tgovori o tome gde i kako je ovaj proizvod najbolje upotrebiti. Ubaciti se u ulogu klijenta i shvatiti za koje potrebe je njima potreban bas ovaj aparat",
+    body: "Harmony White je stoni termoelektrični aparat za vodu je kompaktan i energetski efikasan, pružajući povoljan izbor za manje prostore i sa pristupačnom cenom.",
     eyebrow: "Termoelektrični aparat",
-    image: "/harmony-white.png",
+    image: "/harmony_white_front_shadow.jpg",
     perks: [
       {
         id: 0,
