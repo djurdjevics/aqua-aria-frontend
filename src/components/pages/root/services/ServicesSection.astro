@@ -1,5 +1,8 @@
-import { useState } from "react";
-import { ServicesCard } from "./ServicesCard";
+---
+import Container from "@components/Container.astro";
+import { ServicesContent } from "./ServicesContent";
+import { ServicesContentMobile } from "./ServicesContentMobile";
+import { ServicesHeader } from "./ServicesHeader";
 
 export const services = [
   {
@@ -41,20 +44,15 @@ export const services = [
     description: "Naša firma uz prodaju nudi usluge isporuke vode direktno na vašu adresu brzo i fleksibilno.",
   },
 ];
+---
 
-export function ServicesContent() {
-  const [activeServiceIndex, setActiveServiceIndex] = useState<string>("01");
-
-  return (
-    <div className="mt-12 hidden gap-x-4 md:flex">
-      {services.map((service) => (
-        <ServicesCard
-          activeServiceIndex={activeServiceIndex}
-          setActiveServiceIndex={setActiveServiceIndex}
-          key={service.id}
-          service={service}
-        />
-      ))}
-    </div>
-  );
-}
+<div class="bg-secondary py-14 md:py-[4.5rem] lg:py-[120px]">
+  <Container className="hidden lg:block">
+    <ServicesHeader />
+    <ServicesContent client:load />
+  </Container>
+  <section class="px-4 lg:hidden">
+    <ServicesHeader />
+    <ServicesContentMobile client:load />
+  </section>
+</div>

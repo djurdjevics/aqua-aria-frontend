@@ -1,0 +1,13 @@
+---
+import type { ImageMetadata } from "astro";
+import ImagesCarousel from "@components/pages/catalog/ImagesCarousel"
+interface Props {
+  images: ImageMetadata[];
+}
+
+const {images} = Astro.props;
+---
+
+<div class="px-4 md:hidden">
+  <ImagesCarousel client:load images={images} />
+</div>

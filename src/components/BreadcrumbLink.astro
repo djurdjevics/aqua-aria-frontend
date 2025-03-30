@@ -1,0 +1,11 @@
+---
+interface Props {
+  slug: string;
+}
+
+const {slug} = Astro.props;
+---
+
+<Fragment>
+  <a href={`/${slug}`} class="font-bold" />
+</Fragment>

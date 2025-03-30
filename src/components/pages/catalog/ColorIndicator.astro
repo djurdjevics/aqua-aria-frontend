@@ -1,0 +1,10 @@
+---
+import { cn } from "../../../utils/cn";
+interface Props {
+  color: string;
+}
+
+const{color} = Astro.props;
+---
+
+<div class={cn("rounded-full w-6 h-6 md:h-7 md:w-7", color === "white" ? "bg-white" : "bg-[#979797]")} />

@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import DispenserCard from "./DispenserCard.astro";
+
+interface Props {
+  dispensers: CollectionEntry<"dispensers">[],
+}
+
+const {dispensers} = Astro.props;
+---
+
+<div class="space-y-4 md:grid md:grid-cols-2 md:gap-y-4 md:gap-x-4 md:space-y-0">
+  {dispensers.map((dispenser, index) => (
+    <DispenserCard dispenser={dispenser} />
+  ))}
+</div>

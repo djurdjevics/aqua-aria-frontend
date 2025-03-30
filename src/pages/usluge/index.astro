@@ -1,0 +1,50 @@
+---
+import RootLayout from "../../layouts/RootLayout.astro";
+import ServiceSection from "../../components/pages/services/ServiceSection.astro";
+import prodajaVodeImage from "@assets/images/prodaja-vode-img.png";
+import distribucijaVodeImage from "@assets/images/distribucija-vode-img.png";
+import otkupAparataImage from "@assets/images/otkup-aparata-img.png";
+import prodajaAparataImage from "@assets/images/prodaja-aparata-img.png";
+import servisAparataImage from "@assets/images/servis-aparata-img.png";
+import {Image} from "astro:assets";
+import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
+import {CallToAction} from "@components/CallToAction";
+---
+
+<RootLayout title="Aqua Aria | Usluge">
+  <div class="relative pb-12 sm:pb-16 md:pb-40">
+  <ServiceSection id="prodaja-vode" title="Prodaja vode" layout="paragraphFirst">
+    <p slot="description" class="text-secondary/80 md:text-2xl">
+      Naša usluga prodaje vode omogućava vam jednostavan i pouzdan način da obezbedite kvalitetnu vodu za vaš dom ili poslovni prostor. Kontaktirajte nas i osigurajte neprekidan izvor sveže i čiste vode.
+    </p>
+    <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={prodajaVodeImage} width="300" height="300" alt="Balloons of water in front of the door" />
+  </ServiceSection>
+  <ServiceSection id="distribucija-vode" title="Distribucija vode" layout="imageFirst">
+    <p slot="description" class="text-secondary/80  md:text-2xl">
+      Naša usluga distribucije vode obezbeđuje pouzdanu i redovnu isporuku balona sa vodom direktno na vašu adresu. Fleksibilni termini dostave i brza isporuka omogućavaju vam jednostavno snabdevanje vodom kada vam je najpotrebnije. </p>
+      <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={distribucijaVodeImage} width="300" height="300" alt="Balloons of water" />
+  </ServiceSection>
+  <ServiceSection id="prodaja-aparata" title="Prodaja aparata" layout="paragraphFirst">
+    <p slot="description" class="text-secondary/80  md:text-2xl">
+      Nudimo širok izbor aparata za vodu koji odgovaraju različitim potrebama – bilo da vam je potreban uređaj za kancelariju, ugostiteljski objekat ili vaš dom. Naši aparati omogućavaju jednostavno i praktično korišćenje balona sa vodom, uz opcije za hladnu i toplu vodu.     </p>
+    <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={prodajaAparataImage} width="300" height="300" alt="Two persons talk next to the water dispenser" />
+  </ServiceSection>
+  <ServiceSection id="otkup-aparata" title="Otkup aparata" layout="imageFirst">
+    <p slot="description" class="text-secondary/80  md:text-2xl">
+      Ukoliko posedujete aparat za vodu koji vam više nije potreban, nudimo mogućnost otkupa po fer i konkurentnim uslovima. Bez obzira na stanje i model aparata, naš tim će izvršiti procenu i ponuditi vam najbolje rešenje. Kontaktirajte nas kako bismo dogovorili preuzimanje i pojednostavili proces prodaje vašeg aparata.  </p>
+      <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={otkupAparataImage} width="300" height="300" alt="Balloons of water" />
+  </ServiceSection>
+  <ServiceSection id="servis-aparata" title="Servis aparata" layout="paragraphFirst">
+    <p slot="description" class="text-secondary/80  md:text-2xl">
+      Redovno održavanje i servis aparata za vodu ključni su za njihovu dugotrajnost i ispravan rad. Naš tim pruža usluge popravke aparata, osiguravajući da vaša voda ostane higijenski ispravna i sveža. Bilo da je reč o zameni delova, otklanjanju kvarova ili preventivnom održavanju, stojimo vam na raspolaganju za brzu i pouzdanu uslugu. </p>
+      <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={servisAparataImage} width="300" height="300" alt="Balloons of water" />
+  </ServiceSection>
+  <ServiceSection id="sanatacija-aparata" title="Sanacija aparata" layout="imageFirst">
+    <p slot="description" class="text-secondary/80  md:text-2xl">
+      Sanacija aparata podrazumeva detaljno čišćenje, dezinfekciju i obnovu kako bi uređaj ponovo bio potpuno funkcionalan i siguran za upotrebu. Bilo da je aparat bio van upotrebe duži period ili je došlo do zagađenja sistema, naš tim obavlja temeljnu sanaciju, uklanjajući nečistoće, kamenac i bakterije. Na taj način obezbeđujemo da vaš aparat ponovo isporučuje kvalitetnu i bezbednu vodu. </p>
+    <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={servisAparataImage} width="300" height="300" alt="Balloons of water" />
+  </ServiceSection>
+    <WaveSecondaryMobile />
+  </div>
+  <CallToAction />
+</RootLayout>

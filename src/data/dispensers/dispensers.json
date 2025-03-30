@@ -1,0 +1,75 @@
+ [{
+    "slug": "/katalog/aparati/harmony",
+    "name": "Aparat Harmony",
+    "price": 12000.00,
+    "images": ["./glacier-white-1.jpg", "./glacier-white-1.png", "./harmony-white.png"],
+    "availableColors": ["grey", "white"],
+    "type": "Termoelektrični",
+    "mainSpecs": [
+      {
+        "category": "dimensions",
+        "value": "30x35x100cm"
+      },
+      {
+        "category": "weight",
+        "value": "15kg"
+      },
+      {
+        "category": "volume",
+        "value": "11L"
+      }
+    ],
+    "otherSpecs": [
+      {
+        "category": "Glasnoća",
+        "value": "100dB"
+      },
+      {
+        "category": "Garancija",
+        "value": "12 meseci"
+      },
+      {
+        "category": "Jos nesto",
+        "value": "Nesto"
+      }
+    ],
+    "description": "Ovo su neke dodatne informacije o samom aparatu i ne znam koje to treba da budu ali treba da se doda ili da se promeni model."
+  },
+   {
+     "slug": "/katalog/aparati/glacier",
+     "name": "Aparat Harmony",
+     "price": 12000.00,
+     "images": ["./glacier-white-1.png"],
+     "availableColors": ["grey", "white"],
+     "type": "Termoelektrični",
+     "mainSpecs": [
+       {
+         "category": "dimensions",
+         "value": "30x35x100cm"
+       },
+       {
+         "category": "weight",
+         "value": "15kg"
+       },
+       {
+         "category": "volume",
+         "value": "11L"
+       }
+     ],
+     "otherSpecs": [
+       {
+         "category": "Glasnoća",
+         "value": "100dB"
+       },
+       {
+         "category": "Garancija",
+         "value": "12 meseci"
+       },
+       {
+         "category": "Jos nesto",
+         "value": "Nesto"
+       }
+     ],
+     "description": "Ovo su neke dodatne informacije o samom aparatu i ne znam koje to treba da budu ali treba da se doda ili da se promeni model."
+   }
+ ]

@@ -10,7 +10,7 @@ export type Dispenser = {
     id: number;
     body: string;
     title: string;
-    Icon: Icon;
+    icon: string;
   }[];
   imageSide: "left" | "right";
   badge: "new" | "popular";

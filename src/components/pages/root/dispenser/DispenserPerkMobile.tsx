@@ -13,7 +13,7 @@ export function DispenserPerkMobile({
   perk: {
     id: number;
     body: string;
-    Icon: Icon;
+    icon: string;
   };
 }) {
   const size = isTablet ? 56 : 40;
@@ -22,7 +22,7 @@ export function DispenserPerkMobile({
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
 
-  const { body, Icon } = perk;
+  const { body, icon } = perk;
 
   return (
     <div
@@ -65,7 +65,7 @@ export function DispenserPerkMobile({
       </svg>
       {/* Center Icon */}
       <div className="bg-primary absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center">
-        <Icon className={cn(isTablet ? "h-5 w-5" : "h-4 w-4")} />
+        <img src={icon} className="h-4 w-5" />
       </div>
     </div>
   );

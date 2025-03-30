@@ -1,13 +1,87 @@
 ---
+
+export const prerender = false;
+
 import { CallToAction } from "../components/CallToAction";
 import { Logo } from "../components/Logo";
 import RootLayout from "../layouts/RootLayout.astro";
+import Container from "../components/Container.astro";
+import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
+import {actions} from "astro:actions";
+import {Button} from "@components/Button";
 ---
 
 <RootLayout title="Aqua Aria | Kontakt">
-  <div class="flex flex-col items-center justify-center w-full gap-y-10 text-center h-screen">
-    <h1 class="font-display text-5xl md:text-7xl text-secondary">Coming soon. <span class="text-primary block"> Stay tuned! </span></h1>
-    <Logo />
+  <div class="relative pb-14 md:pb-32">
+  <div class="bg-secondary text-center py-14 relative">
+    <Container>
+      <h1 class="text-6xl font-display text-bg">Kontaktirajte nas</h1>
+    </Container>
   </div>
-  <CallToAction />
+  <Container className="py-14 md:grid md:grid-cols-2">
+    <div class="hidden md:block md:space-y-9">
+
+        <div class="space-y-2">
+          <p class="text-secondary text-base">Adresa</p>
+          <address class="text-2xl not-italic">Sarajevska 15, Zrenjanin</address>
+        </div>
+
+        <div class="space-y-2">
+          <p class="text-secondary text-base">Pozovi nas</p>
+          <a href="tel:011234999" class="flex gap-x-2 text-2xl">
+            <span>+381</span>
+            <span>11</span>
+            <span>234</span>
+            <span>999</span>
+          </a>
+          <a href="tel:011234999" class="flex gap-x-2 text-2xl">
+            <span>+381</span>
+            <span>11</span>
+            <span>234</span>
+            <span>999</span>
+          </a>
+        </div>
+
+        <div>
+          <p class="text-secondary text-base">Zaprati nas</p>
+          <a href="#" class="inline-block h-8 w-8 mt-2 mr-2">
+            <img
+              src="instagram-icon-dark.svg"
+              class="h-full w-full opacity-80"
+            />
+          </a>
+          <a href="#" class="inline-block h-8 w-8">
+            <img
+              src="facebook-dark.svg"
+              class="h-full w-full opacity-80"
+            />
+          </a>
+        </div>
+
+    </div>
+    <form action={actions.send} method="POST">
+      <label class="sr-only" for="firstName">Ime</label>
+      <input id="firstName" name="firstName" placeholder="Ime*" required type="text" class="border-b border-secondary/70 w-full focus:border-primary focus:outline-none" />
+      <label class="sr-only" for="lastName">Prezime</label>
+      <input id="lastName" name="lastName" placeholder="Prezime*" required type="text" class="border-b border-secondary/70 mt-9 w-full focus:border-primary focus:outline-none" />
+      <label class="sr-only" for="email">Email</label>
+      <input id="email" name="email" placeholder="Email*" required type="email" class="border-b border-secondary/70 mt-9 w-full focus:border-primary focus:outline-none" />
+      <label class="sr-only" for="phone">Broj telefona</label>
+      <input id="phone" name="phone" placeholder="Broj telefona*" required type="number" class="border-b border-secondary/70 mt-9 w-full focus:border-primary focus:outline-none" />
+      <label for="serviceType" class="sr-only">Tip usluge</label>
+      <select id="serviceType" name="serviceType" class="w-full outline-none border-b border-secondary/70 text-secondary/70 pl-0 pb-1 mt-9">
+        <option value="0" class="text-secondary/30">Tip usluge</option>
+        <option value="servis-aparata">Servis aparata</option>
+        <option value="reparacija-aparata">Reparacija aparata</option>
+        <option value="prodaja-vode">Prodaja vode</option>
+      </select>
+      <label for="message" class="sr-only">Napiši poruku</label>
+      <textarea id="message" name="message" placeholder="Napiši poruku..." rows="7" class="rounded-2xl mt-9 p-4 w-full border border-secondary/70" />
+      <Button className="w-full mt-4" type="submit">
+        Pošalji poruku
+      </Button>
+    </form>
+  </Container>
+    <WaveSecondaryMobile />
+  </div>
 </RootLayout>
