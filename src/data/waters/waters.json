@@ -2,22 +2,26 @@
   {
     "id": 1,
     "name": "Ledena voda",
-    "image": "./ledena-image.png",
-    "volume": "11L",
-    "pricePerBalloon": 300,
-    "description": "Naša CrystalPure voda dolazi iz prirodnih izvora i pažljivo je filtrirana kako bi pružila najviši kvalitet i osveženje",
+    "image": "./golijska-ledena.webp",
+    "volume": "18.9L",
+    "pricePerBalloon": 450.00,
+    "description": "Golijska Ledena sa izvora Vučje, kristalno čista, izvire sa dubine od 130 metara, na nadmorskoj visini od 1080 metara, ispod vrha Bozac, okruženog netaknutom prirodom planine Golija.",
     "composition": [
       {
-        "substance": "Bikarbonat",
-        "amount": "xx.qq"
+        "substance": "Kalcijum (Ca)",
+        "amount": "20.44"
       },
       {
-        "substance": "Natrijum",
-        "amount": "xx.qq"
+        "substance": "Magnezijum (Mg)",
+        "amount": "3.64"
       },
       {
-        "substance": "Kalijum",
-        "amount": "xx.qq"
+        "substance": "Natrijum (Na)",
+        "amount": "0.79"
+      },
+      {
+        "substance": "pH vrednost",
+        "amount": "7.45"
       }
     ]
   }
