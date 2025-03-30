@@ -1,14 +1,96 @@
  [{
     "slug": "/katalog/aparati/harmony",
-    "name": "Aparat Harmony",
-    "price": 12000.00,
-    "images": ["./glacier-white-1.jpg", "./glacier-white-1.png", "./harmony-white.png"],
-    "availableColors": ["grey", "white"],
+    "name": "Harmony White",
+    "price": 7700.00,
+    "images": ["./harmony_white_front_shadow.jpg", "./harmony_white_side_shadow.jpg"],
+    "availableColors": ["white"],
     "type": "Termoelektrični",
     "mainSpecs": [
       {
         "category": "dimensions",
-        "value": "30x35x100cm"
+        "value": "26x26x34cm"
+      },
+      {
+        "category": "weight",
+        "value": "3kg"
+      },
+      {
+        "category": "volume",
+        "value": "18.9L"
+      }
+    ],
+    "otherSpecs": [
+      {
+        "category": "Kapacitet hlađenja",
+        "value": "0.8L/h"
+      },
+      {
+        "category": "Kapacitet zagrevanja",
+        "value": "5L/h"
+      },
+      {
+        "category": "Temperatura hladne vode",
+        "value": "12-13 °C"
+      },
+      {
+        "category": "Temperatura tople vode",
+        "value": "90-95 °C"
+      }
+    ],
+    "description": ""
+  },
+  {
+    "slug": "/katalog/aparati/glacier-white",
+    "name": "Glacier White",
+    "price": 15900.00,
+    "images": ["./glacier_white_side_shadow.jpg","./glacier_white_front_shadow.jpg","./glacier_white_side_open_shadow.jpg"],
+    "availableColors": ["white"],
+    "type": "Kompresorski",
+    "mainSpecs": [
+      {
+        "category": "dimensions",
+        "value": "30x30x97cm"
+      },
+      {
+        "category": "weight",
+        "value": "12kg"
+      },
+      {
+        "category": "volume",
+        "value": "18.9L"
+      }
+    ],
+    "otherSpecs": [
+      {
+        "category": "Kapacitet hlađenja",
+        "value": "2L/h"
+      },
+      {
+        "category": "Kapacitet zagrevanja",
+        "value": "5L/h"
+      },
+      {
+        "category": "Temperatura hladne vode",
+        "value": "5-8 °C"
+      },
+      {
+        "category": "Temperatura tople vode",
+        "value": "90-95 °C"
+      }
+    ],
+    "description": ""
+  },
+  {
+    "slug": "/katalog/aparati/glacier-silver",
+    "name": "Glacier Silver",
+    "price": 17300.00,
+    "images": ["./glacier_silver_side_shadow.jpg","./glacier_silver_front_shadow.jpg","./glacier_silver_side_open_shadow.jpg"],
+    "availableColors": ["grey"],
+    "type": "Kompresorski",
+    "mainSpecs": [
+      {
+        "category": "dimensions",
+        "value": "30x30x97cm"
       },
       {
         "category": "weight",
@@ -16,60 +98,27 @@
       },
       {
         "category": "volume",
-        "value": "11L"
+        "value": "18.9L"
       }
     ],
     "otherSpecs": [
       {
-        "category": "Glasnoća",
-        "value": "100dB"
+        "category": "Kapacitet hlađenja",
+        "value": "2L/h"
       },
       {
-        "category": "Garancija",
-        "value": "12 meseci"
+        "category": "Kapacitet zagrevanja",
+        "value": "5L/h"
       },
       {
-        "category": "Jos nesto",
-        "value": "Nesto"
+        "category": "Temperatura hladne vode",
+        "value": "5-8 °C"
+      },
+      {
+        "category": "Temperatura tople vode",
+        "value": "90-95 °C"
       }
     ],
-    "description": "Ovo su neke dodatne informacije o samom aparatu i ne znam koje to treba da budu ali treba da se doda ili da se promeni model."
-  },
-   {
-     "slug": "/katalog/aparati/glacier",
-     "name": "Aparat Harmony",
-     "price": 12000.00,
-     "images": ["./glacier-white-1.png"],
-     "availableColors": ["grey", "white"],
-     "type": "Termoelektrični",
-     "mainSpecs": [
-       {
-         "category": "dimensions",
-         "value": "30x35x100cm"
-       },
-       {
-         "category": "weight",
-         "value": "15kg"
-       },
-       {
-         "category": "volume",
-         "value": "11L"
-       }
-     ],
-     "otherSpecs": [
-       {
-         "category": "Glasnoća",
-         "value": "100dB"
-       },
-       {
-         "category": "Garancija",
-         "value": "12 meseci"
-       },
-       {
-         "category": "Jos nesto",
-         "value": "Nesto"
-       }
-     ],
-     "description": "Ovo su neke dodatne informacije o samom aparatu i ne znam koje to treba da budu ali treba da se doda ili da se promeni model."
-   }
+    "description": ""
+  }
  ]
