@@ -106,3 +106,19 @@
     min-height: 40px;
   }
 }
+
+.progress-circle {
+  transition: stroke-dashoffset 3s linear;
+  stroke-dasharray: 283; /* Full circle (2 * π * r) */
+  stroke-dashoffset: 283; /* Start empty */
+  transform: rotate(-90deg); /* Rotate to start from the top */
+  transform-origin: 50% 50%; /* Ensure rotation happens around the center */
+}
+
+.progress-circle-2 {
+  transition: stroke-dashoffset 3s linear;
+  stroke-dasharray: 283; /* Full circle (2 * π * r) */
+  stroke-dashoffset: 283; /* Start empty */
+  transform: rotate(-90deg); /* Rotate to start from the top */
+  transform-origin: 50% 50%; /* Ensure rotation happens around the center */
+}

@@ -1,0 +1,200 @@
+---
+import Eyebrow from "@components/Eyebrow.astro";
+import DispenserTitle from "./DispenserTitle.astro";
+import DispenserDescription from "./DispenserDescription.astro";
+import DispenserImageHarmony from "./DispenserImageHarmony.astro";
+---
+
+<div class="space-y-4 md:flex md:flex-col md:justify-between">
+  <div class="space-y-4">
+    <Eyebrow text="Termoelekrični aparat" />
+    <DispenserTitle title="Harmony White" />
+    <DispenserDescription
+      description="Harmony White je stoni termoelektrični aparat za vodu je kompaktan i energetski efikasan, pružajući povoljan izbor za manje prostore i sa pristupačnom cenom."
+    />
+  </div>
+  <div class="md:hidden">
+    <DispenserImageHarmony />
+  </div>
+  <div class="space-y-13 mt-17 hidden lg:block">
+    <div id="perk-1" class="flex gap-x-6 items-center max-w-[450px]">
+      <div class="w-14 h-14 flex items-center justify-center bg-primary rounded-full flex-shrink-0">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M27.992 6.74628C27.9572 6.49641 27.8131 6.26745 27.6027 6.12917C27.6016 6.12917 27.6016 6.128 27.6004 6.128C27.5597 5.97692 14.6771 0.199636 14.6072 0.0812231C14.3771 -0.0256994 14.1122 -0.0268597 13.8809 0.0765744L0.518284 6.06296C0.357919 6.13618 0.219634 6.25704 0.128989 6.40814C0.0453197 6.54412 0.00348361 6.70217 0 6.86138V21.1387C0 21.4792 0.197551 21.7884 0.506655 21.9325L13.3927 27.9201C13.6217 28.0258 13.8889 28.0258 14.119 27.9247L27.4829 21.9372C27.7978 21.7965 28 21.4839 28 21.1387V6.86258C28 6.82307 27.9967 6.78463 27.992 6.74628ZM14.2331 1.83721L25.0183 6.84863L20.8814 8.70232L10.0974 3.69091L14.2343 1.83721H14.2331ZM7.98225 4.63693L18.7663 9.64834C17.5275 10.2039 15.0116 11.33 13.7681 11.8879L2.98293 6.87764L7.98106 4.63812L7.98225 4.63693ZM1.75132 8.23394L12.8876 13.4081V25.7551L1.75132 20.581V8.23394ZM14.6374 25.776V13.4161C15.4811 13.0384 25.1239 8.71741 26.2511 8.21311V20.573L14.6374 25.776Z"
+            fill="white"></path>
+        </svg>
+      </div>
+      <div class="text-white">
+        <span class="font-semibold">Dizajn - </span>
+        <p class="inline text-white/80">Termoelektrični aparati su manjih dimenzija, idealni za manje prostore i lako prenosivi.</p>
+      </div>
+    </div>
+    <div id="perk-2" class="flex gap-x-6 items-center max-w-[450px]">
+      <div class="w-14 h-14 flex items-center justify-center bg-primary rounded-full flex-shrink-0">
+        <svg width="27" height="20" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.0689 0.42608C13.1622 -0.142027 12.0343 -0.142027 11.1276 0.42608L5.92166 3.59862C5.76107 3.69463 5.58024 3.74398 5.39563 3.74131H2.94123C1.32014 3.74931 0.0075749 5.1322 0 6.84181V13.1575C0.0075872 14.8671 1.32014 16.25 2.94123 16.258H5.39563C5.57898 16.262 5.75981 16.31 5.92166 16.4007L11.1276 19.5733C11.5727 19.852 12.0811 20 12.5983 20C14.2219 19.984 15.5319 18.5958 15.5382 16.8848V3.11451C15.5458 2.00499 14.9831 0.976845 14.0689 0.42608ZM13.6503 16.8835V16.8848C13.6554 17.2862 13.4543 17.6596 13.123 17.861C12.793 18.061 12.3858 18.0583 12.0583 17.8516L6.86623 14.6938C6.4186 14.4191 5.91279 14.2724 5.3956 14.267H2.9412C2.35952 14.267 1.88913 13.771 1.88913 13.1575V6.84181C1.88913 6.22837 2.35952 5.73229 2.9412 5.73229H5.3956C5.91279 5.73363 6.42112 5.5856 6.86623 5.30556L12.0596 2.1477H12.0583C12.3858 1.93833 12.7968 1.93833 13.1243 2.1477C13.4581 2.33973 13.6617 2.71447 13.6503 3.11451L13.6503 16.8835ZM26.7063 13.7963V13.7976C27.0768 14.191 27.0768 14.8258 26.7063 15.2205C26.5242 15.4006 26.2827 15.5019 26.0323 15.5046C25.7858 15.5032 25.5493 15.4006 25.371 15.2205L21.7697 11.4226L18.1684 15.2205C17.9863 15.4006 17.7448 15.5019 17.4944 15.5046C17.2478 15.5032 17.0114 15.4006 16.833 15.2205C16.4626 14.8258 16.4626 14.191 16.833 13.7976L20.4344 9.99965L16.833 6.20168C16.4613 5.8083 16.4613 5.17219 16.833 4.77877C17.2061 4.38672 17.8092 4.38672 18.1823 4.77877L21.7697 8.57674L25.371 4.77877C25.744 4.38672 26.3472 4.38672 26.7202 4.77877C27.0933 5.17216 27.0933 5.80827 26.7202 6.20168L23.0924 9.99965L26.7063 13.7963Z"
+            fill="white"></path>
+        </svg>
+      </div>
+      <div class="text-white">
+        <span class="font-semibold">Tihi rad - </span>
+        <p class="inline text-white/80">Ovi aparati rade gotovo nečujno, što ih čini savršenim za kancelarije, spavaće sobe i kuhinje.</p>
+      </div>
+    </div>
+    <div id="perk-3" class="flex gap-x-6 items-center max-w-[450px]">
+      <div class="w-14 h-14 flex items-center justify-center bg-primary rounded-full flex-shrink-0">
+        <svg width="13" height="28" viewBox="0 0 13 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M7.92446 11.9367C5.18074 10.6991 4.08324 10.0509 4.08324 8.57731C4.08324 7.36842 4.79705 6.18947 7.04674 6.18947C8.44325 6.18947 9.44536 6.48536 10.202 6.79852C10.873 7.07599 11.6178 6.67072 11.8118 5.92698L11.9447 5.41809C12.1055 4.80215 11.8343 4.13899 11.291 3.87877C10.4496 3.47465 9.39822 3.20871 7.9244 3.12465V1.31134C7.9244 0.587175 7.3778 0 6.70366 0H6.45716C5.78302 0 5.23642 0.587175 5.23642 1.31134L5.23534 3.24211C2.08006 3.86152 0.131462 6.18947 0.131462 9.13684C0.131462 12.2902 2.16138 13.9113 5.45375 15.2963C7.92417 16.2403 9.07629 17.0946 9.07629 18.7158C9.07629 20.2781 7.81374 21.4571 5.56404 21.4571C4.31971 21.4571 3.0036 21.1209 1.8526 20.6247C1.17202 20.3311 0.405725 20.7225 0.207436 21.4812L0.0455997 22.103C-0.119452 22.7373 0.175285 23.4086 0.740092 23.6642C1.9512 24.211 3.54391 24.5933 5.15255 24.7291V26.6887C5.15255 27.4128 5.69916 28 6.37329 28C7.04743 28 7.59403 27.4128 7.59403 26.6887V24.4044C11.1074 23.7263 13 21.221 13 18.1849C13 15.2675 11.5456 13.4402 7.9241 11.9368L7.92446 11.9367Z"
+            fill="white"></path>
+        </svg>
+      </div>
+      <div class="text-white">
+        <span class="font-semibold">Efikasnost - </span>
+        <p class="inline text-white/80">Aparat koristi energetski efikasan kompresorski sistem koji štedi struju i smanjuje troškove.</p>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col space-y-4 pb-2 lg:hidden">
+    <!-- Perks Container -->
+    <div class="flex items-center space-x-4">
+      <div class="perk-2 relative flex flex-col items-center opacity-50 transition-opacity duration-300">
+        <svg viewBox="0 0 100 100" class="w-10 h-10 md:w-14 md:h-14">
+          <circle cx="50" cy="50" r="45" class="fill-primary stroke-transparent stroke-[5]"></circle>
+          <circle cx="50" cy="50" r="45" class="progress-circle-2 fill-none stroke-white stroke-[5]"></circle>
+        </svg>
+        <svg
+          class="absolute top-1/2 left-1/2 -translate-1/2 h-4 w-4 md:w-5 md:h-5"
+          width="28"
+          height="28"
+          viewBox="0 0 28 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M27.992 6.74628C27.9572 6.49641 27.8131 6.26745 27.6027 6.12917C27.6016 6.12917 27.6016 6.128 27.6004 6.128C27.5597 5.97692 14.6771 0.199636 14.6072 0.0812231C14.3771 -0.0256994 14.1122 -0.0268597 13.8809 0.0765744L0.518284 6.06296C0.357919 6.13618 0.219634 6.25704 0.128989 6.40814C0.0453197 6.54412 0.00348361 6.70217 0 6.86138V21.1387C0 21.4792 0.197551 21.7884 0.506655 21.9325L13.3927 27.9201C13.6217 28.0258 13.8889 28.0258 14.119 27.9247L27.4829 21.9372C27.7978 21.7965 28 21.4839 28 21.1387V6.86258C28 6.82307 27.9967 6.78463 27.992 6.74628ZM14.2331 1.83721L25.0183 6.84863L20.8814 8.70232L10.0974 3.69091L14.2343 1.83721H14.2331ZM7.98225 4.63693L18.7663 9.64834C17.5275 10.2039 15.0116 11.33 13.7681 11.8879L2.98293 6.87764L7.98106 4.63812L7.98225 4.63693ZM1.75132 8.23394L12.8876 13.4081V25.7551L1.75132 20.581V8.23394ZM14.6374 25.776V13.4161C15.4811 13.0384 25.1239 8.71741 26.2511 8.21311V20.573L14.6374 25.776Z"
+            fill="white"></path>
+        </svg>
+      </div>
+
+      <div class="perk-2 relative flex flex-col items-center opacity-50 transition-opacity duration-300">
+        <svg viewBox="0 0 100 100" class="w-10 h-10 md:w-14 md:h-14">
+          <circle cx="50" cy="50" r="45" class="fill-primary stroke-transparent stroke-[5]"></circle>
+          <circle cx="50" cy="50" r="45" class="progress-circle-2 fill-none stroke-white stroke-[5]"></circle>
+        </svg>
+        <svg
+          class="w-4 h-4 absolute left-1/2 top-1/2 -translate-1/2 md:w-5 md:h-5"
+          width="27"
+          height="20"
+          viewBox="0 0 27 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.0689 0.42608C13.1622 -0.142027 12.0343 -0.142027 11.1276 0.42608L5.92166 3.59862C5.76107 3.69463 5.58024 3.74398 5.39563 3.74131H2.94123C1.32014 3.74931 0.0075749 5.1322 0 6.84181V13.1575C0.0075872 14.8671 1.32014 16.25 2.94123 16.258H5.39563C5.57898 16.262 5.75981 16.31 5.92166 16.4007L11.1276 19.5733C11.5727 19.852 12.0811 20 12.5983 20C14.2219 19.984 15.5319 18.5958 15.5382 16.8848V3.11451C15.5458 2.00499 14.9831 0.976845 14.0689 0.42608ZM13.6503 16.8835V16.8848C13.6554 17.2862 13.4543 17.6596 13.123 17.861C12.793 18.061 12.3858 18.0583 12.0583 17.8516L6.86623 14.6938C6.4186 14.4191 5.91279 14.2724 5.3956 14.267H2.9412C2.35952 14.267 1.88913 13.771 1.88913 13.1575V6.84181C1.88913 6.22837 2.35952 5.73229 2.9412 5.73229H5.3956C5.91279 5.73363 6.42112 5.5856 6.86623 5.30556L12.0596 2.1477H12.0583C12.3858 1.93833 12.7968 1.93833 13.1243 2.1477C13.4581 2.33973 13.6617 2.71447 13.6503 3.11451L13.6503 16.8835ZM26.7063 13.7963V13.7976C27.0768 14.191 27.0768 14.8258 26.7063 15.2205C26.5242 15.4006 26.2827 15.5019 26.0323 15.5046C25.7858 15.5032 25.5493 15.4006 25.371 15.2205L21.7697 11.4226L18.1684 15.2205C17.9863 15.4006 17.7448 15.5019 17.4944 15.5046C17.2478 15.5032 17.0114 15.4006 16.833 15.2205C16.4626 14.8258 16.4626 14.191 16.833 13.7976L20.4344 9.99965L16.833 6.20168C16.4613 5.8083 16.4613 5.17219 16.833 4.77877C17.2061 4.38672 17.8092 4.38672 18.1823 4.77877L21.7697 8.57674L25.371 4.77877C25.744 4.38672 26.3472 4.38672 26.7202 4.77877C27.0933 5.17216 27.0933 5.80827 26.7202 6.20168L23.0924 9.99965L26.7063 13.7963Z"
+            fill="white"></path>
+        </svg>
+      </div>
+
+      <div class="perk-2 relative flex flex-col items-center opacity-50 transition-opacity duration-300">
+        <svg viewBox="0 0 100 100" class="w-10 h-10 md:w-14 md:h-14">
+          <circle cx="50" cy="50" r="45" class="fill-primary stroke-transparent stroke-[5]"></circle>
+          <circle cx="50" cy="50" r="45" class="progress-circle-2 fill-none stroke-white stroke-[5]"></circle>
+        </svg>
+        <svg
+          class="w-4 h-4 absolute top-1/2 left-1/2 -translate-1/2 md:w-5 md:h-5"
+          width="13"
+          height="28"
+          viewBox="0 0 13 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7.92446 11.9367C5.18074 10.6991 4.08324 10.0509 4.08324 8.57731C4.08324 7.36842 4.79705 6.18947 7.04674 6.18947C8.44325 6.18947 9.44536 6.48536 10.202 6.79852C10.873 7.07599 11.6178 6.67072 11.8118 5.92698L11.9447 5.41809C12.1055 4.80215 11.8343 4.13899 11.291 3.87877C10.4496 3.47465 9.39822 3.20871 7.9244 3.12465V1.31134C7.9244 0.587175 7.3778 0 6.70366 0H6.45716C5.78302 0 5.23642 0.587175 5.23642 1.31134L5.23534 3.24211C2.08006 3.86152 0.131462 6.18947 0.131462 9.13684C0.131462 12.2902 2.16138 13.9113 5.45375 15.2963C7.92417 16.2403 9.07629 17.0946 9.07629 18.7158C9.07629 20.2781 7.81374 21.4571 5.56404 21.4571C4.31971 21.4571 3.0036 21.1209 1.8526 20.6247C1.17202 20.3311 0.405725 20.7225 0.207436 21.4812L0.0455997 22.103C-0.119452 22.7373 0.175285 23.4086 0.740092 23.6642C1.9512 24.211 3.54391 24.5933 5.15255 24.7291V26.6887C5.15255 27.4128 5.69916 28 6.37329 28C7.04743 28 7.59403 27.4128 7.59403 26.6887V24.4044C11.1074 23.7263 13 21.221 13 18.1849C13 15.2675 11.5456 13.4402 7.9241 11.9368L7.92446 11.9367Z"
+            fill="white"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Text Container -->
+    <div class="text-sm font-semibold text-white">
+      <div class="perk-text-2 hidden">
+        <span class="font-semibold">Dizajn - </span>
+        <p class="inline font-normal text-white/80">Termoelektrični aparati su manjih dimenzija, idealni za manje prostore i lako prenosivi.</p>
+      </div>
+      <div class="perk-text-2 hidden">
+        <span class="font-semibold">Tihi rad - </span>
+        <p class="inline font-normal text-white/80">Ovi aparati rade gotovo nečujno, što ih čini savršenim za kancelarije, spavaće sobe i kuhinje.</p>
+      </div>
+      <div class="perk-text-2 hidden">
+        <span class="font-semibold">Efikasnost - </span>
+        <p class="inline font-normal text-white/80">Aparat koristi energetski efikasan kompresorski sistem koji štedi struju i smanjuje troškove.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const perks = document.querySelectorAll(".perk-2");
+    const texts = document.querySelectorAll(".perk-text-2");
+    const circles = document.querySelectorAll(".progress-circle-2");
+    let currentIndex = 0;
+    let intervalTime = 3000;
+    let intervalId: any;
+
+    function updatePerks() {
+      perks.forEach((perk, index) => {
+        const circle = circles[index] as any;
+
+        perk.classList.toggle("opacity-100", index === currentIndex);
+        perk.classList.toggle("opacity-50", index !== currentIndex);
+        texts[index].classList.toggle("hidden", index !== currentIndex);
+
+        // Reset stroke animation when switching to a new perk (without animation)
+        if (index === currentIndex) {
+          circle.style.transition = "none"; // Disable transition
+          circle.style.strokeDashoffset = "283"; // Reset to full circle immediately
+          setTimeout(() => {
+            // Enable transition and start the animation from 0
+            circle.style.transition = `stroke-dashoffset ${intervalTime}ms linear`;
+            circle.style.strokeDashoffset = "0"; // Start filling
+          }, 50); // Small delay to ensure the reset happens first
+        } else {
+          circle.style.transition = "none";
+          circle.style.strokeDashoffset = "283"; // Reset the inactive circle stroke instantly
+        }
+      });
+
+      currentIndex = (currentIndex + 1) % perks.length;
+    }
+
+    function startInterval() {
+      intervalId = setInterval(updatePerks, intervalTime);
+      updatePerks();
+    }
+
+    function cleanup() {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    }
+
+    startInterval();
+
+    // Cleanup on page unload
+    window.addEventListener("beforeunload", cleanup);
+
+    // Cleanup if the component is removed from the DOM
+    const observer = new MutationObserver(() => {
+      if (!document.body.contains(perks[0])) {
+        cleanup();
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>

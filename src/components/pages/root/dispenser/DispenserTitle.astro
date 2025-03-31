@@ -1,0 +1,12 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h2 class="uppercase font-display text-5xl lg:text-7xl text-white">
+  Aparat <br />
+  <span class="text-primary">{title}</span>
+</h2>

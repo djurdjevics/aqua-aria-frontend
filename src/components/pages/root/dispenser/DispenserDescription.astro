@@ -1,0 +1,11 @@
+---
+interface Props {
+  description: string;
+}
+
+const { description } = Astro.props;
+---
+
+<p class="text-white/80 text-sm lg:text-base lg:max-w-[500px]">
+  {description}
+</p>
