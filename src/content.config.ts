@@ -1,42 +1,61 @@
-import {defineCollection, z} from "astro:content";
+import { defineCollection, z } from "astro:content";
 
-import {glob, file} from "astro/loaders";
+import { glob, file } from "astro/loaders";
 
 const dispensers = defineCollection({
   loader: file("src/data/dispensers/dispensers.json"),
-  schema: ({ image }) => z.object({
-    slug: z.string(),
-    name: z.string(),
-    description: z.string(),
-    price: z.number().gt(0),
-    images: z.array(image()),
-    availableColors: z.array(z.string()),
-    type: z.enum(['Termoelektrični', "Kompresorski"]),
-    mainSpecs: z.array(z.object({
-      category: z.enum(["dimensions", "weight", "volume"]),
-      value: z.string()
-    })),
-    otherSpecs: z.array(z.object({
-      category:z.string(),
-      value: z.string()
-    })),
-  })
+  schema: ({ image }) =>
+    z.object({
+      slug: z.string(),
+      name: z.string(),
+      description: z.string(),
+      price: z.number().gt(0),
+      images: z.array(image()),
+      availableColors: z.array(z.string()),
+      type: z.enum(["Termoelektrični", "Kompresorski"]),
+      mainSpecs: z.array(
+        z.object({
+          category: z.enum(["dimensions", "weight", "volume"]),
+          value: z.string(),
+        }),
+      ),
+      otherSpecs: z.array(
+        z.object({
+          category: z.string(),
+          value: z.string(),
+        }),
+      ),
+    }),
 });
 
 const waters = defineCollection({
   loader: file("src/data/waters/waters.json"),
-  schema: ({ image }) => z.object({
-    id:z.number(),
-    name: z.string(),
-    image: image(),
-    volume: z.string(),
-    pricePerBalloon: z.number(),
-    description: z.string(),
-    composition: z.array(z.object({
-      substance: z.string(),
-      amount: z.string()
-    }))
-  })
-})
+  schema: ({ image }) =>
+    z.object({
+      id: z.number(),
+      name: z.string(),
+      image: image(),
+      volume: z.string(),
+      pricePerBalloon: z.number(),
+      description: z.string(),
+      composition: z.array(
+        z.object({
+          substance: z.string(),
+          amount: z.string(),
+        }),
+      ),
+    }),
+});
 
-export const collections = {dispensers, waters};
+const testimonails = defineCollection({
+  loader: file("src/data/testimonials/testimonials.json"),
+  schema: ({ image }) =>
+    z.object({
+      id: z.number(),
+      fullName: z.string(),
+      avatar: image(),
+      testimonial: z.string(),
+    }),
+});
+
+export const collections = { dispensers, waters, testimonails };

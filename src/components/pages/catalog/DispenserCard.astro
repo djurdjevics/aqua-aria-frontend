@@ -2,6 +2,8 @@
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import ColorIndicator from "./ColorIndicator.astro";
+import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
+import ButtonLinkSecondary from "@components/ButtonLinkSecondary.astro";
 
 interface Props {
   dispenser: CollectionEntry<"dispensers">;
@@ -12,18 +14,21 @@ const { dispenser } = Astro.props;
 
 <a class="block relative rounded-2xl border group border-slate-200 overflow-hidden h-full" href={dispenser.data.slug}>
   <div class="relative w-full h-[600px]">
+    <div
+      class="absolute flex items-center justify-center inset-0 bg-white/30 backdrop-blur-xs opacity-0 inset-0 z-20 w-full h-full group-hover:opacity-100 transition duration-500"
+    >
+      <button class="px-12 py-3 cursor-pointer uppercase bg-primary rounded-full text-white font-semibold">Saznaj više</button>
+    </div>
     <Image quality={100} class="w-full h-full object-contain" src={dispenser.data.images[0]} alt={`${dispenser.data.name}`} width={800} height={1200} />
   </div>
-  <div
-    class="flex group-hover:bg-stone-300/10 backdrop-blur-sm transition duration-500 bottom-0 inset-x-0 bg-secondary justify-between items-center px-4 py-[10px] md:p-4 lg:p-7"
-  >
+  <div class="flex transition duration-500 bg-secondary justify-between items-center px-4 py-[10px] md:p-4 lg:p-7">
     <div class="space-y-1">
-      <p class="font-display group-hover:text-secondary transition duration-150 leading-[120%] text-bg text-lg lg:text-[2rem]">
+      <p class="font-display transition duration-150 leading-[120%] text-bg text-lg lg:text-[2rem]">
         {dispenser.data.type}
         <br />
         {dispenser.data.name}
       </p>
     </div>
-    <p class="text-bg font-semibold group-hover:text-secondary transition duration-500 lg:text-[28px]">{dispenser.data.price.toLocaleString("de-DE")} rsd</p>
+    <p class="text-bg font-semibold transition duration-500 lg:text-[28px]">{dispenser.data.price.toLocaleString("de-DE")} rsd</p>
   </div>
 </a>

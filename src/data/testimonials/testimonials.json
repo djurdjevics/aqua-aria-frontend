@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "fullName": "Jovan Cvetkov",
+    "avatar": "./jovan-avatar.png",
+    "testimonial": "Aparat servisiran u dogovorenom roku. Svaka preporuka!"
+  },
+  {
+    "id": 2,
+    "fullName": "Dušan Runjevac",
+    "avatar": "./dusan-avatar.png",
+    "testimonial": "Svaka čast za kompaniju, efikasna i profesionalna pre svega. Voda odlična."
+  },
+  {
+    "id": 3,
+    "fullName": "Ph Aqua Solution",
+    "avatar": "./ph-avatar.png",
+    "testimonial": "Svi naši aparati su kvalitetno servisirani u dogovorenom roku. Sve preporuke za Aqua Ariu!"
+  },
+  {
+    "id": 4,
+    "fullName": "Allimo Group",
+    "avatar": "./allimo-avatar.png",
+    "testimonial": "Sve pohvale, saradnja za preporuku. Sve na jednom mestu, popravka aparata, kupovina novih aparata."
+  },
+  {
+    "id": 5,
+    "fullName": "Ognjen Radivojević",
+    "avatar": "./ognjen-avatar.png",
+    "testimonial": "Odlična usluga, prilikom poručivanja voda stiže u istom danu."
+  },
+  {
+    "id": 6,
+    "fullName": "Antonije Erdeljan",
+    "avatar": "./antonije-avatar.png",
+    "testimonial": "Vrhunski kvalitet usluge, svaka preporuka!"
+  },
+  {
+    "id": 7,
+    "fullName": "Nebojša Kotlagin",
+    "avatar": "./nebojsa-avatar.png",
+    "testimonial": "Odlična saradnja, uvek dostupni i ljubazni. Aparati takođe fenomenalni, i više nego pristupačni. Svaka preporuka!"
+  }
+]
