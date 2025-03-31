@@ -1,133 +1,41 @@
 ---
+import { getCollection } from "astro:content";
+
+import HeroTestimonials from "./HeroTestimonials.astro";
+
 import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
 import ButtonLinkSecondary from "@components/ButtonLinkSecondary.astro";
-import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
-import { getEntries } from "astro:content";
-import { getEntry } from "astro:content";
-import { getCollection } from "astro:content";
-import { cn } from "src/utils/cn";
 
 const testimonialsCollection = await getCollection("testimonails");
 
 const testimonials = [testimonialsCollection[0].data, testimonialsCollection[1].data, testimonialsCollection[2].data];
 ---
 
-<div class="relative z-30 md:flex md:flex-col h-full md:justify-between md:overflow-visible lg:pt-8">
+<div class="relative z-30 md:flex md:flex-col h-full md:justify-between md:overflow-visible md:pt-3 lg:pt-8">
   <div>
     <div>
       <h1
-        class="font-display text-secondary text-left text-[3.5rem] leading-[98%] uppercase sm:text-[4.25rem] md:text-[4.25rem] lg:pl-1 lg:text-[7rem] lg:font-normal lg:tracking-tight"
+        class="font-display leading-16 text-secondary tracking-tight text-left text-5xl uppercase md:text-6xl lg:leading-none lg:text-8xl lg:font-normal lg:tracking-tight"
       >
-        <span class="text-secondary md:text-nowrap"> Iskoristi više od</span>
+        <span class="text-secondary md:text-nowrap">Iskoristi više od</span>
         <span class="md:text-nowrap">
           <span class="md:text-nowrap">svoje</span>
           <span class="text-primary md:text-nowrap">vode.</span>
         </span>
       </h1>
-      <p class="text-secondary/80 mt-3 text-sm leading-[140%] md:max-w-[500px] md:text-base">
+      <p class="text-secondary/80 mt-3 text-sm md:max-w-[500px] lg:text-base">
         Uz naše aparate, uvek imate pristup svežoj i kvalitetnoj vodi bez brige o instalaciji ili održavanju. Jednostavno postavi balon i uživaj u hidraciji
         bilo kada.
       </p>
     </div>
-    <div class="mt-4 flex items-center gap-x-5 gap-y-5 md:mt-[54px] md:flex-row md:gap-x-[18px]">
+    <div class="mt-4 flex w-full items-center gap-x-5 gap-y-5 md:mt-10 md:flex-row md:gap-x-4">
       <ButtonLinkPrimary href="/katalog" label="Katalog" />
       <ButtonLinkSecondary href="/kontakt" label="Usluge" />
     </div>
   </div>
-  {
-    testimonials.map((t) => (
-      <div id={`testimonial-${t?.id}`} class={cn("space-y-1 absolute bottom-0 bg-white transition-opacity duration-300 opacity-0")}>
-        <div class="flex items-center gap-x-1">
-          <svg
-            height="15"
-            width="15"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 53.867 53.867"
-            xml:space="preserve"
-          >
-            <polygon
-              style="fill:#EFCE4A;"
-              points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "
-            />
-          </svg>
-          <svg
-            height="15"
-            width="15"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 53.867 53.867"
-            xml:space="preserve"
-          >
-            <polygon
-              style="fill:#EFCE4A;"
-              points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "
-            />
-          </svg>
-          <svg
-            height="15"
-            width="15"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 53.867 53.867"
-            xml:space="preserve"
-          >
-            <polygon
-              style="fill:#EFCE4A;"
-              points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "
-            />
-          </svg>
-          <svg
-            height="15"
-            width="15"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 53.867 53.867"
-            xml:space="preserve"
-          >
-            <polygon
-              style="fill:#EFCE4A;"
-              points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "
-            />
-          </svg>
-          <svg
-            height="15"
-            width="15"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 53.867 53.867"
-            xml:space="preserve"
-          >
-            <polygon
-              style="fill:#EFCE4A;"
-              points="26.934,1.318 35.256,18.182 53.867,20.887 40.4,34.013 43.579,52.549 26.934,43.798 
-	10.288,52.549 13.467,34.013 0,20.887 18.611,18.182 "
-            />
-          </svg>
-        </div>
-        <p class="text-lg leading-normal pr-4">"{t?.testimonial}"</p>
-        <div class="flex items-center gap-x-2 justify-start mt-2">
-          <img src={t?.avatar.src} class="rounded-full w-6 h-6" />
-          <p class="text-sm text-secondary/80">{t?.fullName}</p>
-        </div>
-      </div>
-    ))
-  }
+  <div class="relative pt-32 md:pt-32">
+    {testimonials.map((t) => <HeroTestimonials id={t.id} fullName={t.fullName} testimonial={t.testimonial} avatar={t.avatar} />)}
+  </div>
 </div>
 
 <script>
@@ -141,7 +49,7 @@ const testimonials = [testimonialsCollection[0].data, testimonialsCollection[1].
   const testimonials = document.querySelectorAll("[id^='testimonial-']");
 
   testimonials.forEach((t, i) => {
-    t.classList.add("opacity-0", "transition-opacity", "duration-500", "absolute", "left-0", "right-0");
+    t.classList.add("opacity-0", "transition-opacity", "duration-500", "left-0", "right-0");
   });
   testimonials[activeIndex].classList.remove("opacity-0");
   testimonials[activeIndex].classList.add("opacity-100");

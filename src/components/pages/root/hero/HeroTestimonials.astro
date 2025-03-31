@@ -1,0 +1,21 @@
+---
+import HeroStars from "./HeroStars.astro";
+
+interface Props {
+  id: number;
+  fullName: string;
+  avatar: ImageMetadata;
+  testimonial: string;
+}
+
+const { id, fullName, avatar, testimonial } = Astro.props;
+---
+
+<div id={`testimonial-${id}`} class={"space-y-1 absolute bottom-0 bg-white transition-opacity duration-300 opacity-0"}>
+  <HeroStars />
+  <p class="text-sm lg:text-lg leading-normal pr-4">"{testimonial}"</p>
+  <div class="flex items-center gap-x-2 justify-start mt-2">
+    <img src={avatar.src} class="rounded-full w-6 h-6" />
+    <p class="text-xs lg:text-sm text-secondary/80">{fullName}</p>
+  </div>
+</div>
