@@ -1,0 +1,62 @@
+---
+import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
+import Eyebrow from "@components/Eyebrow.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const watersCollection = await getCollection("waters");
+---
+
+<section class="relative mx-auto max-w-7xl px-4 py-14 lg:py-[120px]">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr] md:items-center md:justify-items-center md:gap-x-12">
+    <div class="mx-auto relative rounded-sm overflow-hidden hidden md:block">
+      <Image src={watersCollection[0].data.image} alt={watersCollection[0].data.name} class="w-full h-full" />
+      <div class="absolute inset-0 bg-gradient-to-bl from-white to-transparent"></div>
+    </div>
+    <div class="flex h-full flex-col items-start justify-between">
+      <div>
+        <span class="text-primary text-lg md:text-xl lg:text-3xl font-medium mb-3 block">U našoj ponudi</span>
+        <div class="mx-auto relative rounded-sm overflow-hidden block md:hidden">
+          <Image src={watersCollection[0].data.image} alt={watersCollection[0].data.name} class="w-full h-full" />
+          <div class="absolute inset-0 bg-gradient-to-b from-white to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent"></div>
+          <div class="absolute top-0">
+            <h2 class="font-display text-secondary text-7xl block">
+              {watersCollection[0].data?.name}
+            </h2>
+            <div class="mt-2 flex items-center gap-x-2 ml-2 md:mt-4 absolute">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.2332 0.470668L17.2549 0.478169C17.411 0.553185 17.486 0.628203 17.5355 0.786494V0.788745L17.537 0.790245C18.0824 2.83377 18.1454 4.98062 17.729 7.04816C17.7253 7.08341 17.7193 7.11717 17.7088 7.15018C17.6563 7.39699 17.5985 7.64004 17.5332 7.88459C17.0599 9.65348 16.2212 11.3465 15.0224 12.8477L14.9849 12.895C14.6789 13.2746 14.3495 13.6414 13.9962 13.9948L13.9865 14.0045C12.2311 15.7562 10.1164 16.9355 7.88309 17.5333C5.56434 18.1552 3.11193 18.1552 0.790878 17.5355L0.768372 17.5288L0.746618 17.5213L0.67085 17.4845L0.656597 17.4755L0.638593 17.4628C0.585331 17.4208 0.546321 17.3818 0.511064 17.3218L0.502812 17.3067L0.500561 17.3022L0.493059 17.2865L0.490809 17.2812L0.486308 17.2692L0.480306 17.2565L0.476556 17.2475L0.465303 17.2122V17.21L0.463803 17.2092C-0.1551 14.8882 -0.1551 12.436 0.466803 10.1163C1.06619 7.87997 2.24696 5.76155 4.00388 4.00551L4.00463 4.00401L4.01364 3.99576C4.36321 3.64543 4.72856 3.31911 5.10514 3.01528L5.1524 2.97777C6.652 1.7775 8.34668 0.940389 10.1156 0.467003C10.3587 0.401739 10.6032 0.343226 10.85 0.291464C10.883 0.280212 10.9168 0.27496 10.952 0.271209C13.0196 -0.14514 15.1665 -0.0828792 17.21 0.463252L17.2332 0.470668ZM16.8296 1.82173L12.1043 6.54694H16.8858C17.1589 4.98435 17.1394 3.379 16.8296 1.82173ZM11.1815 7.46971L6.52753 12.1237H14.4238C15.4763 10.7644 16.216 9.23919 16.6421 7.64735L16.6887 7.46956L11.1815 7.46971ZM5.60552 13.0457L1.8209 16.8295C3.7473 17.2136 5.74591 17.1521 7.646 16.642C9.73525 16.0831 11.7097 14.9826 13.3451 13.3465L13.3459 13.345L13.6354 13.0457L5.60552 13.0457ZM1.16967 16.1783L4.95353 12.3945V4.36476L4.65496 4.65357L4.65346 4.65507C3.01733 6.29043 1.91682 8.2649 1.3572 10.3541C0.847842 12.2543 0.786324 14.2527 1.16967 16.1783ZM5.8763 11.4725L10.5303 6.81849V1.3107L10.3525 1.35796C8.76065 1.78407 7.23564 2.52297 5.87615 3.57625L5.8763 11.4725ZM11.4531 5.89573L16.1784 1.17051C14.621 0.860688 13.0156 0.841195 11.4531 1.11425V5.89573Z"
+                  fill="#29A58C"></path>
+              </svg>
+
+              <span class="text-green text-base font-semibold uppercase"> 100% reciklabilno </span>
+            </div>
+          </div>
+          <div class="absolute bottom-0 py-4 bg-white">
+            <p class="text-secondary/80 mt-3 text-sm lg:text-base">
+              {watersCollection[0].data.description}
+            </p>
+          </div>
+        </div>
+        <h2 class="font-display text-secondary md:text-6xl lg:text-8xl hidden md:block">
+          {watersCollection[0].data?.name}
+        </h2>
+        <p class="text-secondary/80 mt-3 text-sm hidden md:block lg:text-base">
+          {watersCollection[0].data.description}
+        </p>
+        <div class="mt-6 md:flex items-center gap-x-2 md:mt-4 hidden">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17.2332 0.470668L17.2549 0.478169C17.411 0.553185 17.486 0.628203 17.5355 0.786494V0.788745L17.537 0.790245C18.0824 2.83377 18.1454 4.98062 17.729 7.04816C17.7253 7.08341 17.7193 7.11717 17.7088 7.15018C17.6563 7.39699 17.5985 7.64004 17.5332 7.88459C17.0599 9.65348 16.2212 11.3465 15.0224 12.8477L14.9849 12.895C14.6789 13.2746 14.3495 13.6414 13.9962 13.9948L13.9865 14.0045C12.2311 15.7562 10.1164 16.9355 7.88309 17.5333C5.56434 18.1552 3.11193 18.1552 0.790878 17.5355L0.768372 17.5288L0.746618 17.5213L0.67085 17.4845L0.656597 17.4755L0.638593 17.4628C0.585331 17.4208 0.546321 17.3818 0.511064 17.3218L0.502812 17.3067L0.500561 17.3022L0.493059 17.2865L0.490809 17.2812L0.486308 17.2692L0.480306 17.2565L0.476556 17.2475L0.465303 17.2122V17.21L0.463803 17.2092C-0.1551 14.8882 -0.1551 12.436 0.466803 10.1163C1.06619 7.87997 2.24696 5.76155 4.00388 4.00551L4.00463 4.00401L4.01364 3.99576C4.36321 3.64543 4.72856 3.31911 5.10514 3.01528L5.1524 2.97777C6.652 1.7775 8.34668 0.940389 10.1156 0.467003C10.3587 0.401739 10.6032 0.343226 10.85 0.291464C10.883 0.280212 10.9168 0.27496 10.952 0.271209C13.0196 -0.14514 15.1665 -0.0828792 17.21 0.463252L17.2332 0.470668ZM16.8296 1.82173L12.1043 6.54694H16.8858C17.1589 4.98435 17.1394 3.379 16.8296 1.82173ZM11.1815 7.46971L6.52753 12.1237H14.4238C15.4763 10.7644 16.216 9.23919 16.6421 7.64735L16.6887 7.46956L11.1815 7.46971ZM5.60552 13.0457L1.8209 16.8295C3.7473 17.2136 5.74591 17.1521 7.646 16.642C9.73525 16.0831 11.7097 14.9826 13.3451 13.3465L13.3459 13.345L13.6354 13.0457L5.60552 13.0457ZM1.16967 16.1783L4.95353 12.3945V4.36476L4.65496 4.65357L4.65346 4.65507C3.01733 6.29043 1.91682 8.2649 1.3572 10.3541C0.847842 12.2543 0.786324 14.2527 1.16967 16.1783ZM5.8763 11.4725L10.5303 6.81849V1.3107L10.3525 1.35796C8.76065 1.78407 7.23564 2.52297 5.87615 3.57625L5.8763 11.4725ZM11.4531 5.89573L16.1784 1.17051C14.621 0.860688 13.0156 0.841195 11.4531 1.11425V5.89573Z"
+              fill="#29A58C"></path>
+          </svg>
+
+          <span class="text-green text-base font-semibold uppercase"> 100% reciklabilno </span>
+        </div>
+      </div>
+      <ButtonLinkPrimary href={"/katalog?q=vode"} label="Katalog" classNames="w-auto" />
+    </div>
+  </div>
+</section>

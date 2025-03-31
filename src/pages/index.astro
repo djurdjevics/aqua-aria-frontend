@@ -4,7 +4,7 @@ import HeroSection from "@components/pages/root/hero/HeroSection.astro";
 import DispenserSection from "@components/pages/root/dispenser/DispenserSection.astro";
 import OurMissionSection from "@components/pages/root/our-mission/OurMissionSection.astro";
 import ServicesSection from "@components/pages/root/services/ServicesSection.astro";
-import { WatersSection } from "@components/pages/root/waters/WatersSection";
+import WatersSection from "@components/pages/root/waters/WatersSection.astro";
 import { AnanasSection } from "../components/pages/root/ananas/AnanasSection";
 import { TestimonialsSection } from "../components/pages/root/testimonials/TestimonialsSection";
 import { CallToAction } from "../components/CallToAction";
@@ -17,7 +17,7 @@ import WaveIntersection from "@components/pages/root/intersection/WaveIntersecti
   <DispenserSection />
   <OurMissionSection />
   <ServicesSection />
-  <WatersSection client:load />
+  <WatersSection />
   <AnanasSection />
   <TestimonialsSection client:only="react" />
   <CallToAction />
