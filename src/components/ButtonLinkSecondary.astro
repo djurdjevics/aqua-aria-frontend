@@ -1,15 +1,21 @@
 ---
+import { cn } from "src/utils/cn";
+
 interface Props {
   href: string;
   label: string;
+  classNames?: string;
 }
 
-const { href, label } = Astro.props;
+const { href, label, classNames } = Astro.props;
 ---
 
 <a
   href={href}
-  class="inline-flex w-full items-center cursor-pointer justify-center gap-2 whitespace-nowrap rounded-sm text-sm lg:text-base font-semibold uppercase transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-white border-2 border-secondary/50 lg:w-auto text-secondary hover:bg-secondary hover:text-bg px-[2.125rem] py-3 sm:px-8 sm:py-3 lg:px-16 lg:py-4"
+  class={cn(
+    "inline-flex w-full items-center cursor-pointer justify-center gap-2 whitespace-nowrap rounded-sm text-sm lg:text-base font-semibold uppercase transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-white border-2 border-secondary/50 lg:w-auto text-secondary hover:bg-secondary hover:text-bg px-[2.125rem] py-3 sm:px-8 sm:py-3 lg:px-16 lg:py-4",
+    classNames
+  )}
 >
   {label}
 </a>

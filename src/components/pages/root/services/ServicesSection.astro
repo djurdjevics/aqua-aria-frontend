@@ -4,6 +4,9 @@ import { ServicesContent } from "./ServicesContent";
 import { ServicesContentMobile } from "./ServicesContentMobile";
 import { ServicesHeader } from "./ServicesHeader";
 
+import ServiceCard from "./ServiceCard.astro";
+import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
+
 export const services = [
   {
     id: "01",
@@ -46,13 +49,18 @@ export const services = [
 ];
 ---
 
-<div class="bg-secondary py-14 md:py-[4.5rem] lg:py-[120px]">
-  <Container className="hidden lg:block">
-    <ServicesHeader />
-    <ServicesContent client:load />
-  </Container>
-  <section class="px-4 lg:hidden">
-    <ServicesHeader />
-    <ServicesContentMobile client:load />
-  </section>
-</div>
+<section class="py-14">
+  <div class="max-w-7xl mx-auto px-4 space-y-4">
+    <div class="flex items-center justify-between">
+      <div class="space-y-4">
+        <h3 class="text-4xl md:text-5xl lg:text-6xl font-display uppercase">Naše usluge</h3>
+        <p class="text-sm md:text-base text-secondary/80">Nudimo razne ulsluge kako bi Vam omogućili prijatno iskustvo kada je u pitanju Vaša hidratacija.</p>
+        <ButtonLinkPrimary label="Kontakt" href="/kontakt" classNames="lg:hidden inline-flex w-auto" />
+      </div>
+      <ButtonLinkPrimary label="Kontakt" href="/kontakt" classNames="hidden lg:inline-flex" />
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:mt-12">
+      {services.map((s) => <ServiceCard service={s} />)}
+    </div>
+  </div>
+</section>
