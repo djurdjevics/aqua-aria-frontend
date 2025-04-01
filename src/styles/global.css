@@ -122,3 +122,9 @@
   transform: rotate(-90deg); /* Rotate to start from the top */
   transform-origin: 50% 50%; /* Ensure rotation happens around the center */
 }
+
+.avatar {
+  transition:
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
+}
