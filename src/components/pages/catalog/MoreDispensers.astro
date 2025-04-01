@@ -1,16 +1,15 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection } from "astro:content";
 import DispenserCardSecondary from "@components/pages/catalog/DispenserCardSecondary.astro";
+import DispenserCard from "./DispenserCard.astro";
 
 const dispensers = await getCollection("dispensers");
 
 const params = Astro.params;
 
-const filteredDispensers = dispensers.filter(dispenser => dispenser.id !== `/katalog/${params.slug}`);
-
+const filteredDispensers = dispensers.filter((dispenser) => dispenser.id !== `/katalog/${params.slug}`);
 ---
-<div class="mt-9 space-y-4">
-  {filteredDispensers.map((dispenser) => (
-    <DispenserCardSecondary dispenser={dispenser} />
-  ))}
+
+<div class="mt-9 gap-y-4 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+  {filteredDispensers.map((dispenser) => <DispenserCard dispenser={dispenser} />)}
 </div>
