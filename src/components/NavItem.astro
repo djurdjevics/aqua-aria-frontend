@@ -1,0 +1,24 @@
+---
+import "../styles/wave.css";
+
+interface Props {
+  label: string;
+  href: string;
+}
+
+const { label, href } = Astro.props;
+---
+
+<li>
+  <a href={href} class="md:hover:text-primary text-secondary/80 relative block text-2xl transition-all duration-200 sm:text-2xl md:text-base">
+    {label}
+    <svg viewBox="0 0 455.555 48" fill="transparent" class="absolute -bottom-1 left-0 w-full">
+      <path
+        d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"
+      ></path>
+      <path
+        d="M0 2c37.962 0 37.962 44 75.924 44s37.962-44 75.924-44 37.962 44 75.923 44c37.962 0 37.962-44 75.925-44 37.965 0 37.965 44 75.929 44s37.965-44 75.93-44"
+      ></path>
+    </svg>
+  </a>
+</li>

@@ -1,0 +1,41 @@
+---
+import { cn } from "src/utils/cn";
+import Logo from "./Logo.astro";
+import NavItem from "./NavItem.astro";
+---
+
+<div class="block md:hidden">
+  <button id="menu-open" class="cursor-pointer">
+    <img src="/menu.svg" width={20} height={16} />
+  </button>
+  <nav id="nav" class={cn("fixed inset-0 z-50 h-screen w-full translate-x-full bg-white px-4 py-7 transition-all duration-500", "transition-all duration-500")}>
+    <div class="items-center justify-between flex">
+      <Logo />
+      <button id="menu-close" class="cursor-pointer">
+        <img src="/close.svg" width={20} height={16} />
+      </button>
+    </div>
+    <ul class="flex h-full flex-col items-center justify-center gap-x-10 gap-y-6">
+      <NavItem label="O nama" href="/o-nama" />
+      <NavItem label="Katalog" href="/katalog" />
+      <NavItem label="Usluge" href="/usluge" />
+      <NavItem label="Kontakt" href="/kontakt" />
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const openBtn = document.getElementById("menu-open");
+  const closeBtn = document.getElementById("menu-close");
+  const nav = document.getElementById("nav");
+
+  openBtn?.addEventListener("click", () => {
+    nav?.classList.remove("translate-x-full");
+    document.body.classList.add("overflow-y-hidden");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    nav?.classList.add("translate-x-full");
+    document.body.classList.remove("overflow-y-hidden");
+  });
+</script>

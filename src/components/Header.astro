@@ -1,0 +1,31 @@
+---
+import Logo from "./Logo.astro";
+import MobileNavigation from "./MobileNavigation.astro";
+import Navigation from "./Navigation.astro";
+---
+
+<header id="navbar" class="bg-white transition-all duration-300 py-6 md:py-6">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4">
+    <Logo />
+    <Navigation />
+    <MobileNavigation />
+  </div>
+</header>
+<div id="navbar-placeholder" class="h-[80px] hidden"></div>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar")!;
+    const placeholder = document.getElementById("navbar-placeholder")!;
+
+    if (window.scrollY > 300) {
+      navbar.classList.remove("md:py-6", "py-6");
+      navbar.classList.add("fixed-navbar", "py-3", "md:py-4");
+      placeholder.classList.remove("hidden");
+    } else {
+      navbar.classList.add("md:py-6", "py-6");
+      navbar.classList.remove("fixed-navbar", "py-3", "md:py-4");
+      placeholder.classList.add("hidden");
+    }
+  });
+</script>
