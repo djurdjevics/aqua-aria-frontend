@@ -1,5 +1,7 @@
 ---
 import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
+import AnanasPicture from "../../../../assets/images/ananas.png";
+import Image from "astro/components/Image.astro";
 ---
 
 <section class="bg-secondary py-14 md:my-20 md:py-[px]">
@@ -23,7 +25,7 @@ import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
       <ButtonLinkPrimary href="#" label="Poruči" classNames="mt-6 sm:w-auto" />
     </div>
     <div class="relative ml-20 hidden w-full md:mx-auto md:-mt-[300px] md:block md:w-[215px] md:shrink-0 lg:-mt-[328px] lg:w-[18.75rem]">
-      <img src="ananas.png" class="hidden w-full object-cover md:block md:h-full md:w-full" width={300} height={680} alt="Ananas fruit" />
+      <Image src={AnanasPicture} class="hidden w-full object-cover md:block md:h-full md:w-full" width={300} height={680} alt="Ananas fruit" />
     </div>
   </div>
 </section>

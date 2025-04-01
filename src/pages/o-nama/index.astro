@@ -1,91 +1,139 @@
 ---
-
 import RootLayout from "../../layouts/RootLayout.astro";
 import Container from "../../components/Container.astro";
 
-import TestimonialCard from "@components/pages/about/TestimonialCard.astro";
+import { Image } from "astro:assets";
 
-import {Image} from "astro:assets"
-
-import aboutImage1 from "@assets/images/o-nama-img-1.png";
-import aboutImage2 from "@assets/images/our-mission-img.jpg"
-import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
-import {CallToAction} from "@components/CallToAction";
+import aboutImage1 from "@assets/images/o-nama-img-1.jpg";
+import aboutImage2 from "@assets/images/our-mission-img.jpg";
+import CallToAction from "@components/CallToAction.astro";
+import TestimonialsSection from "@components/pages/root/testimonials/TestimonialsSection.astro";
+import WaveIntersection from "@components/pages/root/intersection/WaveIntersection.astro";
 ---
 
 <RootLayout title="Aqua Aria | O nama">
-  <div class="relative md:pb-24">
-  <Container className="pt-9">
-    <h1 class="text-4xl font-display space-y-2 sm:text-5xl md:text-6xl lg:text-7xl">
-      Naša misija je da vam obezbedimo pristup vrhunskoj <span class="text-primary">hidrataciji</span>
+  <Container className="py-4 md:pt-9 md:pb-12">
+    <h1 id="split-header-types" class="text-4xl leading-[120%] block font-display md:leading-none space-y-2 sm:text-5xl md:text-6xl lg:text-7xl">
+      Naša misija je da <span>vam pružimo</span>
+      <span class="text-primary">vrhunsku hidrataciju</span>
     </h1>
-    <p class="text-sm text-secondary/80 lg:text-base lg:max-w-[500px] lg:mt-3 lg:mb-5">Pristup kvalitetnoj vodi za piće potrebno je da ima svaki dom i poslovni prostor. Na nama je da to i obezbedimo svojim klijentima.</p>
-    <div class="w-full relative pb-14 h-full">
-      <Image src={aboutImage1} alt="Landscape of a mountain river" width={400} height={400} class="rounded-2xl mt-5 w-full" />
-      <div class="grid grid-cols-2 mt-5 gap-y-5 pb-14 md:absolute md:grid-cols-1 md:bg-white md:w-[180px] md:top-0 md:inset-y-0 md:h-full md:pb-0 md:mt-0 md:right-[20%] md:gap-y-0 lg:w-[270px]">
-        <div class="flex flex-col items-center md:self-start">
-          <span class="text-5xl font-display lg:text-7xl">50+</span>
-          <p class="text-sm font-medium text-center lg:text-2xl">Prodatih aparata</p>
+    <p class="text-sm text-secondary/80 mt-2 mb-2 md:text-base max-w-[450px] md:text-right md:ml-auto xl:-mt-10 lg:mb-5">
+      Pristup kvalitetnoj vodi za piće potrebno je da ima svaki dom i poslovni prostor. Na nama je da to i obezbedimo svojim klijentima.
+    </p>
+    <div class="w-full relative h-full rounded-sm overflow-hidden">
+      <Image src={aboutImage1} alt="Landscape of a mountain river" width={2000} height={2000} class="w-full" />
+      <div
+        class="grid grid-cols-2 gap-y-2 p-2 justify-items-center items-center top-0 bottom-0 left-0 right-0 bg-white/70 absolute md:absolute md:grid-cols-1 md:bg-white md:w-[180px] md:top-0 md:bottom-0 md:h-full md:pb-0 md:mt-0 md:right-[20%] md:left-auto md:gap-y-0 lg:w-[270px]"
+      >
+        <div class="flex flex-col items-start md:items-center md:self-center">
+          <span class="text-4xl font-display sm:text-5xl lg:text-7xl">50+</span>
+          <p class="text-xs font-medium md:text-center lg:text-xl text-secondary/80">Prodatih <br class="md:hidden" /> aparata</p>
         </div>
-        <div class="flex flex-col items-center md:self-start">
-          <span class="text-5xl font-display lg:text-7xl">30+</span>
-          <p class="text-sm font-medium text-center lg:text-2xl">Uspešnih servisa</p>
+        <div class="flex flex-col items-start md:items-center md:self-center">
+          <span class="text-4xl font-display sm:text-5xl lg:text-7xl">30+</span>
+          <p class="text-xs font-medium md:text-center lg:text-xl text-secondary/80">Uspešnih <br class="md:hidden" /> servisa</p>
         </div>
-        <div class="flex flex-col items-center md:self-start">
-          <span class="text-5xl font-display lg:text-7xl">4</span>
-          <p class="text-sm font-medium text-center lg:text-2xl">Godine poslovanja</p>
+        <div class="flex flex-col items-start md:items-center md:self-center">
+          <span class="text-4xl font-display sm:text-5xl lg:text-7xl">4</span>
+          <p class="text-xs font-medium md:text-center lg:text-xl text-secondary/80">Godine <br class="md:hidden" /> poslovanja</p>
         </div>
-        <div class="flex flex-col items-center md:self-start">
-          <span class="text-5xl font-display lg:text-7xl">75+</span>
-          <p class="text-sm font-medium text-center lg:text-2xl">Zadovoljnih klijenata</p>
+        <div class="flex flex-col items-start md:items-center md:self-center">
+          <span class="text-4xl font-display sm:text-5xl lg:text-7xl">75+</span>
+          <p class="text-xs font-medium md:text-center lg:text-xl text-secondary/80">Zadovoljnih <br class="md:hidden" /> klijenata</p>
         </div>
       </div>
     </div>
   </Container>
   <section class="bg-secondary py-14">
     <Container className="space-y-2 md:grid md:grid-cols-2 md:items-center md:gap-x-4">
-      <div class="space-y-2">
-      <h2 class="font-display text-bg text-4xl md:text-5xl lg:text-7xl">Ko smo mi?</h2>
-        <p class="text-bg/80 text-sm lg:text-base lg:mt-3 lg:max-w-[500px]">
-          Aqua Aria je specijalizovani servis za kompresorske i termoelektrične aparate za vodu iz Zrenjanina, sa dugogodišnjim iskustvom u održavanju i popravci. Pored profesionalnog servisiranja, nudimo i prodaju novih i polovnih aparata, kao i savetovanje pri odabiru idealnog rešenja za vaše potrebe.
-        </p>
+      <div class="md:flex md:flex-col md:justify-between md:h-full lg:block lg:h-auto">
+        <div class="">
+          <h3 class="font-display text-white mb-3 text-5xl uppercase lg:text-7xl">Ko smo mi?</h3>
+          <p class="text-white/80 mb-3 text-sm lg:text-base lg:max-w-[450px]">
+            Aqua Aria je specijalizovani servis za kompresorske i termoelektrične aparate za vodu iz Zrenjanina, sa dugogodišnjim iskustvom u održavanju i
+            popravci. Pored profesionalnog servisiranja, nudimo i prodaju novih i polovnih aparata, kao i savetovanje pri odabiru idealnog rešenja za vaše
+            potrebe.
+          </p>
+          <div class="mb-3 overflow-hidden rounded-sm md:hidden">
+            <Image src={aboutImage2} alt={"Hands holding glass of water"} class={"rounded-2xl"} width={800} height={800} />
+          </div>
+          <p class="text-white/80 text-sm lg:text-base lg:max-w-[450px]">
+            Sa fokusom na pouzdanost, održivost i vrhunski kvalitet, naša vizija je da postanemo sinonim za sigurnu i praktičnu distribuciju vode i aparata.
+          </p>
+        </div>
       </div>
-      <Image src={aboutImage2} class="w-full rounded-2xl mt-5" alt="Hands holding glass of water" width={500} height={500} />
-    </Container>
-  </section>
-  <section class="py-17 lg:pt-[180px]">
-    <Container>
-      <h3 class="font-display text-4xl text-center md:text-5xl lg:text-7xl lg:pb-[180px]">“Verujemo da kvalitetna voda nije samo osnovna potreba, već i ključni deo zdravog i produktivnog života.”</h3>
-      <p class="text-sm text-secondary/80 mt-17 lg:text-base">Šta o nama kažu naši klijenti:</p>
-      <div class="space-y-4 mt-2 md:grid md:grid-cols-2 md:gap-x-4">
-        <TestimonialCard
-          quote={"Vrhunski kvalitet usluge, svaka preporuka!"}
-          fullName="Antonije Erdeljan"
-          location="Novi Sad, Srbija"
-        />
-        <TestimonialCard
-          quote={
-            "Odlicna usluga, prilikom porucivanja voda stize u istom danu"
-          }
-          fullName="Ognjen Radivojević"
-          location="Zrenjanin, Srbija"
-        />
-        <TestimonialCard
-          quote={"Aparat servisiran u dogovorenom roku. Svaka preporuka!"}
-          fullName="Jovan Cvetkov"
-          location="Beograd, Srbija"
-        />
-        <TestimonialCard
-          quote={
-            "Svaka čast za kompaniju, efikasna i profesionalna pre svega. Voda odlična."
-          }
-          fullName="Dušan Runjevac"
-          location="Zrenjanin, Srbija"
-        />
+      <div class="hidden relative h-full w-full overflow-hidden rounded-sm md:block md:max-h-[400px] lg:max-h-[600px]">
+        <Image alt="Hands holding glass of water" width={1200} height={800} src={aboutImage2} class="h-full w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-tr from-white/80 to-transparent"></div>
       </div>
     </Container>
   </section>
-    <WaveSecondaryMobile />
-  </div>
+  <section class="max-w-7xl mx-auto py-16 px-4 md:py-44">
+    <p id="reveal-type" class="font-display text-2xl sm:text-3xl text-center md:text-5xl lg:text-7xl">
+      “Verujemo da kvalitetna voda nije samo osnovna potreba, već i ključni deo zdravog i produktivnog života.”
+    </p>
+    <p class="font-display hidden text-2xl text-center md:text-5xl lg:text-7xl">
+      “Verujemo da kvalitetna voda nije samo osnovna potreba, već i ključni deo zdravog i produktivnog života.”
+    </p>
+  </section>
+  <TestimonialsSection />
+  <WaveIntersection />
   <CallToAction />
 </RootLayout>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  import SplitType from "split-type";
+
+  import Lenis from "lenis";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const splitTypes = document.querySelectorAll("#reveal-type");
+
+  const splitHeaderTypes = document.querySelectorAll("#split-header-types");
+
+  splitTypes.forEach((char: any, i) => {
+    const text = new SplitType(char, { types: "words" });
+
+    gsap.from(text.words, {
+      scrollTrigger: {
+        trigger: char,
+        start: "top 90%",
+        end: "bottom 20%",
+        scrub: true,
+        markers: false,
+      },
+      opacity: 0.2,
+      stagger: 0.1,
+    });
+  });
+
+  splitHeaderTypes.forEach((char: any, i) => {
+    const text = new SplitType(char, { types: "words" });
+
+    gsap.from(text.words, {
+      scrollTrigger: {
+        trigger: char,
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: false,
+        markers: false,
+      },
+      opacity: 0.2,
+      stagger: 0.1,
+    });
+  });
+
+  const lenis = new Lenis();
+
+  function raf(time: number) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
