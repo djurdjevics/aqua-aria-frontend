@@ -5,14 +5,16 @@ import NavItem from "./NavItem.astro";
 ---
 
 <div class="block md:hidden">
-  <button id="menu-open" class="cursor-pointer">
-    <img src="/menu.svg" width={20} height={16} />
+  <button id="menu-open" class="cursor-pointer" aria-label="Open navigation menu">
+    <img src="/menu.svg" width={20} height={16} alt="menu icon" />
+    <span class="sr-only">Open navigation menu</span>
   </button>
   <nav id="nav" class={cn("fixed inset-0 z-50 h-screen w-full translate-x-full bg-white px-4 py-7 transition-all duration-500", "transition-all duration-500")}>
     <div class="items-center justify-between flex">
       <Logo />
-      <button id="menu-close" class="cursor-pointer">
-        <img src="/close.svg" width={20} height={16} />
+      <button id="menu-close" class="cursor-pointer" aria-label="Close navigation menu">
+        <img src="/close.svg" width={20} height={16} alt="close menu icon" />
+        <span class="sr-only">Close navigation menu</span>
       </button>
     </div>
     <ul class="flex h-full flex-col items-center justify-center gap-x-10 gap-y-6">

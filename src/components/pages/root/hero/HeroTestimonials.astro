@@ -16,7 +16,7 @@ const { id, fullName, avatar, testimonial } = Astro.props;
   <HeroStars />
   <p class="text-sm lg:text-lg leading-normal pr-4">"{testimonial}"</p>
   <div class="flex items-center gap-x-2 justify-start mt-2">
-    <Image src={avatar} alt={"User avatar"} class="rounded-full w-6 h-6" width={24} height={24} />
+    <Image src={avatar} alt={"User avatar"} class="rounded-full w-6 h-6" />
     <p class="text-xs lg:text-sm text-secondary/80">{fullName}</p>
   </div>
 </div>
