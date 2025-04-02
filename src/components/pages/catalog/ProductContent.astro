@@ -14,9 +14,9 @@ const { data } = Astro.props;
   <ProductEyebrow type={data.data.type} />
   <h1 class="font-display leading-[120%] text-secondary text-5xl mt-2 lg:text-7xl">{data.data.name}</h1>
   <span class="text-secondary text-xl lg:text-[28px]">{data.data.price.toLocaleString("de-DE")} rsd.</span>
-  <div class="flex items-center gap-x-1 pt-3">
+  <div class="flex items-center gap-x-2 pt-3">
     {data.data.mainSpecs.map((spec) => <MainProductSpec spec={spec} />)}
-    <div class="flex flex-col items-center justify-center border border-secondary rounded-2xl flex-1 h-16 lg:h-19">
+    <div class="flex flex-col items-center justify-center border border-secondary rounded-sm flex-1 h-16 lg:h-19">
       <span class="text-2xl lg:text-4xl">24</span>
       <span class="text-xs text-secondary/80 text-center">Meseci <br class="md:hidden" /> Garancije</span>
     </div>

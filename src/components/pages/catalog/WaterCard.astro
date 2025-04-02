@@ -10,8 +10,8 @@ interface Props {
 const { water } = Astro.props;
 ---
 
-<div class="bg-secondary rounded-2xl md:grid md:grid-cols-2">
-  <div class="w-full relative rounded-2xl overflow-hidden">
+<div class="bg-secondary rounded-sm md:grid md:grid-cols-2">
+  <div class="w-full relative rounded-sm overflow-hidden">
     <Image class="w-full h-full" src={water.data.image} alt={water.data.name} width={1200} height={600} />
   </div>
   <div class="py-6 px-4 md:p-[18px] lg:p-7">
