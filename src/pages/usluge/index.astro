@@ -1,50 +1,115 @@
 ---
-import RootLayout from "../../layouts/RootLayout.astro";
-import ServiceSection from "../../components/pages/services/ServiceSection.astro";
-import prodajaVodeImage from "@assets/images/prodaja-vode-img.png";
-import distribucijaVodeImage from "@assets/images/distribucija-vode-img.png";
-import otkupAparataImage from "@assets/images/otkup-aparata-img.png";
-import prodajaAparataImage from "@assets/images/prodaja-aparata-img.png";
-import servisAparataImage from "@assets/images/servis-aparata-img.png";
-import {Image} from "astro:assets";
-import { WaveSecondaryMobile } from "@assets/waves/WaveSecondary";
-import {CallToAction} from "@components/CallToAction";
+import CallToAction from "@components/CallToAction.astro";
+import Container from "@components/Container.astro";
+import WaveIntersection from "@components/pages/root/intersection/WaveIntersection.astro";
+import RootLayout from "@layouts/RootLayout.astro";
 ---
 
 <RootLayout title="Aqua Aria | Usluge">
-  <div class="relative pb-12 sm:pb-16 md:pb-40">
-  <ServiceSection id="prodaja-vode" title="Prodaja vode" layout="paragraphFirst">
-    <p slot="description" class="text-secondary/80 md:text-2xl">
-      Naša usluga prodaje vode omogućava vam jednostavan i pouzdan način da obezbedite kvalitetnu vodu za vaš dom ili poslovni prostor. Kontaktirajte nas i osigurajte neprekidan izvor sveže i čiste vode.
-    </p>
-    <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={prodajaVodeImage} width="300" height="300" alt="Balloons of water in front of the door" />
-  </ServiceSection>
-  <ServiceSection id="distribucija-vode" title="Distribucija vode" layout="imageFirst">
-    <p slot="description" class="text-secondary/80  md:text-2xl">
-      Naša usluga distribucije vode obezbeđuje pouzdanu i redovnu isporuku balona sa vodom direktno na vašu adresu. Fleksibilni termini dostave i brza isporuka omogućavaju vam jednostavno snabdevanje vodom kada vam je najpotrebnije. </p>
-      <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={distribucijaVodeImage} width="300" height="300" alt="Balloons of water" />
-  </ServiceSection>
-  <ServiceSection id="prodaja-aparata" title="Prodaja aparata" layout="paragraphFirst">
-    <p slot="description" class="text-secondary/80  md:text-2xl">
-      Nudimo širok izbor aparata za vodu koji odgovaraju različitim potrebama – bilo da vam je potreban uređaj za kancelariju, ugostiteljski objekat ili vaš dom. Naši aparati omogućavaju jednostavno i praktično korišćenje balona sa vodom, uz opcije za hladnu i toplu vodu.     </p>
-    <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={prodajaAparataImage} width="300" height="300" alt="Two persons talk next to the water dispenser" />
-  </ServiceSection>
-  <ServiceSection id="otkup-aparata" title="Otkup aparata" layout="imageFirst">
-    <p slot="description" class="text-secondary/80  md:text-2xl">
-      Ukoliko posedujete aparat za vodu koji vam više nije potreban, nudimo mogućnost otkupa po fer i konkurentnim uslovima. Bez obzira na stanje i model aparata, naš tim će izvršiti procenu i ponuditi vam najbolje rešenje. Kontaktirajte nas kako bismo dogovorili preuzimanje i pojednostavili proces prodaje vašeg aparata.  </p>
-      <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={otkupAparataImage} width="300" height="300" alt="Balloons of water" />
-  </ServiceSection>
-  <ServiceSection id="servis-aparata" title="Servis aparata" layout="paragraphFirst">
-    <p slot="description" class="text-secondary/80  md:text-2xl">
-      Redovno održavanje i servis aparata za vodu ključni su za njihovu dugotrajnost i ispravan rad. Naš tim pruža usluge popravke aparata, osiguravajući da vaša voda ostane higijenski ispravna i sveža. Bilo da je reč o zameni delova, otklanjanju kvarova ili preventivnom održavanju, stojimo vam na raspolaganju za brzu i pouzdanu uslugu. </p>
-      <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={servisAparataImage} width="300" height="300" alt="Balloons of water" />
-  </ServiceSection>
-  <ServiceSection id="sanatacija-aparata" title="Sanacija aparata" layout="imageFirst">
-    <p slot="description" class="text-secondary/80  md:text-2xl">
-      Sanacija aparata podrazumeva detaljno čišćenje, dezinfekciju i obnovu kako bi uređaj ponovo bio potpuno funkcionalan i siguran za upotrebu. Bilo da je aparat bio van upotrebe duži period ili je došlo do zagađenja sistema, naš tim obavlja temeljnu sanaciju, uklanjajući nečistoće, kamenac i bakterije. Na taj način obezbeđujemo da vaš aparat ponovo isporučuje kvalitetnu i bezbednu vodu. </p>
-    <Image slot="image" class="rounded-2xl w-full mt-5 sm:mt-0" src={servisAparataImage} width="300" height="300" alt="Balloons of water" />
-  </ServiceSection>
-    <WaveSecondaryMobile />
+  <div class="flex w-full max-w-7xl mx-auto px-4">
+    <!-- Fixed Sidebar -->
+    <div class="w-1/3 h-screen sticky top-20 bg-white py-6">
+      <h2 class="text-5xl mb-4 font-display">Naše usluge</h2>
+      <p class="text-gray-500 text-sm my-8">
+        Nudimo pouzdan servis i održavanje aparata, profesionalnu sanaciju kvarova, kao i prodaju visokokvalitetne vode. Sa dugogodišnjim iskustvom i stručnim
+        timom, osiguravamo kvalitetna i dugotrajna rešenja koja zadovoljavaju najviše standarde.
+      </p>
+      <div id="menu" class="space-y-8">
+        <div data-target="prodaja" class="active border-b pb-2 text-2xl font-semibold">Prodaja vode</div>
+        <div data-target="distribucija" class="text-gray-400 border-b pb-2 text-2xl font-semibold">Distribucija vode</div>
+        <div data-target="prodaja-a" class="text-gray-400 border-b pb-2 text-2xl font-semibold">Prodaja aparata</div>
+        <div data-target="otkup" class="text-gray-400 border-b pb-2 text-2xl font-semibold">Otkup aparata</div>
+        <div data-target="servis" class="text-gray-400 border-b pb-2 text-2xl font-semibold">Servis aparata</div>
+        <div data-target="sanacija" class="text-gray-400 border-b pb-2 text-2xl font-semibold">Sanacija aparata</div>
+      </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="w-2/3 overflow-y-auto pl-10" id="content">
+      <section id="prodaja" class="h-screen flex flex-col justify-start pt-4">
+        <h2 class="text-2xl font-bold">Prodaja vode</h2>
+        <p class="text-gray-600">
+          Naša usluga prodaje vode omogućava vam jednostavan i pouzdan način da obezbedite kvalitetnu vodu za vaš dom ili poslovni prostor. Kontaktirajte nas i
+          osigurajte neprekidan izvor sveže i čiste vode.
+        </p>
+      </section>
+      <section id="distribucija" class="h-screen flex flex-col justify-center pt-4">
+        <h2 class="text-2xl font-bold">Distribucija vode</h2>
+        <p class="text-gray-600">
+          Naša usluga distribucije vode obezbeđuje pouzdanu i redovnu isporuku balona sa vodom direktno na vašu adresu. Fleksibilni termini dostave i brza
+          isporuka omogućavaju vam jednostavno snabdevanje vodom kada vam je najpotrebnije.
+        </p>
+      </section>
+      <section id="prodaja-a" class="h-screen flex flex-col justify-center pt-4">
+        <h2 class="text-2xl font-bold">Prodaja aparata</h2>
+        <p class="text-gray-600">
+          Nudimo širok izbor aparata za vodu koji odgovaraju različitim potrebama – bilo da vam je potreban uređaj za kancelariju, ugostiteljski objekat ili vaš
+          dom. Naši aparati omogućavaju jednostavno i praktično korišćenje balona sa vodom, uz opcije za hladnu i toplu vodu.
+        </p>
+      </section>
+      <section id="otkup" class="h-screen flex flex-col justify-center pt-4">
+        <h2 class="text-2xl font-bold">Otkup aparata</h2>
+        <p class="text-gray-600">
+          Ukoliko posedujete aparat za vodu koji vam više nije potreban, nudimo mogućnost otkupa po fer i konkurentnim uslovima. Bez obzira na stanje i model
+          aparata, naš tim će izvršiti procenu i ponuditi vam najbolje rešenje. Kontaktirajte nas kako bismo dogovorili preuzimanje i pojednostavili proces
+          prodaje vašeg aparata.
+        </p>
+      </section>
+      <section id="servis" class="h-screen flex flex-col justify-center pt-4">
+        <h2 class="text-2xl font-bold">Servis aparata</h2>
+        <p class="text-gray-600">
+          Redovno održavanje i servis aparata za vodu ključni su za njihovu dugotrajnost i ispravan rad. Naš tim pruža usluge popravke aparata, osiguravajući da
+          vaša voda ostane higijenski ispravna i sveža. Bilo da je reč o zameni delova, otklanjanju kvarova ili preventivnom održavanju, stojimo vam na
+          raspolaganju za brzu i pouzdanu uslugu.
+        </p>
+      </section>
+      <section id="sanacija" class="h-screen flex flex-col justify-start pt-4">
+        <h2 class="text-2xl font-bold">Sanacija aparata</h2>
+        <p class="text-gray-600">
+          Sanacija aparata podrazumeva detaljno čišćenje, dezinfekciju i obnovu kako bi uređaj ponovo bio potpuno funkcionalan i siguran za upotrebu. Bilo da je
+          aparat bio van upotrebe duži period ili je došlo do zagađenja sistema, naš tim obavlja temeljnu sanaciju, uklanjajući nečistoće, kamenac i bakterije.
+          Na taj način obezbeđujemo da vaš aparat ponovo isporučuje kvalitetnu i bezbednu vodu.
+        </p>
+      </section>
+    </div>
   </div>
+  <WaveIntersection />
   <CallToAction />
 </RootLayout>
+
+<script>
+  import Lenis from "lenis";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const menuItems = document.querySelectorAll("#menu div");
+
+    window.addEventListener("scroll", () => {
+      let currentSection = "" as any;
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 400;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      menuItems.forEach((item) => {
+        item.classList.remove("active");
+        item.classList.add("text-gray-400");
+        if (item.getAttribute("data-target") === currentSection) {
+          item.classList.add("active");
+          item.classList.remove("text-gray-400");
+        }
+      });
+    });
+  });
+
+  const lenis = new Lenis();
+
+  function raf(time: number) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
