@@ -62,13 +62,14 @@ import WaveIntersection from "@components/pages/root/intersection/WaveIntersecti
           <input
             id="firstName"
             name="firstName"
+            placeholder=""
             type="text"
             required
-            class="h-16 text-base px-10 border border-secondary/20 bg-transparent outline-none rounded-sm peer w-full"
+            class="h-16 text-base px-10 border border-secondary/20 bg-transparent outline-none rounded-sm peer w-full placeholder-transparent"
           />
           <label
             for="firstName"
-            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-focus:text-secondary px-1 duration-300 peer-focus:top-0 bg-white text-base"
+            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-focus:text-secondary px-1 duration-300 peer-[&:not(:placeholder-shown)]:top-0 peer-focus:top-0 bg-white text-base"
             >Ime</label
           >
           <svg
@@ -86,12 +87,13 @@ import WaveIntersection from "@components/pages/root/intersection/WaveIntersecti
             id="lastName"
             name="lastName"
             type="text"
+            placeholder=""
             required
-            class="h-16 text-base px-10 border border-secondary/20 bg-transparent outline-none rounded-sm peer w-full"
+            class="h-16 text-base px-10 border border-secondary/20 bg-transparent placeholder-transparent outline-none rounded-sm peer w-full"
           />
           <label
             for="lastName"
-            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-focus:text-secondary px-1 duration-300 peer-focus:top-0 bg-white text-base"
+            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-focus:text-secondary peer-[&:not(:placeholder-shown)]:top-0 px-1 duration-300 peer-focus:top-0 bg-white text-base"
             >Prezime</label
           >
           <svg
@@ -109,13 +111,14 @@ import WaveIntersection from "@components/pages/root/intersection/WaveIntersecti
             id="email"
             name="email"
             type="email"
+            placeholder=""
             autocomplete="email"
             required
-            class="h-16 text-base px-10 border border-secondary/20 bg-transparent outline-none rounded-sm peer w-full"
+            class="h-16 text-base px-10 border border-secondary/20 bg-transparent placeholder-transparent outline-none rounded-sm peer w-full"
           />
           <label
             for="email"
-            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-focus:text-secondary px-1 duration-300 peer-focus:top-0 bg-white text-base"
+            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-[&:not(:placeholder-shown)]:top-0 peer-focus:text-secondary px-1 duration-300 peer-focus:top-0 bg-white text-base"
             >Email adresa</label
           >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute left-4 w-5 text-secondary/50 top-1/2 -translate-y-1/2" fill="currentColor"
@@ -129,13 +132,14 @@ import WaveIntersection from "@components/pages/root/intersection/WaveIntersecti
             id="phone"
             name="phone"
             autocomplete="tel"
+            placeholder=""
             type="tel"
             required
-            class="h-16 text-base px-10 border border-secondary/20 bg-transparent outline-none rounded-sm peer w-full"
+            class="h-16 text-base px-10 border border-secondary/20 bg-transparent placeholder-transparent outline-none rounded-sm peer w-full"
           />
           <label
             for="phone"
-            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-focus:text-secondary px-1 duration-300 peer-focus:top-0 bg-white text-base"
+            class="absolute -translate-y-1/2 top-1/2 left-10 text-base pointer-events-none text-secondary/50 peer-[&:not(:placeholder-shown)]:top-0 peer-focus:text-secondary px-1 duration-300 peer-focus:top-0 bg-white text-base"
             >Broj telefona</label
           >
           <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-4 w-5 text-secondary/50 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="currentColor"
@@ -148,12 +152,14 @@ import WaveIntersection from "@components/pages/root/intersection/WaveIntersecti
           <textarea
             id="message"
             name="message"
+            placeholder=""
             cols="8"
             required
-            class="text-base resize-none h-52 px-4 py-4 border border-secondary/20 bg-transparent outline-none rounded-sm peer w-full"></textarea>
+            class="text-base resize-none h-52 px-4 py-4 border border-secondary/20 bg-transparent placeholder-transparent outline-none rounded-sm peer w-full"
+          ></textarea>
           <label
             for="message"
-            class="absolute top-4 left-4 text-base pointer-events-none text-secondary/50 peer-focus:text-secondary px-1 duration-300 peer-focus:-translate-y-1/2 peer-focus:top-0 bg-white text-base"
+            class="absolute top-4 left-4 text-base pointer-events-none text-secondary/50 peer-[&:not(:placeholder-shown)]:top-0 peer-focus:text-secondary px-1 duration-300 peer-focus:-translate-y-1/2 peer-focus:top-0 bg-white text-base"
             >Napiši poruku</label
           >
         </div>
