@@ -9,14 +9,6 @@
   --color-bg: #fff;
   --color-accent: #fff;
   --color-green: #29a58c;
-
-  .dark {
-    --color-primary: #6aa8d4;
-    --color-secondary: #1a262f;
-    --color-bg: #fff;
-    --color-accent: #fff;
-    --color-green: #29a58c;
-  }
 }
 
 @keyframes slideDown {
