@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  background-color: #ffffff !important; /* Ensures the background stays white */
+  color: #000000 !important; /* Ensures text remains black */
+}
+
 :root {
   color-scheme: light only;
 }
