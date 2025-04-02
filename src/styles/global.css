@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
-html {
-  background-color: #ffffff !important; /* Ensures the background stays white */
-  color: #000000 !important; /* Ensures text remains black */
-}
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
 
-:root {
-  color-scheme: light only;
+  * {
+    filter: none !important; /* Disable forced dark mode adjustments */
+    background-color: inherit !important;
+  }
 }
 
 @theme {
