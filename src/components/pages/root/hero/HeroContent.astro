@@ -39,38 +39,45 @@ const testimonials = [testimonialsCollection[0].data, testimonialsCollection[1].
 </div>
 
 <script>
-  let intervalTimer;
-  let interval = 50;
-  let duration = 5000;
-  let stepIncrement = 100 / (duration / interval);
-  let progress = 0;
-  let activeIndex = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    let intervalTimer: any;
+    let interval = 50;
+    let duration = 5000;
+    let stepIncrement = 100 / (duration / interval);
+    let progress = 0;
+    let activeIndex = 0;
 
-  const testimonials = document.querySelectorAll("[id^='testimonial-']");
+    const testimonials = document.querySelectorAll("[id^='testimonial-']");
+    if (testimonials.length === 0) return;
 
-  testimonials.forEach((t, i) => {
-    t.classList.add("opacity-0", "transition-opacity", "duration-500", "left-0", "right-0");
-  });
-  testimonials[activeIndex].classList.remove("opacity-0");
-  testimonials[activeIndex].classList.add("opacity-100");
+    testimonials.forEach((t, i) => {
+      t.classList.add("opacity-0", "transition-opacity", "duration-500", "absolute");
+    });
+    testimonials[activeIndex].classList.remove("opacity-0");
+    testimonials[activeIndex].classList.add("opacity-100");
 
-  intervalTimer = setInterval(() => {
-    progress = progress + stepIncrement;
+    function switchTestimonial() {
+      testimonials[activeIndex].classList.remove("opacity-100");
+      testimonials[activeIndex].classList.add("opacity-0");
 
-    if (progress >= 100) {
-      setTimeout(() => {
-        testimonials[activeIndex].classList.remove("opacity-100");
-        testimonials[activeIndex].classList.add("opacity-0");
+      activeIndex = (activeIndex + 1) % testimonials.length;
 
-        activeIndex = (activeIndex + 1) % testimonials.length;
+      testimonials[activeIndex].classList.remove("opacity-0");
+      testimonials[activeIndex].classList.add("opacity-100");
 
-        testimonials[activeIndex].classList.remove("opacity-0");
-        testimonials[activeIndex].classList.add("opacity-100");
-
-        progress = 0;
-      }, 300);
+      progress = 0;
     }
-  }, interval);
 
-  window.addEventListener("beforeunload", () => clearInterval(intervalTimer));
+    function animate() {
+      progress += stepIncrement;
+      if (progress >= 100) {
+        switchTestimonial();
+      }
+      intervalTimer = requestAnimationFrame(animate);
+    }
+
+    intervalTimer = requestAnimationFrame(animate);
+
+    window.addEventListener("beforeunload", () => cancelAnimationFrame(intervalTimer));
+  });
 </script>
