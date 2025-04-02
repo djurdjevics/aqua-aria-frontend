@@ -1,18 +1,5 @@
 @import "tailwindcss";
 
-@media (prefers-color-scheme: dark) {
-  html,
-  body {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-  }
-
-  * {
-    filter: none !important; /* Disable forced dark mode adjustments */
-    background-color: inherit !important;
-  }
-}
-
 @theme {
   --font-display: "Reem Kufi Fun", "sans-serif";
   --font-sans: "Inter", "sans-serif";
