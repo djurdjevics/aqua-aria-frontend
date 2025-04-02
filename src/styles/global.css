@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light only;
+}
+
 @theme {
   --font-display: "Reem Kufi Fun", "sans-serif";
   --font-sans: "Inter", "sans-serif";
