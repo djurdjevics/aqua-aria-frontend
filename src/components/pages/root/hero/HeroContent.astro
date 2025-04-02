@@ -40,16 +40,14 @@ const testimonials = [testimonialsCollection[0].data, testimonialsCollection[1].
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    let intervalTimer: any;
-    let interval = 50;
-    let duration = 5000;
-    let stepIncrement = 100 / (duration / interval);
-    let progress = 0;
+    let duration = 5000; // 5 seconds per testimonial
     let activeIndex = 0;
+    let lastSwitchTime = performance.now();
 
     const testimonials = document.querySelectorAll("[id^='testimonial-']");
     if (testimonials.length === 0) return;
 
+    // Initialize testimonials
     testimonials.forEach((t, i) => {
       t.classList.add("opacity-0", "transition-opacity", "duration-500", "absolute");
     });
@@ -65,19 +63,19 @@ const testimonials = [testimonialsCollection[0].data, testimonialsCollection[1].
       testimonials[activeIndex].classList.remove("opacity-0");
       testimonials[activeIndex].classList.add("opacity-100");
 
-      progress = 0;
+      lastSwitchTime = performance.now();
     }
 
     function animate() {
-      progress += stepIncrement;
-      if (progress >= 100) {
+      let now = performance.now();
+      if (now - lastSwitchTime >= duration) {
         switchTestimonial();
       }
-      intervalTimer = requestAnimationFrame(animate);
+      requestAnimationFrame(animate);
     }
 
-    intervalTimer = requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
 
-    window.addEventListener("beforeunload", () => cancelAnimationFrame(intervalTimer));
+    window.addEventListener("beforeunload", () => cancelAnimationFrame(animate as any));
   });
 </script>
