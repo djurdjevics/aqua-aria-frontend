@@ -9,6 +9,6 @@ interface Props {
 const { waters } = Astro.props
 ---
 
-<div class="mt-4">
+<div class="mt-4 flex flex-col gap-6">
   {waters.map(water => <WaterCard water={water} />)}
 </div>

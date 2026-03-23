@@ -24,5 +24,31 @@
         "amount": "7.45"
       }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Kremanska voda",
+    "image": "./kremanska.jpg",
+    "volume": "18.9L",
+    "pricePerBalloon": 450.0,
+    "description": "Kremanska voda izvire na 822 metra nadmorske visine u netaknutoj prirodi u blizini Nacionalni park Tara, zadržava svoj prirodni sastav i čistoću, a zahvaljujući pH vrednosti 9.2+, visokom sadržaju magnezijuma i niskom nivou natrijuma predstavlja idealan izbor za zdravu i balansiranu hidrataciju.",
+    "composition": [
+      {
+        "substance": "Kalcijum (Ca)",
+        "amount": "5.6"
+      },
+      {
+        "substance": "Magnezijum (Mg)",
+        "amount": "63.0"
+      },
+      {
+        "substance": "Natrijum (Na)",
+        "amount": "17.8"
+      },
+      {
+        "substance": "pH vrednost",
+        "amount": "9.2+"
+      }
+    ]
   }
 ]

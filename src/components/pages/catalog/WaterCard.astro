@@ -19,10 +19,7 @@ const { water } = Astro.props;
       <p class="font-display text-[20px] leading-[120%] lg:text-[2rem]">
         {water.data.name}
         {water.data.volume}
-        <br class="md:hidden" />Balon
-      </p>
-      <p class="font-semibold lg:text-[24px]">
-        {water.data.pricePerBalloon.toLocaleString("de-DE")} rsd
+        <br class="md:hidden" />balon
       </p>
     </div>
     <p class="text-xs text-white/80 mt-2 md:mt-1 lg:text-base lg:mt-3">{water.data.description}</p>
