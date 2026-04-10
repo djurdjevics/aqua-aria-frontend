@@ -2,64 +2,198 @@
 import ButtonLinkPrimary from "@components/ButtonLinkPrimary.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+import "../../../../styles/embla.css";
 
 const watersCollection = await getCollection("waters");
 ---
 
-<section class="relative mx-auto max-w-7xl px-4 py-14 lg:py-[120px]">
-  <span class="text-primary text-lg md:text-xl lg:text-3xl font-medium mb-12 block text-center">Vode u našoj ponudi</span>
-  <div class="flex flex-col gap-16">
-    {watersCollection.map((water, idx) => {
-      const isEven = idx % 2 === 0;
-      // even: image left, text right
-      if (isEven) {
-        return (
-          <div class="flex flex-col md:flex-row items-center md:gap-x-12" style="direction: ltr;">
-            <div class="relative rounded-sm overflow-hidden w-full h-80 md:h-[420px] md:w-1/2">
-              <Image src={water.data.image} alt={water.data.name} class="w-full h-full object-cover" />
-              <div class="absolute inset-0 bg-gradient-to-bl from-white to-transparent"></div>
-            </div>
+<section class="px-4 py-14 lg:py-[120px] relative">
+  <h2 class="text-5xl font-display md:text-7xl mb-20 block text-center">
+    Vode u našoj ponudi
+  </h2>
+  <div class="embla">
+    <div class="embla__viewport">
+      <div class="max-w-7xl mx-auto flex gap-16 embla__container">
+        {
+          watersCollection.map((water) => (
+            <div
+              class="flex min-w-full flex-col md:flex-row-reverse items-center md:gap-x-12 embla__slide"
+              style="direction: ltr;"
+            >
+              <div class="relative rounded-sm overflow-hidden w-full h-80 md:h-[420px] md:w-1/2">
+                <Image
+                  src={water.data.image}
+                  alt={water.data.name}
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-br from-white to-transparent" />
+              </div>
 
-            <div class="flex flex-col items-start justify-between h-full px-2 py-6 md:w-1/2">
-              <h2 class="font-display text-secondary text-4xl md:text-6xl lg:text-7xl mb-2">{water.data.name}</h2>
-              <p class="text-secondary/80 mt-2 text-sm md:text-base">{water.data.description}</p>
+              <div class="flex flex-col justify-between items-start md:h-full px-2 py-6 md:w-1/2">
+                <div>
+                  <h2 class="font-display text-secondary text-4xl md:text-6xl lg:text-7xl mb-2">
+                    {water.data.name}
+                  </h2>
+                  <p class="text-secondary/80 mt-6 text-sm md:text-base">
+                    {water.data.description}
+                  </p>
 
-
-              <div class="mt-6 flex items-center gap-x-2">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.2332 0.470668L17.2549 0.478169C17.411 0.553185 17.486 0.628203 17.5355 0.786494V0.788745L17.537 0.790245C18.0824 2.83377 18.1454 4.98062 17.729 7.04816C17.7253 7.08341 17.7193 7.11717 17.7088 7.15018C17.6563 7.39699 17.5985 7.64004 17.5332 7.88459C17.0599 9.65348 16.2212 11.3465 15.0224 12.8477L14.9849 12.895C14.6789 13.2746 14.3495 13.6414 13.9962 13.9948L13.9865 14.0045C12.2311 15.7562 10.1164 16.9355 7.88309 17.5333C5.56434 18.1552 3.11193 18.1552 0.790878 17.5355L0.768372 17.5288L0.746618 17.5213L0.67085 17.4845L0.656597 17.4755L0.638593 17.4628C0.585331 17.4208 0.546321 17.3818 0.511064 17.3218L0.502812 17.3067L0.500561 17.3022L0.493059 17.2865L0.490809 17.2812L0.486308 17.2692L0.480306 17.2565L0.476556 17.2475L0.465303 17.2122V17.21L0.463803 17.2092C-0.1551 14.8882 -0.1551 12.436 0.466803 10.1163C1.06619 7.87997 2.24696 5.76155 4.00388 4.00551L4.00463 4.00401L4.01364 3.99576C4.36321 3.64543 4.72856 3.31911 5.10514 3.01528L5.1524 2.97777C6.652 1.7775 8.34668 0.940389 10.1156 0.467003C10.3587 0.401739 10.6032 0.343226 10.85 0.291464C10.883 0.280212 10.9168 0.27496 10.952 0.271209C13.0196 -0.14514 15.1665 -0.0828792 17.21 0.463252L17.2332 0.470668ZM16.8296 1.82173L12.1043 6.54694H16.8858C17.1589 4.98435 17.1394 3.379 16.8296 1.82173ZM11.1815 7.46971L6.52753 12.1237H14.4238C15.4763 10.7644 16.216 9.23919 16.6421 7.64735L16.6887 7.46956L11.1815 7.46971ZM5.60552 13.0457L1.8209 16.8295C3.7473 17.2136 5.74591 17.1521 7.646 16.642C9.73525 16.0831 11.7097 14.9826 13.3451 13.3465L13.3459 13.345L13.6354 13.0457L5.60552 13.0457ZM1.16967 16.1783L4.95353 12.3945V4.36476L4.65496 4.65357L4.65346 4.65507C3.01733 6.29043 1.91682 8.2649 1.3572 10.3541C0.847842 12.2543 0.786324 14.2527 1.16967 16.1783ZM5.8763 11.4725L10.5303 6.81849V1.3107L10.3525 1.35796C8.76065 1.78407 7.23564 2.52297 5.87615 3.57625L5.8763 11.4725ZM11.4531 5.89573L16.1784 1.17051C14.621 0.860688 13.0156 0.841195 11.4531 1.11425V5.89573Z" fill="#29A58C"></path>
-                </svg>
-                <span class="text-green text-base font-semibold uppercase"> 100% reciklabilno </span>
+                  <div class="mt-6 flex items-center gap-x-2">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.2332 0.470668L17.2549 0.478169C17.411 0.553185 17.486 0.628203 17.5355 0.786494V0.788745L17.537 0.790245C18.0824 2.83377 18.1454 4.98062 17.729 7.04816C17.7253 7.08341 17.7193 7.11717 17.7088 7.15018C17.6563 7.39699 17.5985 7.64004 17.5332 7.88459C17.0599 9.65348 16.2212 11.3465 15.0224 12.8477L14.9849 12.895C14.6789 13.2746 14.3495 13.6414 13.9962 13.9948L13.9865 14.0045C12.2311 15.7562 10.1164 16.9355 7.88309 17.5333C5.56434 18.1552 3.11193 18.1552 0.790878 17.5355L0.768372 17.5288L0.746618 17.5213L0.67085 17.4845L0.656597 17.4755L0.638593 17.4628C0.585331 17.4208 0.546321 17.3818 0.511064 17.3218L0.502812 17.3067L0.500561 17.3022L0.493059 17.2865L0.490809 17.2812L0.486308 17.2692L0.480306 17.2565L0.476556 17.2475L0.465303 17.2122V17.21L0.463803 17.2092C-0.1551 14.8882 -0.1551 12.436 0.466803 10.1163C1.06619 7.87997 2.24696 5.76155 4.00388 4.00551L4.00463 4.00401L4.01364 3.99576C4.36321 3.64543 4.72856 3.31911 5.10514 3.01528L5.1524 2.97777C6.652 1.7775 8.34668 0.940389 10.1156 0.467003C10.3587 0.401739 10.6032 0.343226 10.85 0.291464C10.883 0.280212 10.9168 0.27496 10.952 0.271209C13.0196 -0.14514 15.1665 -0.0828792 17.21 0.463252L17.2332 0.470668ZM16.8296 1.82173L12.1043 6.54694H16.8858C17.1589 4.98435 17.1394 3.379 16.8296 1.82173ZM11.1815 7.46971L6.52753 12.1237H14.4238C15.4763 10.7644 16.216 9.23919 16.6421 7.64735L16.6887 7.46956L11.1815 7.46971ZM5.60552 13.0457L1.8209 16.8295C3.7473 17.2136 5.74591 17.1521 7.646 16.642C9.73525 16.0831 11.7097 14.9826 13.3451 13.3465L13.3459 13.345L13.6354 13.0457L5.60552 13.0457ZM1.16967 16.1783L4.95353 12.3945V4.36476L4.65496 4.65357L4.65346 4.65507C3.01733 6.29043 1.91682 8.2649 1.3572 10.3541C0.847842 12.2543 0.786324 14.2527 1.16967 16.1783ZM5.8763 11.4725L10.5303 6.81849V1.3107L10.3525 1.35796C8.76065 1.78407 7.23564 2.52297 5.87615 3.57625L5.8763 11.4725ZM11.4531 5.89573L16.1784 1.17051C14.621 0.860688 13.0156 0.841195 11.4531 1.11425V5.89573Z"
+                        fill="#29A58C"
+                      />
+                    </svg>
+                    <span class="text-green text-base font-semibold uppercase">
+                      {" "}
+                      100% reciklabilno{" "}
+                    </span>
+                  </div>
+                </div>
+                <ButtonLinkPrimary
+                  href={"/katalog?q=vode"}
+                  label="Katalog"
+                  classNames="w-auto mt-6"
+                />
               </div>
             </div>
-          </div>
-        );
-      }
-
-      // odd: image right, text left
-      return (
-        <div class="flex flex-col md:flex-row-reverse items-center md:gap-x-12" style="direction: ltr;">
-          <div class="relative rounded-sm overflow-hidden w-full h-80 md:h-[420px] md:w-1/2">
-            <Image src={water.data.image} alt={water.data.name} class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-br from-white to-transparent"></div>
-          </div>
-
-          <div class="flex flex-col items-start justify-between h-full px-2 py-6 md:w-1/2">
-            <h2 class="font-display text-secondary text-4xl md:text-6xl lg:text-7xl mb-2">{water.data.name}</h2>
-            <p class="text-secondary/80 mt-2 text-sm md:text-base">{water.data.description}</p>
-
-            <div class="mt-6 flex items-center gap-x-2">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.2332 0.470668L17.2549 0.478169C17.411 0.553185 17.486 0.628203 17.5355 0.786494V0.788745L17.537 0.790245C18.0824 2.83377 18.1454 4.98062 17.729 7.04816C17.7253 7.08341 17.7193 7.11717 17.7088 7.15018C17.6563 7.39699 17.5985 7.64004 17.5332 7.88459C17.0599 9.65348 16.2212 11.3465 15.0224 12.8477L14.9849 12.895C14.6789 13.2746 14.3495 13.6414 13.9962 13.9948L13.9865 14.0045C12.2311 15.7562 10.1164 16.9355 7.88309 17.5333C5.56434 18.1552 3.11193 18.1552 0.790878 17.5355L0.768372 17.5288L0.746618 17.5213L0.67085 17.4845L0.656597 17.4755L0.638593 17.4628C0.585331 17.4208 0.546321 17.3818 0.511064 17.3218L0.502812 17.3067L0.500561 17.3022L0.493059 17.2865L0.490809 17.2812L0.486308 17.2692L0.480306 17.2565L0.476556 17.2475L0.465303 17.2122V17.21L0.463803 17.2092C-0.1551 14.8882 -0.1551 12.436 0.466803 10.1163C1.06619 7.87997 2.24696 5.76155 4.00388 4.00551L4.00463 4.00401L4.01364 3.99576C4.36321 3.64543 4.72856 3.31911 5.10514 3.01528L5.1524 2.97777C6.652 1.7775 8.34668 0.940389 10.1156 0.467003C10.3587 0.401739 10.6032 0.343226 10.85 0.291464C10.883 0.280212 10.9168 0.27496 10.952 0.271209C13.0196 -0.14514 15.1665 -0.0828792 17.21 0.463252L17.2332 0.470668ZM16.8296 1.82173L12.1043 6.54694H16.8858C17.1589 4.98435 17.1394 3.379 16.8296 1.82173ZM11.1815 7.46971L6.52753 12.1237H14.4238C15.4763 10.7644 16.216 9.23919 16.6421 7.64735L16.6887 7.46956L11.1815 7.46971ZM5.60552 13.0457L1.8209 16.8295C3.7473 17.2136 5.74591 17.1521 7.646 16.642C9.73525 16.0831 11.7097 14.9826 13.3451 13.3465L13.3459 13.345L13.6354 13.0457L5.60552 13.0457ZM1.16967 16.1783L4.95353 12.3945V4.36476L4.65496 4.65357L4.65346 4.65507C3.01733 6.29043 1.91682 8.2649 1.3572 10.3541C0.847842 12.2543 0.786324 14.2527 1.16967 16.1783ZM5.8763 11.4725L10.5303 6.81849V1.3107L10.3525 1.35796C8.76065 1.78407 7.23564 2.52297 5.87615 3.57625L5.8763 11.4725ZM11.4531 5.89573L16.1784 1.17051C14.621 0.860688 13.0156 0.841195 11.4531 1.11425V5.89573Z" fill="#29A58C"></path>
-                </svg>
-                <span class="text-green text-base font-semibold uppercase"> 100% reciklabilno </span>
-              </div>
-            </div>
-          </div>
-        );
-    })}
+          ))
+        }
+      </div>
+    </div>
+    <button class="embla__button embla__button--prev embla__button--desktop">
+      <svg
+        width="86"
+        height="73"
+        viewBox="0 0 86 73"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15.7993 36.3369C15.7993 55.5325 29.7805 72.6734 48.976 72.6734C74.2536 75.8331 85.3125 55.5325 85.3125 36.3369C85.3125 17.1414 74.491 3.16016 55.2954 3.16016C36.0999 3.16016 15.7993 20.5385 15.7993 36.3369Z"
+          fill="#6AA8D4"></path>
+        <path
+          d="M9.00583 18.9582C14.2165 18.9582 18.8694 15.1451 18.8694 9.90994C19.7271 3.01607 14.2165 -6.21421e-07 9.00583 -3.93657e-07C3.7952 -1.65893e-07 1.29007e-07 2.95133 3.57842e-07 8.18647C5.86678e-07 13.4216 4.71734 18.9582 9.00583 18.9582Z"
+          fill="#6AA8D4"></path>
+        <path
+          d="M28.2812 6.31938C30.0181 6.31938 31.5691 5.04836 31.5691 3.30331C31.855 1.00536 30.0181 -2.0714e-07 28.2812 -1.31219e-07C26.5444 -5.52978e-08 25.2793 0.983775 25.2793 2.72882C25.2793 4.47387 26.8517 6.31938 28.2812 6.31938Z"
+          fill="#6AA8D4"></path>
+        <path
+          d="M49.1245 25.9509C48.7859 25.5196 48.3268 25.2773 47.848 25.2773C47.3692 25.2773 46.9101 25.5196 46.5715 25.9509L38.4464 36.3035C38.1079 36.7349 37.9178 37.32 37.9178 37.93C37.9178 38.54 38.1079 39.1251 38.4464 39.5565L46.5715 49.9091C46.912 50.3281 47.3681 50.56 47.8415 50.5548C48.3149 50.5495 48.7678 50.3076 49.1025 49.8811C49.4373 49.4545 49.6272 48.8775 49.6313 48.2743C49.6354 47.6711 49.4534 47.09 49.1245 46.6561L44.2369 40.2306H61.3897C61.8686 40.2306 62.3279 39.9882 62.6665 39.5567C63.0051 39.1253 63.1953 38.5401 63.1953 37.93C63.1953 37.3198 63.0051 36.7347 62.6665 36.3032C62.3279 35.8718 61.8686 35.6294 61.3897 35.6294H44.2369L49.1245 29.2039C49.463 28.7725 49.6532 28.1875 49.6532 27.5774C49.6532 26.9674 49.463 26.3823 49.1245 25.9509Z"
+          fill="white"></path>
+      </svg>
+    </button>
+    <button class="embla__button embla__button--next embla__button--desktop">
+      <svg
+        width="86"
+        height="73"
+        viewBox="0 0 86 73"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M69.5132 36.3369C69.5132 55.5325 55.532 72.6734 36.3365 72.6734C11.0589 75.8331 0 55.5325 0 36.3369C0 17.1414 10.8215 3.16016 30.0171 3.16016C49.2126 3.16016 69.5132 20.5385 69.5132 36.3369Z"
+          fill="#6AA8D4"></path>
+        <path
+          d="M76.3067 18.9582C71.096 18.9582 66.4431 15.1451 66.4431 9.90994C65.5854 3.01607 71.096 -6.21421e-07 76.3067 -3.93657e-07C81.5173 -1.65893e-07 85.3125 2.95133 85.3125 8.18647C85.3125 13.4216 80.5952 18.9582 76.3067 18.9582Z"
+          fill="#6AA8D4"></path>
+        <path
+          d="M57.0313 6.31938C55.2944 6.31938 53.7434 5.04836 53.7434 3.30331C53.4575 1.00536 55.2944 -2.0714e-07 57.0313 -1.31219e-07C58.7681 -5.52978e-08 60.0332 0.983775 60.0332 2.72882C60.0332 4.47387 58.4608 6.31938 57.0313 6.31938Z"
+          fill="#6AA8D4"></path>
+        <path
+          d="M36.188 25.9509C36.5266 25.5196 36.9857 25.2773 37.4645 25.2773C37.9433 25.2773 38.4024 25.5196 38.741 25.9509L46.8661 36.3035C47.2046 36.7349 47.3947 37.32 47.3947 37.93C47.3947 38.54 47.2046 39.1251 46.8661 39.5565L38.741 49.9091C38.4005 50.3281 37.9444 50.56 37.471 50.5548C36.9976 50.5495 36.5447 50.3076 36.21 49.8811C35.8752 49.4545 35.6853 48.8775 35.6812 48.2743C35.6771 47.6711 35.8591 47.09 36.188 46.6561L41.0756 40.2306H23.9228C23.4439 40.2306 22.9846 39.9882 22.646 39.5567C22.3074 39.1253 22.1172 38.5401 22.1172 37.93C22.1172 37.3198 22.3074 36.7347 22.646 36.3032C22.9846 35.8718 23.4439 35.6294 23.9228 35.6294H41.0756L36.188 29.2039C35.8495 28.7725 35.6593 28.1875 35.6593 27.5774C35.6593 26.9674 35.8495 26.3823 36.188 25.9509Z"
+          fill="white"></path>
+      </svg>
+    </button>
   </div>
-  <div class="mt-12 flex justify-center">
-    <ButtonLinkPrimary href={"/katalog?q=vode"} label="Katalog" classNames="w-auto" />
-  </div>
+  <div class="sm:mt-12 flex justify-center"></div>
+
+  <script>
+    import EmblaCarousel, {
+      type EmblaCarouselType,
+      type EmblaOptionsType,
+    } from "embla-carousel";
+
+    import Autoplay from "embla-carousel-autoplay";
+
+    const OPTIONS: EmblaOptionsType = {
+      loop: true,
+    };
+
+    const emblaNode = document.querySelector(".embla") as HTMLElement;
+    const viewportNode = emblaNode.querySelector(
+      ".embla__viewport",
+    ) as HTMLElement;
+    const prevBtn = emblaNode.querySelector(
+      ".embla__button--prev",
+    ) as HTMLElement;
+    const nextBtn = emblaNode.querySelector(
+      ".embla__button--next",
+    ) as HTMLElement;
+
+    const emblaApi = EmblaCarousel(viewportNode, OPTIONS, [
+      Autoplay({
+        delay: 5000,
+        stopOnInteraction: true,
+      }),
+    ]);
+
+    addPrevNextButtonClickHandlers(emblaApi, prevBtn, nextBtn);
+
+    function addTogglePrevNextButtonsActive(
+      emblaApi: EmblaCarouselType,
+      prevBtn: HTMLElement,
+      nextBtn: HTMLElement,
+    ): void {
+      const togglePrevNextButtonsState = (): void => {
+        if (emblaApi.canScrollPrev()) {
+          prevBtn.classList.remove("embla__button--disabled");
+        } else {
+          prevBtn.classList.add("embla__button--disabled");
+        }
+
+        if (emblaApi.canScrollNext()) {
+          nextBtn.classList.remove("embla__button--disabled");
+        } else {
+          nextBtn.classList.add("embla__button--disabled");
+        }
+      };
+
+      togglePrevNextButtonsState();
+      emblaApi
+        .on("select", togglePrevNextButtonsState)
+        .on("reInit", togglePrevNextButtonsState);
+    }
+
+    function addPrevNextButtonClickHandlers(
+      emblaApi: EmblaCarouselType,
+      prevBtn: HTMLElement,
+      nextBtn: HTMLElement,
+    ): void {
+      const scrollPrev = (): void => {
+        emblaApi.scrollPrev();
+      };
+
+      const scrollNext = (): void => {
+        emblaApi.scrollNext();
+      };
+
+      prevBtn.addEventListener("click", scrollPrev, false);
+      nextBtn.addEventListener("click", scrollNext, false);
+
+      emblaApi.on("destroy", () => {
+        prevBtn.removeEventListener("click", scrollPrev, false);
+        nextBtn.removeEventListener("click", scrollNext, false);
+      });
+
+      addTogglePrevNextButtonsActive(emblaApi, prevBtn, nextBtn);
+    }
+  </script>
 </section>

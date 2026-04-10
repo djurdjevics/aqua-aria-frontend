@@ -1,5 +1,5 @@
 .embla {
-  max-width: 48rem;
+  max-width: 80rem;
   margin: auto;
   --slide-height: 100%;
   --slide-spacing: 1rem;
@@ -32,10 +32,12 @@
   gap: 1.2rem;
 }
 .embla__buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  width: 100%;
+  justify-content: end;
   gap: 0.6rem;
   align-items: center;
+  padding-bottom: 2rem;
 }
 .embla__button {
   -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
@@ -59,6 +61,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.embla__button--disabled {
+  cursor: default;
+  color: var(--detail-medium-contrast);
+}
+
 .embla__button:disabled {
   color: var(--detail-high-contrast);
 }
@@ -68,7 +76,7 @@
   z-index: 10;
   top: 50%;
   translate: 0% -50%;
-  left: 0;
+  left: 0.5rem;
 }
 
 .embla__button--next {
@@ -76,7 +84,60 @@
   top: 50%;
   z-index: 10;
   translate: 0% -50%;
-  right: 0;
+  right: 0.5rem;
+}
+
+@media (width >= 40rem) {
+  .embla__button--prev {
+    top: 30%;
+    left: 0rem;
+  }
+
+  .embla__button--next {
+    top: 30%;
+    right: 0rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .embla__button--prev {
+    top: 50%;
+    left: 50%;
+  }
+
+  .embla__button--next {
+    top: 50%;
+    right: 0rem;
+  }
+}
+
+@media (width >= 90rem) {
+  .embla__button--prev {
+    top: 50%;
+    left: 1rem;
+  }
+
+  .embla__button--next {
+    top: 50%;
+    right: 1rem;
+  }
+}
+
+@media (width >= 100rem) {
+  .embla__button--prev {
+    top: 50%;
+    left: 10rem;
+  }
+
+  .embla__button--next {
+    top: 50%;
+    right: 10rem;
+  }
+
+  .embla__button {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
 }
 
 .embla__button__svg {
