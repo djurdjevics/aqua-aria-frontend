@@ -8,6 +8,7 @@ const dispensers = defineCollection({
     z.object({
       slug: z.string(),
       name: z.string(),
+      metaDescription : z.string(),
       description: z.string(),
       price: z.number().gt(0),
       images: z.array(image()),

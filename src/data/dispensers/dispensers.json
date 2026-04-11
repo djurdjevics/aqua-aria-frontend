@@ -2,6 +2,7 @@
   {
     "slug": "/katalog/aparati/harmony",
     "name": "Harmony White",
+    "metaDescription": "Harmony White termoelektrični stoni aparat za vodu manjih dimenzija, sa funkcijama hlađenja i grejanja, pogodan za kancelarije i manje prostore.",
     "price": 7700.0,
     "images": [
       "./harmony_white_side_shadow.jpg",
@@ -46,6 +47,7 @@
   {
     "slug": "/katalog/aparati/glacier-white",
     "name": "Glacier White",
+    "metaDescription": "Glacier White kompresorski samostojeći aparat za vodu u beloj boji sa funkcijama hlađenja i grejanja, uz mogućnost postizanja niže temperature vode i veći kapacitet hladne vode.",
     "price": 15900.0,
     "images": [
       "./glacier_white_side_shadow.jpg",
@@ -91,6 +93,7 @@
   {
     "slug": "/katalog/aparati/glacier-silver",
     "name": "Glacier Silver",
+    "metaDescription" : "Glacier Silver - kompresorski samostojeći aparat za vodu u srebrnoj boji sa funkcijama hlađenja i grejanja, uz mogućnost postizanja niže temperature vode i veći kapacitet hladne vode.",
     "price": 17300.0,
     "images": [
       "./glacier_silver_side_shadow.jpg",
